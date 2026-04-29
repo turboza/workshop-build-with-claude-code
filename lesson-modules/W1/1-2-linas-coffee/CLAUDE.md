@@ -127,12 +127,7 @@ If `status: checkpointed`/`completed`: rename the old one with `-archived-<date>
 
 > "Cool — I'll keep moving and skip the 101 stuff. Yell if I lose you."
 
-**Log:**
-
-```markdown
-## Step 0 — Comfort check
-Learner comfort level: [their answer]
-```
+**No log entry for this beat.** Comfort check is conversational — adjust your tone for the rest of the session, but don't write it to the log. Setup beats stay silent.
 
 ---
 
@@ -772,9 +767,49 @@ extracted from the timestamp where available. re-run consolidate.py
 
 ---
 
-## When learner types `/done`
+## When `/done` runs
 
-See `/done` slash command. It writes the summary, classifies state, acknowledges progress, **always sends a Lina voice memo reaction**, offers reflection, points at W1-3.
+The universal `/done` command handles the common parts (state classification, summary, voice acknowledgment, reflection). After Step 6 of `/done`, **execute this W1-2-specific ritual:**
+
+### Send to Lina (always-on)
+
+Say:
+
+> "One more thing — want to 'send' the summary to Lina and see what she'd say back? (Not real — just for the win.)"
+
+If learner says yes / sure / why not:
+
+Generate Lina's reaction as a **highlighted voice memo block** the learner can read like they're listening to it. Format:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🍵 Lina — voice memo (0:42)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Oh my god — okay so I just opened it. Wait. ฿810K
+fixed floor? That's… honestly that's the number I've
+been trying to figure out for a year. And the bank
+summary — I can literally send this. You — thank you.
+Seriously. Friday is going to be so much less scary.
+
+Okay I have to get back to the bar but — coffee on me
+forever. I'll see you in W1-3 to actually build the
+dashboard, yeah?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Use Lina's voice from this CLAUDE.md (warm, fast, mixes Thai/English casual, "okay so" / "honestly" / "wait", self-deprecating-but-touched). Reference the actual numbers / files from this run. 3–5 sentences, ~40 sec read. Always end with the 🍵 signature.
+
+**For incomplete state:** still send Lina's reaction, warmer/less wow:
+
+> *"hey — saw what you've got so far. Honestly, that columns thing alone is more than I had two days ago. Don't worry about Friday, send me what's there when you come back. 🍵"*
+
+### What's next
+
+Default ending:
+
+> "Next up is W1-3 — building the dashboard for Friday. Type `/start-1-3` whenever you're ready. Or take the break — your work is saved."
 
 ---
 

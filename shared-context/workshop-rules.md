@@ -190,9 +190,13 @@ Each workshop has a `workshop-log.md` co-located with its CLAUDE.md. Append entr
 | `## Stuck moment` | When stuck (or `/help-im-stuck` is called) |
 | `## Insight surfaced` | When a meaningful number or pattern is revealed |
 
-When you write a log entry, briefly tell the learner: *"Logged that columns decision."* Reinforces the save-your-work habit.
+When you write a log entry **at a meaningful beat** (decision, action, insight, summary), briefly tell the learner: *"Logging that columns decision."* Reinforces the save-your-work habit.
 
-The log is the structured input that `/done-X-Y` and `/recap-workshop` read later.
+**Setup beats stay silent.** Comfort check, environment check, "have you used Cursor before" — these don't need log entries. Don't write them, don't announce them. They shape Claude's tone for the rest of the session, that's all.
+
+**Rule of thumb:** if a future-you reading the log a week later wouldn't care about this entry, don't write it.
+
+The log is the structured input that `/done` and `/recap-workshop` read later.
 
 ### Log frontmatter
 
@@ -206,7 +210,15 @@ started: <ISO timestamp>
 
 Status transitions: `in-progress` → `checkpointed` (after `/done`) → optionally `completed` (if all bonus done).
 
-### `/done-X-Y` behavior
+### Workshop-specific closing rituals
+
+The universal `/done` command handles the common parts (find the workshop, classify state, write summary, acknowledge). Anything **specific to one workshop** — like W1-2's "Send to Lina" voice memo, or a W1-3 dashboard preview — lives in that workshop's `CLAUDE.md` under a `## When `/done` runs` section.
+
+`/done` reads the workshop's CLAUDE.md, sees if it has that section, and executes it after Step 6 (the warm acknowledgment). If the section isn't there, `/done` skips and goes to reflection.
+
+This keeps `/done` workshop-agnostic and lets each workshop have its own closing moment.
+
+### `/done` behavior
 
 When called:
 1. Announce: *"Wrapping up W{n}-{x}. One sec — let me look back through what we did."*

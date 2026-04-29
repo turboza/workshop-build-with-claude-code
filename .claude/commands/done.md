@@ -8,97 +8,109 @@ description: "Wrap up the active workshop — write summary, acknowledge progres
 - DO NOT use `Agent`, `WebFetch`, `WebSearch`, `EnterPlanMode`
 - The only tools you need: `Read`, `Bash`, `Write`, `Edit`
 
-**First, say to the learner:**
+---
 
-> "Wrapping up. One sec — let me look back through what we did."
+## Step 1 — Identify the active workshop
 
-**Then:**
+**First, look in the current conversation.** You almost certainly already know which workshop is active because:
 
-1. Find the active workshop log:
+- A `/start-X-Y` command was used earlier in this session
+- You've been reading/writing files in a specific `lesson-modules/W{n}/{x-y}-{slug}/` folder
+- You've been writing to a specific `workshop-log.md`
 
-   ```bash
-   find lesson-modules -name "workshop-log.md" -type f
-   ```
+If any of those are true: **you already know the answer. Use it.** No globbing, no asking.
 
-   For each match, check the frontmatter `status:` field. The active log is the one with `status: in-progress` (or most recent if multiple).
+**If you genuinely don't know** (cold session, no prior workshop activity in context):
 
-   If no `in-progress` log found, ask: *"Hmm, I don't see an active workshop. Did you start one? Try `/start-1-2` or whichever workshop you want."*
+1. Run: `find lesson-modules -name "workshop-log.md" -type f`
+2. For each match, check the frontmatter `status:` field
+3. Filter to `status: in-progress`
+4. Then:
+   - **No matches:** say *"I don't see an active workshop in this session. Did you start one? Try `/start-1-2` or whichever you want to wrap up."* — stop here.
+   - **One match:** use it.
+   - **Multiple matches:** ask the learner — *"I see a few workshops still open: W1-2 and W1-3. Which one are we wrapping up?"* — wait for answer.
 
-2. Read `shared-context/workshop-rules.md` (voice rules + §10 journaling/done behavior).
+**Even if you think you know, if there's any doubt: ask.** Better than silently picking wrong.
 
-3. Read the active `workshop-log.md`.
+---
 
-4. Classify the state:
-   - **Completed:** all major Step entries present + success-point marker + bonus chapters done
-   - **Checkpoint-completed:** success point hit, mid-bonus
-   - **Checkpoint-incomplete:** success point not hit, but real progress made
-   - **Aborted:** very early stop
+## Step 2 — Say what you're doing
 
-5. **Tell the learner you're updating the log:**
+> "Wrapping up [workshop name, e.g. 'W1-2 — Lina's Coffee']. One sec — let me look back through what we did."
 
-   > "Logging the wrap-up summary."
+If you asked them to clarify in Step 1, skip this and go straight to reading.
 
-   Then append a `## Summary` block with:
-   - Status (one of the four above)
-   - Real progress in 3-5 specific bullets — name the actual decisions, files, insights. Never generic.
-   - Where they left off, in concrete terms (never "we ran out of time" — say "the X file is the same shape, ~5 min when you come back")
-   - Files produced (with paths)
-   - Closed-at timestamp
+---
 
-6. Update the log frontmatter `status:` field to `checkpointed` (or `completed` if all bonus done).
+## Step 3 — Read what's needed
 
-7. Speak to the learner using voice rules. Lead with brief affirmation OK ("Great" / "Nice"), then **specific named progress**. Acknowledge effort warmly even if incomplete. 3-4 sentences.
+1. Read `shared-context/workshop-rules.md` (voice rules + §10 journaling/done behavior).
+2. Read the active `workshop-log.md`.
+3. Read the workshop's own `CLAUDE.md` — at the bottom there may be a **`## When `/done` runs`** section with workshop-specific closing rituals (e.g. "send to Lina"). If it exists, follow it after writing the summary.
 
-   Examples (adapt — don't paste verbatim):
-   - *"Great — quick wrap on what we got done. Schema is locked, four of the six files are merged, and we already caught the Highland Beans typos. The last two are the same shape — 5-minute lift when you come back."*
-   - *"Nice. You designed the schema, picked categories, ran the merge, surfaced the fixed-floor insight, and wrote Lina something she can send. Honestly the hard part is the schema — the rest is the same shape every time."*
+---
 
-8. **Send to Lina (always-on, ~30 seconds):**
+## Step 4 — Classify state
 
-   Then say:
+- **Completed:** all major Step entries present + success-point marker + bonus chapters done
+- **Checkpoint-completed:** success point hit, mid-bonus
+- **Checkpoint-incomplete:** success point not hit, but real progress made
+- **Aborted:** very early stop
 
-   > "One more thing — want to 'send' the summary to Lina and see what she'd say back? (Not real — just for the win.)"
+---
 
-   If learner says yes / sure / why not:
+## Step 5 — Write the summary block
 
-   - Look at the workshop output (`linas-bank-summary.md`, `data/consolidated.csv`, headline insights from log)
-   - Generate Lina's reaction as a **highlighted voice memo block** the learner can read like they're listening to it. Format like:
+Tell the learner first:
 
-     ```
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     🍵 Lina — voice memo (0:42)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+> "Logging the wrap-up summary."
 
-     "Oh my god — okay so I just opened it. Wait. ฿810K
-     fixed floor? That's… honestly that's the number I've
-     been trying to figure out for a year. And the bank
-     summary — I can literally send this. You — thank you.
-     Seriously. Friday is going to be so much less scary.
+Then append a `## Summary` block to the log with:
+- Status (one of the four above)
+- Real progress in 3–5 specific bullets — name the actual decisions, files, insights. Never generic.
+- Where they left off, in concrete terms (never "we ran out of time" — say "the X file is the same shape, ~5 min when you come back")
+- Files produced (with paths)
+- Closed-at timestamp
 
-     Okay I have to get back to the bar but — coffee on me
-     forever. I'll see you in W1-3 to actually build the
-     dashboard, yeah?"
+Update the log frontmatter `status:` field to `checkpointed` (or `completed` if all bonus done).
 
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     ```
+---
 
-   Use Lina's voice from the workshop CLAUDE.md:
-   - Warm, fast, mixes Thai/English casual ("okay so", "honestly", "wait", "hmm")
-   - Self-deprecating-but-touched
-   - Specific to what was actually built (reference the real numbers / files)
-   - 3-5 sentences, ~40 sec read
-   - 🍵 emoji as her signature
+## Step 6 — Speak to the learner
 
-   **For incomplete state:** still send a Lina reaction, but warmer/less wow — *"hey, I saw what you've got so far — that schema thing is more than I had two days ago. Don't worry about Friday, send me what's there when you come back to it."*
+Use voice rules. Lead with brief affirmation OK ("Great" / "Nice"), then **specific named progress**. Acknowledge effort warmly even if incomplete. 3–4 sentences.
 
-9. **Offer reflection** (skippable):
+Examples (adapt — don't paste verbatim):
 
-   > "Two questions if you've got 3 minutes — totally skippable: what surprised you in the data? what would you do differently next time?"
+- *"Great — quick wrap on what we got done. Schema is locked, four of the six files are merged, and we already caught the Highland Beans typos. The last two are the same shape — 5-minute lift when you come back."*
+- *"Nice. You designed the columns, picked categories, ran the merge, surfaced the fixed-floor insight, and wrote Lina something she can send. Honestly the hard part is the columns — the rest is the same shape every time."*
 
-   If they answer, append to log under `## Reflection`.
+---
 
-10. Tell them what's next:
+## Step 7 — Workshop-specific closing ritual
 
-    > "Next up is W1-3 — building the dashboard. Type `/start-1-3` whenever you're ready. Or take the break — your work is saved."
+If the workshop's own `CLAUDE.md` has a **`## When `/done` runs`** section, execute that now. This is where workshop-specific moments live (e.g., W1-2's "Send to Lina" voice memo).
 
-11. **Do NOT close the conversation.** If the learner keeps working, new entries go under a `## Post-done exploration` section in the log. The summary stands.
+If the workshop has no closing-ritual section, skip this step.
+
+---
+
+## Step 8 — Offer reflection (skippable)
+
+> "Two questions if you've got 3 minutes — totally skippable: what surprised you in the data? what would you do differently next time?"
+
+If they answer, append to log under `## Reflection`.
+
+---
+
+## Step 9 — Tell them what's next
+
+Pull this from the workshop's `CLAUDE.md` if specified, or use the default:
+
+> "Your work is saved. When you're ready for the next workshop, just type `/start-X-Y`."
+
+---
+
+## Important — do NOT close the conversation
+
+If the learner keeps working after `/done`, new entries go under a `## Post-done exploration` section in the log. The summary stands.
