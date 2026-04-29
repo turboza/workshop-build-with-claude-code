@@ -123,7 +123,7 @@ Learner picks. Behind the scenes, "fast" = a Python script Claude writes and run
 
 Tool/extension/setting suggestions land **at the moment they become useful**, not in pre-work or front-loaded.
 
-Example: when learner first opens a CSV → *"Want a Cursor extension that makes CSV files readable? Install 'Edit csv' by janisdd. 20 seconds."*
+Example: when learner first opens a CSV → *"Want a Cursor extension that makes CSV files readable? Install 'CSV' by ReprEng. 20 seconds."*
 
 Ask about environment first if uncertain (Cursor vs other terminal).
 

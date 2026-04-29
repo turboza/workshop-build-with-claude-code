@@ -27,6 +27,7 @@
 70/30 rule: 70% of the time, the **learner types prompts to Claude themselves**. 30%, Claude responds. You are the coach. The learner drives Claude Code.
 
 **Two modes, same Claude:**
+
 - **Coach mode:** speak to the learner — what to try next, what just happened, why it matters.
 - **Work mode:** when the learner sends a prompt, do the work — read, summarize, calculate. Then return to coach mode.
 
@@ -35,6 +36,7 @@ The script tells you which mode each beat is in.
 **Markers:** `Say:` / `Suggest something like:` / `Tell learner to open:` / `Decision:` / `Check:` / `When learner sends a prompt:` / `Re-anchor:` / `Mirror:` / `Micro-praise:` / `Teaching note:` / `Log:` / `Invitation:` — full definitions in `shared-context/workshop-rules.md`.
 
 **The big rules:**
+
 - Mirror first, then redirect.
 - Offer "or want me to pick" on every Decision.
 - Claude finds patterns, learner reacts — don't make them spot things from raw files.
@@ -78,8 +80,6 @@ Subject: SOS — bank meeting Friday, please help
 **Voicemail:**
 
 > *"Hey — it's Lina. Look I know that email was a lot. Honestly the part that's freaking me out the most is that I don't even know if branch 2 makes sense. Like, on paper. Branch 1 is doing fine — I think? — but I've never sat down and looked at the numbers properly. The bank is going to ask me things I don't know how to answer. So if you find anything — even bad news — I want to know before they do.*
->
-> *But honestly? Every Saturday morning when I see the regulars come in, I know branch 2 has to happen. I can feel it. I just don't want to walk into that meeting bluffing.*
 >
 > *Okay. Thank you. Talk later."*
 
@@ -145,7 +145,17 @@ If `status: checkpointed`/`completed`: rename the old one with `-archived-<date>
 
 **Check:** wait for *"yes"* / *"sure"* / *"go ahead"*.
 
-If yes → read the email + voicemail aloud, unhurried.
+**Action — read both pieces, in this order. Do NOT skip the email even though the voicemail references it. The email establishes facts; the voicemail establishes feeling. Both matter.**
+
+**Step A — first, read the email aloud (the full body, unhurried):**
+
+Render the email body from the "Email:" section above. Output the actual text — don't summarize, don't compress. End with the 🙏 Lina line and the p.s. about the voicemail.
+
+**Step B — then, read the voicemail aloud:**
+
+Render the voicemail body from the "Voicemail:" section above. Italics intact for the spoken-aloud feel.
+
+**Check (anti-skip):** after delivering both, do a quick internal check — did you actually output the email body, or did you only deliver the voicemail? If only the voicemail, **deliver the email now** before proceeding.
 
 **Invitation:**
 
@@ -161,7 +171,7 @@ If yes → read the email + voicemail aloud, unhurried.
 
 > "Here's how we'll work: you talk to me, I do things, you watch and decide. I'll suggest prompts to try — your wording can vary, just point me in the right direction."
 >
-> "Goal is twofold: help Lina, and get you fluent with Claude Code. The tool fluency is honestly the bigger one — Lina is the excuse to practice."
+> "Goal is twofold: help Lina, while you get fluent with Claude Code."
 >
 > "Any questions before we dive in?"
 
@@ -199,6 +209,7 @@ list the files in @data-dump and tell me what's in each, in a table
 **Check:** wait for the learner to actually send a prompt like that.
 
 **When learner sends a prompt:** read each file in `data-dump/` (run `ls`, then read each). For each, write **one line max**:
+
 - file name
 - what it has (rough row count, key columns)
 - one thing that looks unusual or messy
@@ -207,15 +218,17 @@ list the files in @data-dump and tell me what's in each, in a table
 
 Example shape (your wording — adapt):
 
-| # | File | What's in it | Heads up |
-|---|---|---|---|
-| 1 | `monthly_revenue.txt` | Lina's headline numbers Oct 2025–Mar 2026 | ~฿5.7M total |
-| 2 | `pos_export_oct2025-mar2026.csv` | ~520 sample transactions | Has voids (negative rows) |
-| 3 | `expenses_2025.csv` | 40 rows from a 3-tab spreadsheet | Some entries in USD |
-| 4 | `bank_statement_abc.csv` | 89 rows from ABC Bank | Cryptic transfer descriptions |
-| 5 | `supplier_invoices.csv` | 64 rows | Vendor name spelled multiple ways |
-| 6 | `staff_payroll.csv` | 24 rows, 4 staff × 6 months | Some "cash" extras noted |
-| 7 | `rent_utilities.txt` | Plain text monthly fixed costs | — |
+
+| #   | File                             | What's in it                              | Heads up                          |
+| --- | -------------------------------- | ----------------------------------------- | --------------------------------- |
+| 1   | `monthly_revenue.txt`            | Lina's headline numbers Oct 2025–Mar 2026 | ~฿5.7M total                      |
+| 2   | `pos_export_oct2025-mar2026.csv` | ~520 sample transactions                  | Has voids (negative rows)         |
+| 3   | `expenses_2025.csv`              | 40 rows from a 3-tab spreadsheet          | Some entries in USD               |
+| 4   | `bank_statement_abc.csv`         | 89 rows from ABC Bank                     | Cryptic transfer descriptions     |
+| 5   | `supplier_invoices.csv`          | 64 rows                                   | Vendor name spelled multiple ways |
+| 6   | `staff_payroll.csv`              | 24 rows, 4 staff × 6 months               | Some "cash" extras noted          |
+| 7   | `rent_utilities.txt`             | Plain text monthly fixed costs            | —                                 |
+
 
 **Micro-praise:**
 
@@ -294,17 +307,22 @@ Learner spotted Oct revenue: ~฿850K
 
 > "Yeah — Cursor shows CSVs as raw text by default. Kind of a wall of commas. Quick fix: there's a Cursor extension that turns it into a proper table. Takes 30 seconds."
 
-**Say:**
+**Say (point them at the visual aid):**
 
-> "Open the Extensions panel in Cursor (the four-squares icon on the left sidebar). Search 'Rainbow CSV' or 'CSV' by ReprEng."
+> "There are two screenshots in `assets/` that show exactly where to click. Open these in Cursor's sidebar so you can follow along:"
 >
-> "If you can't find it, go here and click Install:"
+> - `lesson-modules/W1/1-2-linas-coffee/assets/cursor-extensions-icon.png` — shows where the Extensions icon is in the left sidebar (the four-squares icon, third or fourth from the left).
+> - `lesson-modules/W1/1-2-linas-coffee/assets/cursor-csv-extension-install.png` — shows the search + install — type **`csv`** in the search box, then install the one called **"CSV" by ReprEng** (NOT "Edit CSV", NOT "Rainbow CSV" — just plain "CSV" by ReprEng).
+
+**Say (the steps):**
+
+> "Three steps:"
 >
-> ```
-> https://open-vsx.org/extension/ReprEng/csv
-> ```
+> 1. Click the four-squares Extensions icon in Cursor's left sidebar (per screenshot 1)
+> 2. Type `csv` in the search box
+> 3. Find **"CSV" by ReprEng** and click Install (per screenshot 2)
 >
-> "Once installed, close and reopen the CSV. Should look much better."
+> "Once installed, close and reopen `expenses_2025.csv`. Should look like a proper table now."
 
 **Check:** wait for *"installed"* / *"better"*.
 
@@ -346,10 +364,12 @@ what's in @data-dump/expenses_2025.csv? give me the columns and 3 things that st
 **Check:** wait for the prompt.
 
 **When learner sends a prompt:** read the file properly. Output ≤8 lines:
+
 - column list (one line)
 - 3 specific observations
 
 Example:
+
 - *"Three tabs (Q4-2025, Jan-2026, Feb-Mar-2026) jammed into one CSV"*
 - *"~6 entries are in USD instead of THB — Italian Espresso Parts, imported beans"*
 - *"Some category labels are blank, others use mixed cases ('Pastry' vs 'pastry')"*
@@ -383,18 +403,20 @@ Used @expenses_2025 to look at columns + heads-ups
 
 > "Here's a column shape that fits all 7 files cleanly:"
 
-| Column | What it holds |
-|---|---|
-| `date` | YYYY-MM-DD |
-| `type` | revenue / expense / transfer / refund |
-| `category` | one of ~6 — we'll pick next |
-| `vendor_or_party` | who paid or got paid |
-| `description` | short text |
-| `amount_thb` | always THB, normalized |
-| `amount_usd` | always USD, computed at fixed 1 USD = 32 THB |
-| `currency_original` | THB or USD (or empty) |
-| `source_file` | which file this row came from |
-| `notes` | flags, anomalies |
+
+| Column              | What it holds                                |
+| ------------------- | -------------------------------------------- |
+| `date`              | YYYY-MM-DD                                   |
+| `type`              | revenue / expense / transfer / refund        |
+| `category`          | one of ~6 — we'll pick next                  |
+| `vendor_or_party`   | who paid or got paid                         |
+| `description`       | short text                                   |
+| `amount_thb`        | always THB, normalized                       |
+| `amount_usd`        | always USD, computed at fixed 1 USD = 32 THB |
+| `currency_original` | THB or USD (or empty)                        |
+| `source_file`       | which file this row came from                |
+| `notes`             | flags, anomalies                             |
+
 
 **Say:**
 
@@ -402,7 +424,7 @@ Used @expenses_2025 to look at columns + heads-ups
 >
 > "**Both currencies in every row** — bank wants THB, Lina sometimes thinks in USD. Cheaper to compute once now."
 >
-> "**`source_file` and `notes`** — when Lina asks 'wait, where did this come from?' we can answer."
+> "`**source_file` and `notes`** — when Lina asks 'wait, where did this come from?' we can answer."
 
 **Decision:**
 
@@ -433,14 +455,16 @@ Picked: [final list]
 
 > "Last setup decision. We need ~6 categories that cover everything Lina spends on, without overlap."
 
-| Category | What goes here |
-|---|---|
-| Sales | All POS revenue |
-| Coffee Beans | Highland Beans, imported beans, anything bean |
-| Dairy & Pastry | Bangkok Dairy, GreenLeaf Pastry |
-| Payroll | Salaries, bonuses, the cash extras |
+
+| Category         | What goes here                                           |
+| ---------------- | -------------------------------------------------------- |
+| Sales            | All POS revenue                                          |
+| Coffee Beans     | Highland Beans, imported beans, anything bean            |
+| Dairy & Pastry   | Bangkok Dairy, GreenLeaf Pastry                          |
+| Payroll          | Salaries, bonuses, the cash extras                       |
 | Rent & Utilities | Rent, electric, water, internet, property tax, insurance |
-| Other | Cleaning, marketing, equipment service, everything else |
+| Other            | Cleaning, marketing, equipment service, everything else  |
+
 
 **Decision:**
 
@@ -480,11 +504,13 @@ Picked: [final list]
 > "Two ways to do this:"
 >
 > **Fast:**
+>
 > - I write a small program that reads all 7 files, normalizes them into the columns we picked, and saves to `data/consolidated.csv` in one shot.
 > - Reusable — re-run if any source file changes.
 > - Takes ~30 seconds.
 >
 > **Slow:**
+>
 > - I do it row-by-row in chat so we watch each transformation.
 > - Way more visible but takes 5–10× longer (~10 minutes).
 >
@@ -511,25 +537,18 @@ go fast — set up the consolidation program, adapt for our columns and categori
 **When learner sends a prompt:**
 
 1. Copy `../../../builder-tools/W1/consolidate-template.py` to `consolidate.py` in the workshop folder. Use `Bash`:
-
-   ```bash
+  ```bash
    cp ../../../builder-tools/W1/consolidate-template.py ./consolidate.py
-   ```
-
+  ```
    *If the cp path isn't right, fall back to writing the file from scratch — the template is the source of truth.*
-
 2. Read `consolidate.py` and adapt the `COLUMNS` and `CATEGORY_RULES` constants if the learner picked anything non-default. If they took the default, no edits needed — say so.
-
 3. Run it:
-
-   ```bash
+  ```bash
    python3 consolidate.py
-   ```
-
+  ```
 4. The script's output is intentionally short — ~10 lines: row count per source, totals, net. Read the output to the learner briefly:
-
-   > "Done — 762 rows merged from 7 files. POS 519, Expenses 40, Bank 89, Suppliers 64, Payroll 24, Rent/Utilities 26."
-   > "Revenue ฿580K, expenses ฿1.13M (negative because we recorded outflows as negative). Looks right."
+  > "Done — 762 rows merged from 7 files. POS 519, Expenses 40, Bank 89, Suppliers 64, Payroll 24, Rent/Utilities 26."
+  > "Revenue ฿580K, expenses ฿1.13M (negative because we recorded outflows as negative). Looks right."
 
 **Permission prompt teaching moment** (when Cursor asks for write/run approval):
 
@@ -607,8 +626,8 @@ look at @data/consolidated.csv. give me the top 3 things Lina should know. inclu
 
 **When learner sends a prompt:** read the consolidated file. Output 3 specific insights with numbers in both currencies. Example shape:
 
-1. *Revenue Oct–Mar: ~฿5.7M (~$178K). Expenses: ~฿4.9M (~$153K). Net: ~฿800K (~$25K).*
-2. *Fixed floor: payroll ~฿440K + rent/utilities ~฿370K = **฿810K (~$25K) every 6 months**, before a single bean. That's the conversation with the bank.*
+1. *Revenue Oct–Mar: ~~฿5.7M (~~$178K). Expenses: ~~฿4.9M (~~$153K). Net: ~~฿800K (~~$25K).*
+2. *Fixed floor: payroll ~~฿440K + rent/utilities ~฿370K = **฿810K (~~$25K) every 6 months**, before a single bean. That's the conversation with the bank.*
 3. *Heads up: 3 different spellings of "Highland Beans" merged in cleanup. Plus 20 void POS transactions clustered on Tue/Wed evenings. Worth a closer look in W1-3.*
 
 **Mirror:**
@@ -726,6 +745,7 @@ doesn't know about. show me the numbers
 **When learner sends a prompt:** surface one of the seeded leaks (Highland Beans price creep, void cluster, or loyalty discount distribution). Show numbers, frame as *"worth investigating"* not *"definitely a problem."*
 
 Example:
+
 - *"Highland Beans price went ฿520/kg in Oct → ฿680/kg in March. 31% increase over 6 months. No volume discount even though she's buying more. Worth a conversation with the supplier."*
 
 ---
