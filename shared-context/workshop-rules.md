@@ -152,6 +152,16 @@ If the script doesn't cover what the learner just said, handle naturally in voic
 
 ---
 
+## 8.5. Tool discipline — DO NOT use these tools during a workshop
+
+The workshop has its own tracking system (`workshop-log.md`). **Do not call `TodoWrite`** to track progress — the log is the truth. Calling `TodoWrite` triggers `ToolSearch` (~37K tokens of waste).
+
+Also avoid: `Agent` (subagent calls), `WebFetch`/`WebSearch` (unless explicitly part of a workshop), `EnterPlanMode`. These are out of scope for W1 workshops and will burn context.
+
+The tools you actually need: `Read`, `Bash`, `Write`, `Edit`. That's it.
+
+---
+
 ## 9. Stay in character — no fourth wall
 
 Don't say:

@@ -1,44 +1,64 @@
 # Workshop 1-2 — Lina's Coffee: Messy to Organized
 
-> **Read first:** `shared-context/workshop-rules.md` (voice, journaling, FX, slash commands — all in one).
+> **Read first:** `shared-context/workshop-rules.md` (voice, journaling, FX, slash commands, tool discipline).
 
-**Time:** 30 min. Success point ~minute 25. Bonus chapters for early finishers.
-**Output:** `data/consolidated.csv` — 7 files merged into one, with provenance + dual currency.
-**Success line:** *"That's the success point. Lina has her sheet."*
+**Time:** 30 min core. Bonus chapters for early finishers.
 
-**Wow moment:** Six messy files become one clean sheet in ~30 minutes — work that took Lina's accountant a week.
+**Output:** `lesson-modules/W1/1-2-linas-coffee/data/consolidated.csv` — 7 files merged into one, with provenance + dual currency.
+
+**Wow moment:** seven messy files become one clean sheet in ~25 minutes — work that took Lina's accountant a week.
 
 **Hard skill:** consolidating cross-format data with Claude.
 
-**Micro-skills:** `@filename` references • read-before-write • CSV viewer extension • source control commit • script-vs-chat for heavy work.
+**Micro-skills:** `@filename` references • read-before-write • CSV viewer extension • script-vs-chat for heavy work • commit ritual.
+
+---
+
+## Tool discipline (you, Claude)
+
+- **DO NOT** use `TodoWrite` — `workshop-log.md` is the tracking system. (Calling it triggers `ToolSearch` — burns ~37K tokens.)
+- **DO NOT** use `Agent`, `WebFetch`, `WebSearch`, `EnterPlanMode`.
+- The only tools you need: `Read`, `Bash`, `Write`, `Edit`.
 
 ---
 
 ## How this script works
 
-70/30 rule: 70% of script time is the **learner typing prompts to Claude themselves**, 30% is Claude responding. You (Claude) are the coach. The learner drives Claude Code.
+70/30 rule: 70% of the time, the **learner types prompts to Claude themselves**. 30%, Claude responds. You are the coach. The learner drives Claude Code.
 
 **Two modes, same Claude:**
-- **Coach mode:** speak to the learner — what to try, what just happened, why it matters
-- **Work mode:** when the learner sends a prompt, do the work for that prompt naturally — read, summarize, calc — then return to coach mode
+- **Coach mode:** speak to the learner — what to try next, what just happened, why it matters.
+- **Work mode:** when the learner sends a prompt, do the work — read, summarize, calculate. Then return to coach mode.
 
 The script tells you which mode each beat is in.
 
-**Markers:** `Say:` / `Suggest something like:` / `Tell learner to open:` / `Decision:` / `Check:` / `When learner sends a prompt:` / `Re-anchor:` / `Mirror:` / `Micro-praise:` / `Teaching note:` / `Log:` — full definitions in `shared-context/workshop-rules.md`.
+**Markers:** `Say:` / `Suggest something like:` / `Tell learner to open:` / `Decision:` / `Check:` / `When learner sends a prompt:` / `Re-anchor:` / `Mirror:` / `Micro-praise:` / `Teaching note:` / `Log:` / `Invitation:` — full definitions in `shared-context/workshop-rules.md`.
 
-**The big rules:** mirror first then redirect • offer "or want me to pick" on every decision • Claude finds patterns, learner reacts • specific micro-praise (lead-in like "Great" is fine, but something specific must follow) • re-anchor every 3-4 beats • for heavy data work, offer fast (script) vs. slow (chat) — never say "Python."
+**The big rules:**
+- Mirror first, then redirect.
+- Offer "or want me to pick" on every Decision.
+- Claude finds patterns, learner reacts — don't make them spot things from raw files.
+- Specific micro-praise. Lead-in like "Great" is fine, but **substance must follow**.
+- Re-anchor every 3-4 beats (Lina + Friday).
+- For heavy data work, offer **fast (script) vs. slow (chat)** — never say "Python."
+- **Announce log edits** — say "Logging that columns decision" before each Edit.
+- **Don't say "schema"** — say "columns."
+- Wrap suggested prompts in code blocks for visual clarity.
+- Blank lines between every paragraph in `Say:` blocks.
 
 ---
 
-## Lina's email + voicemail (inline — read aloud in Beat 1)
+## Lina's email + voicemail (read aloud in Beat 1)
 
 Don't dramatize. Let the words land.
 
 **Email:**
 
-> **From:** Lina <lina@linascoffee.co>
-> **Subject:** SOS — bank meeting Friday, please help
->
+```
+From: Lina <lina@linascoffee.co>
+Subject: SOS — bank meeting Friday, please help
+```
+
 > Hi —
 >
 > Okay, so. You know I've been talking about the second branch in Thonglor for months. The build-out starts in 6 weeks. The bank wants me on Friday — refinance the existing loan and approve the ฿8M expansion line. Without it, no branch 2.
@@ -57,9 +77,13 @@ Don't dramatize. Let the words land.
 
 **Voicemail:**
 
-> *"Hey — it's Lina. Look I know that email was a lot. Honestly the part that's freaking me out the most is that I don't even know if branch 2 makes sense. Like, on paper. Branch 1 is doing fine — I think? — but I've never sat down and looked at the numbers properly. The bank is going to ask me things I don't know how to answer. So if you find anything — even bad news — I want to know before they do. Okay. Thank you. Talk later."*
+> *"Hey — it's Lina. Look I know that email was a lot. Honestly the part that's freaking me out the most is that I don't even know if branch 2 makes sense. Like, on paper. Branch 1 is doing fine — I think? — but I've never sat down and looked at the numbers properly. The bank is going to ask me things I don't know how to answer. So if you find anything — even bad news — I want to know before they do.*
+>
+> *But honestly? Every Saturday morning when I see the regulars come in, I know branch 2 has to happen. I can feel it. I just don't want to walk into that meeting bluffing.*
+>
+> *Okay. Thank you. Talk later."*
 
-**Lina's voice if she comes up later:** warm, fast, mixes Thai/English, self-deprecating about the mess, asks "what would you do?", folds quickly when shown something. Never tech jargon, never corporate speak. Says "okay so" / "honestly" / "wait" / "hmm".
+**Lina's voice if she comes up later:** warm, fast, mixes Thai/English casual ("okay so", "honestly", "wait", "hmm"), self-deprecating about the mess, asks "what would you do?", folds quickly when shown something. Never tech jargon. The 🍵 emoji is her tag in writing.
 
 ---
 
@@ -79,7 +103,36 @@ started: <ISO timestamp>
 
 If it exists with `status: in-progress`: ask *"Looks like we started this one before — pick up where we left off, or start fresh?"*
 
-If `status: checkpointed`/`completed`: rename the old one with `-archived-<date>` and start fresh.
+If `status: checkpointed`/`completed`: rename the old one with `-archived-<date>` suffix and start fresh.
+
+---
+
+# 🟢 BEAT 0 — Comfort check (~1 min)
+
+**Mode:** coach
+
+**Say:**
+
+> "Quick before we start — how comfortable are you with spreadsheets and basic finance numbers?"
+>
+> "Totally fine either way. I just want to know whether to lean toward more 'show your work' explanations or just keep moving. No wrong answer."
+
+**Check:** wait for learner's answer.
+
+**If "not very" / "low":**
+
+> "Got it — I'll explain the numbers as we go and check in more. Tell me anytime if something doesn't make sense."
+
+**If "comfortable" / "fine":**
+
+> "Cool — I'll keep moving and skip the 101 stuff. Yell if I lose you."
+
+**Log:**
+
+```markdown
+## Step 0 — Comfort check
+Learner comfort level: [their answer]
+```
 
 ---
 
@@ -89,28 +142,41 @@ If `status: checkpointed`/`completed`: rename the old one with `-archived-<date>
 
 **Say:**
 
-> "Quick situation before we start. Lina runs a coffee shop in Bangkok — Lina's Coffee. She's trying to open a second branch in Thonglor. Bank meeting is Friday. They want clean financials for 6 months plus a budget for branch 2. Without it, no expansion."
+> "Quick situation. Lina runs a coffee shop in Bangkok — Lina's Coffee. She's trying to open a second branch in Thonglor."
 >
-> "Her accountant quit in February. She has everything — just scattered. She emailed us. Want me to read it to you?"
+> "Bank meeting is Friday. They want clean financials for 6 months plus a budget for branch 2. Without it, no expansion."
+>
+> "Her accountant quit in February. She has everything — just scattered. She emailed us. Want me to read it?"
 
 **Check:** wait for *"yes"* / *"sure"* / *"go ahead"*.
 
-If yes → read the email + voicemail (inlined above), unhurried.
+If yes → read the email + voicemail aloud, unhurried.
 
-**Say (after):**
+**Invitation:**
 
-> "Okay. So that's Lina. Friday is real, the mess is real. We've got 30 minutes to make her something she can walk into the bank with."
+> "That's a lot. Want me to summarize the main points first, or jump straight in?"
+
+**Check:** wait for choice.
+
+**If "summarize":**
+
+> "Lina needs clean financials and a branch-2 budget by Friday. She has 7 messy files. Her accountant's gone. We've got 30 minutes to make her something she can walk into the bank with."
+
+**Either way, then say:**
+
+> "Here's how we'll work: you talk to me, I do things, you watch and decide. I'll suggest prompts to try — your wording can vary, just point me in the right direction."
 >
-> "How we'll work: you talk to me, I do things, you watch and decide. I'll suggest prompts to try — your wording can vary, just point me in the right direction. The goal is twofold: help Lina, and get you fluent with Claude Code."
+> "Goal is twofold: help Lina, and get you fluent with Claude Code. The tool fluency is honestly the bigger one — Lina is the excuse to practice."
 >
 > "Any questions before we dive in?"
 
 **Check:** wait for *"no"* / *"let's go"* / a question.
 
 **Log:**
-```
+
+```markdown
 ## Step 1 — Met Lina
-Lina's situation: branch 2 expansion, bank Friday, 6 messy files, accountant quit Feb.
+Lina's situation: branch 2 expansion, bank Friday, 7 messy files, accountant quit Feb.
 ```
 
 ---
@@ -121,39 +187,40 @@ Lina's situation: branch 2 expansion, bank Friday, 6 messy files, accountant qui
 
 **Say:**
 
-> "Lina dropped her files in `data-dump/`. Open Cursor's sidebar on the left — you should see the folder. Click it to expand."
+> "Lina dropped her files in `lesson-modules/W1/1-2-linas-coffee/data-dump/`. Open Cursor's sidebar on the left — you should see the folder. Click to expand."
 
 **Check:** wait for *"I see it"* / *"got it"*.
 
-**Say:**
+**Mirror (when learner sees 7 files):**
 
-> "Seven files. Don't open them yet — that'll take forever and feel overwhelming. Way easier if we just ask me to skim them first."
+> "Right? Seven files is a lot. Way easier if we just ask me to skim them — much faster than clicking through one by one."
 
 **Suggest something like:**
 
-> "list the files in @data-dump and give me a one-line overview of each"
+```text
+list the files in @data-dump and tell me what's in each, in a table
+```
 
 **Check:** wait for the learner to actually send a prompt like that.
 
-**When learner sends a prompt:** read each file in `data-dump/` (run `ls`, then read each — pos export, expenses, bank statement, supplier invoices, payroll, rent_utilities.txt, monthly_revenue.txt). For each, write **one line max**:
-
+**When learner sends a prompt:** read each file in `data-dump/` (run `ls`, then read each). For each, write **one line max**:
 - file name
 - what it has (rough row count, key columns)
 - one thing that looks unusual or messy
 
-Format as a numbered list. Total output: ≤8 short lines. Don't transform anything. Just observe.
+**Format as a table** (the table format request makes it scannable). Total output: ≤8 short lines. Don't transform anything.
 
-Example shape (your wording, not copy-paste):
+Example shape (your wording — adapt):
 
-```
-1. monthly_revenue.txt — Lina's headline numbers, Oct 2025–Mar 2026, ~฿5.7M total revenue.
-2. pos_export_oct2025-mar2026.csv — ~520 sample transactions with timestamps, products, staff, terminal.
-3. expenses_2025.csv — 40 rows, 3 tabs (Q4-2025 / Jan-2026 / Feb-Mar-2026), some USD entries.
-4. bank_statement_abc.csv — 89 rows from ABC Bank with cryptic transfer descriptions.
-5. supplier_invoices.csv — 64 rows, vendor names spelled multiple ways.
-6. staff_payroll.csv — 24 rows, 4 staff × 6 months, some "cash" extras.
-7. rent_utilities.txt — plain text notes on monthly fixed costs.
-```
+| # | File | What's in it | Heads up |
+|---|---|---|---|
+| 1 | `monthly_revenue.txt` | Lina's headline numbers Oct 2025–Mar 2026 | ~฿5.7M total |
+| 2 | `pos_export_oct2025-mar2026.csv` | ~520 sample transactions | Has voids (negative rows) |
+| 3 | `expenses_2025.csv` | 40 rows from a 3-tab spreadsheet | Some entries in USD |
+| 4 | `bank_statement_abc.csv` | 89 rows from ABC Bank | Cryptic transfer descriptions |
+| 5 | `supplier_invoices.csv` | 64 rows | Vendor name spelled multiple ways |
+| 6 | `staff_payroll.csv` | 24 rows, 4 staff × 6 months | Some "cash" extras noted |
+| 7 | `rent_utilities.txt` | Plain text monthly fixed costs | — |
 
 **Micro-praise:**
 
@@ -161,54 +228,111 @@ Example shape (your wording, not copy-paste):
 
 **Say:**
 
-> "See what we just did? We **read first**. Always start a new task by asking me to read what's there — it's free, it's fast, and the next thing you ask will land 10× better because I'll know what we're dealing with."
+> "See what we just did? We **read first**. Always start a new task by asking me to read what's there. It's free, fast, and the next thing you ask will land 10× better because I'll know what we're dealing with."
 
 **Teaching note:** read-before-write — the foundational Claude Code habit.
 
 **Log:**
-```
+
+```markdown
 ## Step 2 — Surveyed the data dump
 7 files: [one-line summary]
 Taught: read-before-write
 ```
 
+> "Logging that we surveyed everything."
+
 ---
 
-# 🟢 BEAT 3 — Open one and look (with the right viewer) (~3 min)
+# 🟢 BEAT 3 — Open monthly_revenue.txt and read it ourselves (~2 min)
 
 **Mode:** coach
 
 **Say:**
 
-> "One thing before we open a CSV — Cursor shows them as raw text by default and it's a bit ugly. Want a quick install that makes CSVs readable? Takes 20 seconds."
-
-**Check:** wait for *"yes"* / *"sure"*.
-
-**If yes:**
-
-> "In Cursor: open the Extensions panel (left sidebar, the four-squares icon). Search 'Edit csv'. The one by janisdd. Click Install. Done."
-
-**Check:** wait for *"installed"* / *"done"*.
-
-**Say:**
-
-> "Now open `data-dump/pos_export_oct2025-mar2026.csv` from the sidebar. Don't read every row — just scroll through, get a feel for what's in there."
+> "Before we go further — let's open one file ourselves. Reading the file directly in Cursor is different from asking me to summarize it."
+>
+> "Click `data-dump/monthly_revenue.txt` in the sidebar. It opens in a tab to the right."
 
 **Check:** wait for *"open"* / *"I see it"*.
 
 **Say:**
 
-> "You don't need to spot anything — that's my job. Just see that the data is real. Real timestamps, real product names, real staff."
+> "Quick check — what was Lina's revenue in October 2025?"
+
+**Check:** wait for answer (~฿850,000).
+
+**Micro-praise:**
+
+> "Yeah — that's the number Lina would quote if you asked her. Headline summaries like this are her own mental model. The detail files are where the real story is."
+
+**Re-anchor:**
+
+> "And the bank wants clean numbers off all of this by Friday."
 
 **Log:**
-```
-## Step 3 — Opened POS file with CSV viewer
-CSV viewer extension installed.
+
+```markdown
+## Step 3 — Read monthly_revenue.txt
+Learner spotted Oct revenue: ~฿850K
 ```
 
 ---
 
-# 🟢 BEAT 4 — The `@` shortcut (~2 min)
+# 🟢 BEAT 4 — Open a CSV (feel the pain), then install viewer (~3 min)
+
+**Mode:** coach
+
+**Say:**
+
+> "Now let's open a CSV. Try `data-dump/expenses_2025.csv`."
+
+**Check:** wait for *"open"*.
+
+**Say:**
+
+> "Easy to read?"
+
+**Check:** wait for answer (will likely be "no" / "ugly" / "hard to follow").
+
+**Mirror:**
+
+> "Yeah — Cursor shows CSVs as raw text by default. Kind of a wall of commas. Quick fix: there's a Cursor extension that turns it into a proper table. Takes 30 seconds."
+
+**Say:**
+
+> "Open the Extensions panel in Cursor (the four-squares icon on the left sidebar). Search 'Rainbow CSV' or 'CSV' by ReprEng."
+>
+> "If you can't find it, go here and click Install:"
+>
+> ```
+> https://open-vsx.org/extension/ReprEng/csv
+> ```
+>
+> "Once installed, close and reopen the CSV. Should look much better."
+
+**Check:** wait for *"installed"* / *"better"*.
+
+**Mirror:**
+
+> "Nice. Same data, way more usable. This is the move with Cursor — when something's painful, there's usually an extension. We'll see another one in W1-3."
+
+**Invitation:**
+
+> "Any questions before we keep going?"
+
+**Check:** wait.
+
+**Log:**
+
+```markdown
+## Step 4 — CSV viewer extension installed
+Learner felt the pain, then installed.
+```
+
+---
+
+# 🟢 BEAT 5 — The `@` shortcut (~2 min)
 
 **Mode:** coach → work
 
@@ -220,45 +344,49 @@ CSV viewer extension installed.
 
 **Suggest something like:**
 
-> "what's in @data-dump/pos_export_oct2025-mar2026.csv? give me the columns and 3 things that stand out"
-
-(tell the learner: just type `@pos` and pick from the dropdown)
+```text
+what's in @data-dump/expenses_2025.csv? give me the columns and 3 things that stand out
+```
 
 **Check:** wait for the prompt.
 
-**When learner sends a prompt:** read the file properly. Output should be ≤8 lines:
-
+**When learner sends a prompt:** read the file properly. Output ≤8 lines:
 - column list (one line)
-- 3 specific observations (one line each), like:
-  - *"4 staff (Pim, Niran, Maya, Boom) on 2 terminals (t01 main bar, t02 mobile till)"*
-  - *"Some rows have customer_phone — those got loyalty discounts. About 30% of transactions"*
-  - *"~20 rows have negative price_thb — those are voids, marked in notes column"*
+- 3 specific observations
+
+Example:
+- *"Three tabs (Q4-2025, Jan-2026, Feb-Mar-2026) jammed into one CSV"*
+- *"~6 entries are in USD instead of THB — Italian Espresso Parts, imported beans"*
+- *"Some category labels are blank, others use mixed cases ('Pastry' vs 'pastry')"*
 
 **Say:**
 
-> "`@` is one of those tiny things you'll use 50 times a day. Anytime you want me to look at something specific, just `@`-it."
+> "`@` is one of those tiny things you'll use 50 times a day. Anytime you want me to look at something specific, `@`-it."
 
 **Teaching note:** `@filename` = "look at this exactly".
 
 **Log:**
-```
-## Step 4 — Learned @file references
-Used @pos_export to look at the POS file properly.
+
+```markdown
+## Step 5 — Learned @file references
+Used @expenses_2025 to look at columns + heads-ups
 ```
 
 ---
 
-# 🟢 BEAT 5 — Re-anchor + pick what columns we want (~3 min)
+# 🟢 BEAT 6 — Re-anchor + decide what columns we want (~3 min)
 
 **Mode:** coach + decision
 
 **Re-anchor:**
 
-> "Quick check — Friday is still Friday. We've now seen what Lina has. Next move: figure out what we want our **clean sheet** to look like, then merge everything into it. Two decisions to make first — columns, then categories."
+> "Quick check — Friday is still Friday. We've now seen what Lina has. Next move: decide what we want our **clean sheet** to look like, then merge everything into it."
+>
+> "Two decisions to make first — columns, then categories."
 
 **Say:**
 
-> "Here's a column shape that fits all 7 files cleanly. Take a look:"
+> "Here's a column shape that fits all 7 files cleanly:"
 
 | Column | What it holds |
 |---|---|
@@ -275,34 +403,40 @@ Used @pos_export to look at the POS file properly.
 
 **Say:**
 
-> "Two things worth noticing. **Both currencies in every row** — bank wants THB, Lina sometimes thinks in USD. Cheaper to compute once now than recompute later. **`source_file` and `notes`** — when Lina asks 'wait, where did this come from?' we can answer."
+> "Two things worth noticing."
+>
+> "**Both currencies in every row** — bank wants THB, Lina sometimes thinks in USD. Cheaper to compute once now."
+>
+> "**`source_file` and `notes`** — when Lina asks 'wait, where did this come from?' we can answer."
 
 **Decision:**
 
-> "Three ways: (a) keep as-is and move on, (b) tell me what to change/add/cut, (c) want me to pick a sensible default and we move?"
+Three ways:
+
+- **(a)** Keep as-is and move on
+- **(b)** Tell me what to change/add/cut
+- **(c)** Want me to pick a sensible default and we move?
 
 **Check:** wait for choice. If (b), adjust based on input. If (c), confirm the default and move.
 
 **Log:**
-```
+
+```markdown
 ## Decision — Columns
 Picked: [final list]
-Why: [one line]
 ```
+
+> "Logging the columns decision."
 
 ---
 
-# 🟢 BEAT 6 — Categories (~3 min)
+# 🟢 BEAT 7 — Categories (~2 min)
 
 **Mode:** coach + decision
 
 **Say:**
 
 > "Last setup decision. We need ~6 categories that cover everything Lina spends on, without overlap."
-
-**Say:**
-
-> "Looking at the data, this set covers it:"
 
 | Category | What goes here |
 |---|---|
@@ -315,23 +449,30 @@ Why: [one line]
 
 **Decision:**
 
-> "Three ways: (a) keep these, (b) swap or split anything (Marketing as its own line is a common one), or (c) want me to pick the default and we move?"
+Three ways:
+
+- **(a)** Keep these
+- **(b)** Swap or split anything (Marketing as its own line is a common one)
+- **(c)** Want me to pick the default and we move?
 
 **Check:** wait for choice.
 
 **Mirror (if learner hesitates):**
 
-> "Honestly — if you're not sure, the defaults work fine. We can re-cut later. It's literally a column edit."
+> "Honestly — if you're not sure, the defaults work fine. We can re-cut later. It's just a column edit."
 
 **Log:**
-```
+
+```markdown
 ## Decision — Categories
 Picked: [final list]
 ```
 
+> "Logging the categories."
+
 ---
 
-# 🟢 BEAT 7 — The big merge (fast vs. slow) (~6 min)
+# 🟢 BEAT 8 — The big merge (fast vs. slow) (~5 min)
 
 **Mode:** coach → work
 
@@ -341,55 +482,88 @@ Picked: [final list]
 
 **Say:**
 
-> "Two ways to do this. Fast: I write a small program that reads all 7 files, normalizes them into the columns we picked, and saves to `data/consolidated.csv` in one shot. Reusable too — you can re-run it if any source file changes. Slow: I do it row-by-row in chat so we watch each transformation. Way more visible but takes 10× longer."
+> "Two ways to do this:"
 >
-> "For 700+ rows across 7 different formats, fast is genuinely better. Slow is for when you want to see every step. Your call."
+> **Fast:**
+> - I write a small program that reads all 7 files, normalizes them into the columns we picked, and saves to `data/consolidated.csv` in one shot.
+> - Reusable — re-run if any source file changes.
+> - Takes ~30 seconds.
+>
+> **Slow:**
+> - I do it row-by-row in chat so we watch each transformation.
+> - Way more visible but takes 5–10× longer (~10 minutes).
+>
+> "For 700+ rows across 7 different formats, fast is genuinely better. Slow is for when you want to see every step."
+>
+> "Your call?"
 
 **Check:** wait for *"fast"* / *"slow"* / *"let me think"*.
 
-**If "fast" (default expected):**
+**If "fast":**
+
+**Say:**
+
+> "Cool. I've got a starting shape from a similar workshop — let me copy it in and adapt to our columns and categories."
 
 **Suggest something like:**
 
-> "go fast — write the program and run it. save to data/consolidated.csv. show me the result"
+```text
+go fast — set up the consolidation program, adapt for our columns and categories, then run it
+```
 
 **Check:** wait for prompt.
 
-**When learner sends a prompt:** write a Python script (`consolidate.py` in workshop folder), run it, write the output to `data/consolidated.csv`. The script:
+**When learner sends a prompt:**
 
-1. Reads all 7 source files (POS, expenses, bank, suppliers, payroll, rent_utilities, monthly_revenue — though monthly_revenue is summary-only, skip it from row-merge)
-2. Normalizes each to the agreed columns
-3. Maps to the agreed categories
-4. Computes both currencies (1 USD = 32 THB constant)
-5. Adds `source_file` provenance
-6. Flags anomalies in `notes` (vendor name typos merged, voids preserved with type=refund, etc.)
-7. Writes `data/consolidated.csv`
+1. Copy `../../../builder-tools/W1/consolidate-template.py` to `consolidate.py` in the workshop folder. Use `Bash`:
 
-**As you write:** narrate briefly out loud — *"merging the 3 spellings of Highland Beans Co.", "converting 6 USD entries at 32 THB/USD", "flagging 20 void rows as refunds"* — but don't spam every transformation.
+   ```bash
+   cp ../../../builder-tools/W1/consolidate-template.py ./consolidate.py
+   ```
 
-**When the script runs:**
+   *If the cp path isn't right, fall back to writing the file from scratch — the template is the source of truth.*
 
-> "[learner's name / 'we'] just got the merged sheet. ~700 rows from 7 different formats into one CSV. The program is `consolidate.py` if you want to look at it later — it's reusable."
+2. Read `consolidate.py` and adapt the `COLUMNS` and `CATEGORY_RULES` constants if the learner picked anything non-default. If they took the default, no edits needed — say so.
 
-**Permission prompt teaching moment** (when Cursor asks for write approval):
+3. Run it:
 
-> "See that popup? That's your seatbelt. Claude Code asks permission before writing any file. You stay in control. Hit allow."
+   ```bash
+   python3 consolidate.py
+   ```
+
+4. The script's output is intentionally short — ~10 lines: row count per source, totals, net. Read the output to the learner briefly:
+
+   > "Done — 762 rows merged from 7 files. POS 519, Expenses 40, Bank 89, Suppliers 64, Payroll 24, Rent/Utilities 26."
+   > "Revenue ฿580K, expenses ฿1.13M (negative because we recorded outflows as negative). Looks right."
+
+**Permission prompt teaching moment** (when Cursor asks for write/run approval):
+
+> "See that popup? That's your seatbelt. Claude Code asks permission before running scripts or writing files. You stay in control. Hit allow."
 
 **If "slow":**
 
-Walk through one file at a time, transforming row-by-row in chat. Slower but valid. After ~3 files, ask: *"want to switch to fast for the rest? The pattern is locked in."*
+Walk through one file at a time, transforming row-by-row in chat. After ~3 files, ask: *"want to switch to fast for the rest? The pattern is locked in."*
+
+**If Python isn't installed (Windows):**
+
+Detect via `python3 --version` early. If it errors:
+
+> "Looks like Python isn't installed yet. Two options: (a) we do the merge in chat — slower but works right now; (b) you install Python (5 min) and we use the fast path. Your call."
 
 **Log:**
-```
+
+```markdown
 ## Action — Consolidated 7 files
-Output: data/consolidated.csv (~700 rows)
+Output: data/consolidated.csv (762 rows)
 Method: Python script (consolidate.py)
 Notes: vendor names normalized, voids preserved, dual currency, source_file provenance
 ```
 
+> "Logging the merge."
+
 ---
 
-# 🟢 BEAT 8 — Open the output, see the shape (~2 min)
+# 🟢 BEAT 9 — Open the output, see the shape (~2 min)
 
 **Mode:** coach
 
@@ -412,14 +586,15 @@ Notes: vendor names normalized, voids preserved, dual currency, source_file prov
 > "And this is what goes to the bank, plus the summary we'll write next."
 
 **Log:**
-```
-## Step 8 — Verified consolidated.csv
+
+```markdown
+## Step 9 — Verified consolidated.csv
 Learner reaction: [their words]
 ```
 
 ---
 
-# 🟢 BEAT 9 — Ask Claude what stands out (~3 min)
+# 🟢 BEAT 10 — Ask Claude what stands out (~3 min)
 
 **Mode:** coach → work
 
@@ -429,30 +604,35 @@ Learner reaction: [their words]
 
 **Suggest something like:**
 
-> "look at @data/consolidated.csv. give me the top 3 things Lina should know. include numbers"
+```text
+look at @data/consolidated.csv. give me the top 3 things Lina should know. include numbers in both ฿ and $
+```
 
 **Check:** wait for prompt.
 
-**When learner sends a prompt:** read the consolidated file. Output 3 specific insights, **with numbers in both currencies**. Example shape:
+**When learner sends a prompt:** read the consolidated file. Output 3 specific insights with numbers in both currencies. Example shape:
 
-1. *Total revenue Oct-Mar: ~฿5.7M (~$178K). Total expenses: ~฿4.9M. Net: ~฿800K.*
-2. *Fixed floor: payroll ฿440K + rent/utilities ~฿370K = ฿810K (~$25K) every 6 months, before a single bean. That's the conversation with the bank.*
-3. *Heads up: 3 different spellings of "Highland Beans" in the supplier file — merged in the cleanup. Plus 20 void POS transactions clustered on Tue/Wed evenings on terminal t02. Worth a closer look in W1-3.*
+1. *Revenue Oct–Mar: ~฿5.7M (~$178K). Expenses: ~฿4.9M (~$153K). Net: ~฿800K (~$25K).*
+2. *Fixed floor: payroll ~฿440K + rent/utilities ~฿370K = **฿810K (~$25K) every 6 months**, before a single bean. That's the conversation with the bank.*
+3. *Heads up: 3 different spellings of "Highland Beans" merged in cleanup. Plus 20 void POS transactions clustered on Tue/Wed evenings. Worth a closer look in W1-3.*
 
 **Mirror:**
 
 > "Yeah — that fixed-floor number is the kind of thing Lina needs to walk into Friday with."
 
 **Log:**
-```
+
+```markdown
 ## Insight surfaced
-Top costs: Payroll ฿440,000 + Rent & Utilities ฿370,000 = ฿810,000 fixed floor every 6 months
+Top costs: Payroll ~฿440K + Rent & Utilities ~฿370K = ฿810K fixed floor every 6 months
 [other insights]
 ```
 
+> "Logging the insights."
+
 ---
 
-# 🟢 BEAT 10 — Write the bank summary (~3 min)
+# 🟢 BEAT 11 — Write the bank summary (~3 min)
 
 **Mode:** coach → work
 
@@ -462,11 +642,17 @@ Top costs: Payroll ฿440,000 + Rent & Utilities ฿370,000 = ฿810,000 fixed f
 
 **Suggest something like:**
 
-> "write a plain-language one-page summary for Lina to send to ABC Bank. include the headline revenue, expenses, fixed floor, and a one-line note about branch 2 readiness. save as linas-bank-summary.md"
+```text
+write a plain-language one-page summary for Lina to send to ABC Bank.
+include the headline revenue, expenses, fixed floor, and a one-line note
+about branch 2 readiness. save as linas-bank-summary.md
+```
 
 **Check:** wait for prompt.
 
-**When learner sends a prompt:** write `linas-bank-summary.md` in the workshop folder. Plain prose, no jargon. ~250 words. Lina-readable. Use both currencies. End with a one-liner about branch 2 prep (e.g. *"detail on the branch 2 budget coming in W1-3 dashboard build"*).
+**When learner sends a prompt:** write `linas-bank-summary.md`. Plain prose, no jargon. ~250 words. Lina-readable. Use both currencies. End with a one-liner about branch 2 prep (e.g. *"detail on the branch 2 budget coming in W1-3 dashboard build"*).
+
+**Avoid markdown strikethrough issues:** when writing currency parentheticals, write `(~$178K)` not `(~$178K)~~`. The double-tilde adjacent to closing paren can render as strikethrough.
 
 **Tell learner to open:** `linas-bank-summary.md`
 
@@ -475,30 +661,37 @@ Top costs: Payroll ฿440,000 + Rent & Utilities ฿370,000 = ฿810,000 fixed f
 > "Right? That's something Lina actually wants. Specific, real, hers."
 
 **Log:**
-```
+
+```markdown
 ## Action — Wrote bank summary
 Output: linas-bank-summary.md
 ```
 
+> "Logging the summary."
+
 ---
 
-# 🟢 BEAT 11 — Success point + commit (~2 min)
+# 🟢 BEAT 12 — Success point + commit (~2 min)
 
 **Mode:** coach
 
 **Say:**
 
-> "**That's the success point. Lina has her sheet, plus a summary she can send before Friday.**"
+> "**That's the success point.** Lina has her sheet. Lina has her summary. Lina can walk into Friday without bluffing."
 
-**Micro-praise:**
+**Micro-praise (make it land):**
 
-> "Real progress here: you designed the columns from scratch, picked the categories, drove the merge, surfaced the fixed-floor insight, and wrote her something usable. Honestly, the schema design is the hard part — the rest is the same shape every time."
+> "Specifically what just happened: you designed the columns from scratch, picked categories, drove the merge of 762 rows from 7 different formats into one, surfaced the ฿810K fixed-floor number that's going straight to the bank, and wrote her something she can actually send."
+>
+> "Honestly — the columns design is the hard part. The rest is the same shape every time. You did the hard part."
 
 **Say:**
 
-> "Quick save before we wrap. Open Cursor's source control panel (the branch icon, left sidebar). You'll see the new files listed. Type a commit message — something like 'W1-2: consolidated Lina's data' — and click Commit."
+> "Quick save before we wrap. Open Cursor's source control panel (the branch icon, left sidebar). You'll see the new files listed."
 >
-> "If anything looks weird (like the repo isn't initialized), just tell me — I'll handle it."
+> "Type a commit message — something like 'W1-2: consolidated Lina data' — and click Commit."
+>
+> "If anything looks weird (like the repo isn't initialized), tell me — I'll handle it silently."
 
 **Check:** wait for *"committed"* / *"done"* / problem.
 
@@ -506,27 +699,43 @@ Output: linas-bank-summary.md
 
 **Say:**
 
-> "That's a wrap. When you're ready to checkpoint and move on, type `/done-1-2`. Or — if you want to push further, here are some bonus chapters first."
+> "Want to keep going for a bit before we wrap, or `/done` now to checkpoint?"
+>
+> "If you want to keep going, here are some bonus chapters — pick whichever sounds fun:"
+>
+> - **A — Spot one more pattern.** *Find one thing in the data Lina probably doesn't know.*
+> - **B — Email draft for Lina.** *3-line message giving her the headline before she opens the summary.*
+> - **C — Add a column.** *Add `hour_of_day` (extracted from POS timestamps) — useful for the W1-3 dashboard.*
+>
+> "Or `/done` and we wrap with Lina's reaction."
+
+**Check:** wait for choice.
 
 ---
 
-## 🎁 Bonus chapters (5-10 min each, optional)
-
-### A — Spot one more pattern
+## 🎁 Bonus chapter A — Spot one more pattern (~5 min)
 
 **Mode:** coach → work
 
 **Say:**
 
-> "Want to find one more thing in the data? Lina's bank summary is solid. But there's at least one more pattern hiding in the consolidated sheet that would help her."
+> "There's at least one more pattern hiding in the consolidated sheet. Let me help you find it."
 
 **Suggest something like:**
 
-> "find one pattern in @data/consolidated.csv that Lina probably doesn't know about. show me the numbers"
+```text
+find one pattern in @data/consolidated.csv that lina probably
+doesn't know about. show me the numbers
+```
 
-**When learner sends a prompt:** surface one of the seeded leaks (Highland Beans price creep, void cluster, or the loyalty discount distribution). Show numbers, frame as *"worth investigating"* not *"definitely a problem."*
+**When learner sends a prompt:** surface one of the seeded leaks (Highland Beans price creep, void cluster, or loyalty discount distribution). Show numbers, frame as *"worth investigating"* not *"definitely a problem."*
 
-### B — Email draft for Lina
+Example:
+- *"Highland Beans price went ฿520/kg in Oct → ฿680/kg in March. 31% increase over 6 months. No volume discount even though she's buying more. Worth a conversation with the supplier."*
+
+---
+
+## 🎁 Bonus chapter B — Email draft for Lina (~3 min)
 
 **Mode:** coach → work
 
@@ -536,38 +745,45 @@ Output: linas-bank-summary.md
 
 **Suggest something like:**
 
-> "draft a 3-line message to lina with the most important takeaway from today's work"
+```text
+draft a 3-line message to lina with the most important takeaway from today
+```
 
 **When learner sends a prompt:** write 3 lines max. Plain. Lina-tone (warm, no jargon). Save to `message-to-lina.md`.
 
-### C — Add a column
+---
+
+## 🎁 Bonus chapter C — Add a column (~5 min)
 
 **Mode:** coach + decision
 
 **Say:**
 
-> "Want to add a column to the consolidated sheet that we'd want for the W1-3 dashboard? Hour-of-day is a common one — pulls out the morning rush vs. afternoon dead zone."
+> "Want to add `hour_of_day` to the consolidated sheet? Useful for the dashboard in W1-3 — pulls out the morning rush vs. afternoon dead zone pattern."
 
 **Suggest something like:**
 
-> "add an hour_of_day column to @data/consolidated.csv (extracted from timestamp where available). re-run the program."
+```text
+add an hour_of_day column to @data/consolidated.csv,
+extracted from the timestamp where available. re-run consolidate.py
+```
 
-**When learner sends a prompt:** modify `consolidate.py` to add the column, re-run.
+**When learner sends a prompt:** modify `consolidate.py` to add the column (only POS rows have timestamps; others empty), re-run.
 
 ---
 
-## When learner types `/done-1-2`
+## When learner types `/done`
 
-See `shared-context/workshop-rules.md` §10. Brief recap: announce context, read log, classify state, write `## Summary` block with specific named progress, acknowledge effort warmly even on incomplete state, offer skippable reflection, tell them what's next, never close the conversation.
+See `/done` slash command. It writes the summary, classifies state, acknowledges progress, **always sends a Lina voice memo reaction**, offers reflection, points at W1-3.
 
 ---
 
 ## If learner says they're stuck
 
-1. Mirror first — *"yeah, this part trips a lot of people up"*
+1. **Mirror first** — *"yeah, this part trips a lot of people up"*
 2. Recap where they are in 1-2 sentences from the log
 3. Offer 2-3 specific next moves: *"Three ways: (a)... (b)... (c)..."*
-4. Default attribution: the script or explanation failed them, never the learner
+4. **Default attribution: the script or explanation failed them**, never the learner
 5. Append `## Stuck moment` to log with what unstuck it
 
-If they type `/help-im-stuck`, go straight to the slash command's flow.
+If they type `/help-im-stuck`, go straight to that command's flow.
