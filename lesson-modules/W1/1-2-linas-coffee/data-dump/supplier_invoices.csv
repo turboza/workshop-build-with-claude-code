@@ -1,0 +1,65 @@
+invoice_no,date,vendor,item,qty_kg,unit_price_thb,total_thb,paid
+INV1001,2025-10-01,GreenLeaf Pastry,Mixed pastries,63,60,3780,yes
+INV1002,2025-10-05,HighlandBeans Co,Specialty coffee beans,10,520,5200,yes
+INV1003,2025-10-06,Bangkok Dairy Co.,Whole milk (litres),50,70,3500,yes
+INV1004,2025-10-08,GreenLeaf Pastry,Mixed pastries,75,60,4500,yes
+INV1005,2025-10-13,Bangkok Dairy Co.,Whole milk (litres),55,70,3850,yes
+INV1006,2025-10-15,GreenLeaf Pastry,Mixed pastries,59,60,3540,yes
+INV1007,2025-10-18,Highland Beans Co.,Specialty coffee beans,10,520,5200,yes
+INV1008,2025-10-20,Bangkok Dairy Co.,Whole milk (litres),52,70,3640,yes
+INV1009,2025-10-22,GreenLeaf Pastry,Mixed pastries,53,60,3180,yes
+INV1010,2025-10-27,Bangkok Dairy Co.,Whole milk (litres),45,70,3150,yes
+INV1011,2025-10-29,GreenLeaf Pastry,Mixed pastries,51,60,3060,yes
+INV1012,2025-11-03,Bangkok Dairy Co.,Whole milk (litres),46,70,3220,yes
+INV1013,2025-11-05,HighlandBeans Co,Specialty coffee beans,10,580,5800,yes
+INV1014,2025-11-05,GreenLeaf Pastry,Mixed pastries,53,60,3180,yes
+INV1015,2025-11-10,Bangkok Dairy Co.,Whole milk (litres),54,70,3780,yes
+INV1016,2025-11-12,GreenLeaf Pastry,Mixed pastries,73,60,4380,yes
+INV1017,2025-11-17,Bangkok Dairy Co.,Whole milk (litres),50,70,3500,yes
+INV1018,2025-11-18,HighlandBeans Co,Specialty coffee beans,8,580,4640,yes
+INV1019,2025-11-19,GreenLeaf Pastry,Mixed pastries,67,60,4020,yes
+INV1020,2025-11-24,Bangkok Dairy Co.,Whole milk (litres),48,70,3360,yes
+INV1021,2025-11-26,GreenLeaf Pastry,Mixed pastries,61,60,3660,yes
+INV1022,2025-12-01,Bangkok Dairy Co.,Whole milk (litres),40,70,2800,yes
+INV1023,2025-12-03,GreenLeaf Pastry,Mixed pastries,63,60,3780,yes
+INV1024,2025-12-05,Highland Beans Co.,Specialty coffee beans,10,580,5800,yes
+INV1025,2025-12-08,Bangkok Dairy Co.,Whole milk (litres),58,70,4060,yes
+INV1026,2025-12-10,GreenLeaf Pastry,Mixed pastries,68,60,4080,yes
+INV1027,2025-12-15,Bangkok Dairy Co.,Whole milk (litres),60,70,4200,yes
+INV1028,2025-12-17,GreenLeaf Pastry,Mixed pastries,70,60,4200,yes
+INV1029,2025-12-18,Highland Beans,Specialty coffee beans,8,580,4640,yes
+INV1030,2025-12-22,Bangkok Dairy Co.,Whole milk (litres),50,70,3500,yes
+INV1031,2025-12-24,GreenLeaf Pastry,Mixed pastries,71,60,4260,yes
+INV1032,2025-12-29,Bangkok Dairy Co.,Whole milk (litres),56,70,3920,yes
+INV1033,2025-12-31,GreenLeaf Pastry,Mixed pastries,65,60,3900,yes
+INV1034,2026-01-05,Highland Beans Co.,Specialty coffee beans,10,620,6200,yes
+INV1035,2026-01-05,Bangkok Dairy Co.,Whole milk (litres),52,70,3640,yes
+INV1036,2026-01-07,GreenLeaf Pastry,Mixed pastries,69,60,4140,yes
+INV1037,2026-01-12,Bangkok Dairy Co.,Whole milk (litres),49,70,3430,yes
+INV1038,2026-01-14,GreenLeaf Pastry,Mixed pastries,64,60,3840,yes
+INV1039,2026-01-18,Highland Beans Co.,Specialty coffee beans,8,620,4960,yes
+INV1040,2026-01-19,Bangkok Dairy Co.,Whole milk (litres),60,70,4200,yes
+INV1041,2026-01-21,GreenLeaf Pastry,Mixed pastries,75,60,4500,yes
+INV1042,2026-01-26,Bangkok Dairy Co.,Whole milk (litres),50,70,3500,yes
+INV1043,2026-01-28,GreenLeaf Pastry,Mixed pastries,63,60,3780,yes
+INV1044,2026-02-02,Bangkok Dairy Co.,Whole milk (litres),60,70,4200,yes
+INV1045,2026-02-04,GreenLeaf Pastry,Mixed pastries,69,60,4140,yes
+INV1046,2026-02-05,Highland Beans Co.,Specialty coffee beans,5,680,3400,yes
+INV1047,2026-02-09,Bangkok Dairy Co.,Whole milk (litres),45,70,3150,yes
+INV1048,2026-02-11,GreenLeaf Pastry,Mixed pastries,60,60,3600,yes
+INV1049,2026-02-16,Bangkok Dairy Co.,Whole milk (litres),47,70,3290,yes
+INV1050,2026-02-18,HighlandBeans Co,Specialty coffee beans,8,680,5440,yes
+INV1051,2026-02-18,GreenLeaf Pastry,Mixed pastries,58,60,3480,yes
+INV1052,2026-02-23,Bangkok Dairy Co.,Whole milk (litres),59,70,4130,yes
+INV1053,2026-02-25,GreenLeaf Pastry,Mixed pastries,70,60,4200,yes
+INV1054,2026-03-02,Bangkok Dairy Co.,Whole milk (litres),52,70,3640,yes
+INV1055,2026-03-04,GreenLeaf Pastry,Mixed pastries,58,60,3480,yes
+INV1056,2026-03-05,HighlandBeans Co,Specialty coffee beans,8,680,5440,yes
+INV1057,2026-03-09,Bangkok Dairy Co.,Whole milk (litres),58,70,4060,yes
+INV1058,2026-03-11,GreenLeaf Pastry,Mixed pastries,66,60,3960,yes
+INV1059,2026-03-16,Bangkok Dairy Co.,Whole milk (litres),54,70,3780,yes
+INV1060,2026-03-18,Highland Beans Co.,Specialty coffee beans,8,680,5440,yes
+INV1061,2026-03-18,GreenLeaf Pastry,Mixed pastries,54,60,3240,yes
+INV1062,2026-03-23,Bangkok Dairy Co.,Whole milk (litres),47,70,3290,yes
+INV1063,2026-03-25,GreenLeaf Pastry,Mixed pastries,71,60,4260,yes
+INV1064,2026-03-30,Bangkok Dairy Co.,Whole milk (litres),48,70,3360,yes

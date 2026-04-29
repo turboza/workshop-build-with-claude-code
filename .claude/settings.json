@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(./**)",
+      "Write(./lesson-modules/**)",
+      "Edit(./lesson-modules/**)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+tab,date,item,amount,currency,amount_thb,category_raw,notes
+Q4-2025,2025-10-03,Beans Highland 5kg,2600,THB,2600,coffee,
+Q4-2025,2025-10-08,Milk delivery weekly,4200,THB,4200,Dairy,
+Q4-2025,2025-10-12,Pastry order,3800,THB,3800,Pastry,
+Q4-2025,2025-10-15,Cleaning supplies,1850,THB,1850,Other,
+Q4-2025,2025-10-22,Beans Highland 5kg,2600,THB,2600,coffee,
+Q4-2025,2025-11-02,Milk delivery weekly,4400,THB,4400,Dairy,
+Q4-2025,2025-11-05,Equipment service - grinder,3500,THB,3500,Maintenance,
+Q4-2025,2025-11-10,Beans Highland 8kg,4640,THB,4640,Coffee Beans,
+Q4-2025,2025-11-18,Pastry order,4100,THB,4100,Pastry,
+Q4-2025,2025-11-25,Marketing IG ads,2500,THB,2500,Marketing,
+Q4-2025,2025-12-01,Milk delivery weekly,4400,THB,4400,Dairy,
+Q4-2025,2025-12-04,Beans Highland 8kg,4640,THB,4640,Coffee Beans,
+Q4-2025,2025-12-10,Holiday decor,1800,THB,1800,Other,
+Q4-2025,2025-12-15,Pastry order,4500,THB,4500,Pastry,
+Q4-2025,2025-12-22,Beans Highland 8kg,4960,THB,4960,Coffee Beans,
+Q4-2025,2025-12-28,Cleaning supplies,1650,THB,1650,Other,
+Jan-2026,2026-01-03,Beans Highland 8kg,4960,THB,4960,,
+Jan-2026,2026-01-05,Milk weekly,4400,THB,4400,,
+Jan-2026,2026-01-08,Italian Espresso Parts gasket kit,145,USD,4640,,FX 1 USD = 32 THB
+Jan-2026,2026-01-10,Pastry order,4200,THB,4200,,
+Jan-2026,2026-01-15,Cleaning supplies,1900,THB,1900,,
+Jan-2026,2026-01-18,Beans Highland 10kg,6200,THB,6200,,
+Jan-2026,2026-01-22,Imported beans Ethiopia (Ethiopian Beans Direct),280,USD,8960,,FX 1 USD = 32 THB
+Jan-2026,2026-01-25,Marketing IG ads,3000,THB,3000,,
+Jan-2026,2026-01-28,Milk weekly,4400,THB,4400,,
+Feb-Mar-2026,2026-02-02,Highland Beans Co.,6800,THB,6800,,10kg @ 680
+Feb-Mar-2026,2026-02-05,Bangkok Dairy Co.,4400,THB,4400,,weekly milk
+Feb-Mar-2026,2026-02-08,GreenLeaf Pastry,4500,THB,4500,,weekly pastry
+Feb-Mar-2026,2026-02-15,Highland Beans Co.,6800,THB,6800,,10kg @ 680
+Feb-Mar-2026,2026-02-18,Cleaning Plus,1900,THB,1900,,
+Feb-Mar-2026,2026-02-22,IG Ads,3500,THB,3500,,marketing
+Feb-Mar-2026,2026-02-25,Bangkok Dairy Co.,4500,THB,4500,,
+Feb-Mar-2026,2026-03-02,Highland Beans Co.,6800,THB,6800,,10kg
+Feb-Mar-2026,2026-03-05,GreenLeaf Pastry,4800,THB,4800,,
+Feb-Mar-2026,2026-03-08,Bangkok Dairy Co.,4500,THB,4500,,
+Feb-Mar-2026,2026-03-12,Equipment service - espresso machine,4200,THB,4200,,
+Feb-Mar-2026,2026-03-15,Highland Beans Co.,6800,THB,6800,,10kg
+Feb-Mar-2026,2026-03-18,Marketing - flyer print,2200,THB,2200,,branch 2 announcement
+Feb-Mar-2026,2026-03-25,Bangkok Dairy Co.,4500,THB,4500,,
+Feb-Mar-2026,2026-03-28,Cleaning Plus,1850,THB,1850,,
