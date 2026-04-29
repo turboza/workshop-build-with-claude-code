@@ -699,7 +699,7 @@ Output: linas-bank-summary.md
 
 > "Specifically what just happened: you designed the columns from scratch, picked categories, drove the merge of 762 rows from 7 different formats into one, surfaced the ฿810K fixed-floor number that's going straight to the bank, and wrote her something she can actually send."
 >
-> "Honestly — the columns design is the hard part. The rest is the same shape every time. You did the hard part."
+> "Honestly — the columns design is the hard part. The rest is the same shape every time."
 
 **Say:**
 
