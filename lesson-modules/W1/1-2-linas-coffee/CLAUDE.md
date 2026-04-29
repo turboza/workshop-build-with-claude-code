@@ -358,8 +358,10 @@ Learner felt the pain, then installed.
 **Suggest something like:**
 
 ```text
-what's in @data-dump/expenses_2025.csv? give me the columns and 3 things that stand out
+what's in @expenses_2025.csv? give me the columns and 3 things that stand out
 ```
+
+Note that you can start typing: `@expense` and select a file you want.
 
 **Check:** wait for the prompt.
 
