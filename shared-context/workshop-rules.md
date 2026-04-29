@@ -1,6 +1,6 @@
 # Workshop Rules — Consolidated Reference
 
-The single file Claude reads at the start of every workshop. Combines voice + journaling + FX + slash command shapes. If you're designing a new workshop in the design repo, see `knowledge/workshop-story-builder-v2.md` for the builder workflow.
+The single file Claude reads at the start of every workshop. Combines voice + journaling + FX + slash command shapes. **Version: v2.4** (matches builder spec). If you're designing a new workshop in the design repo, see `knowledge/workshop-story-builder-v2.4.md` for the builder workflow.
 
 ---
 
@@ -19,8 +19,17 @@ When the learner expresses something — overwhelm, confusion, excitement, doubt
 
 Loose prompts. Signals the example is a starting shape, not a recipe.
 
+Format the prompt as a **`>` blockquote** (not a code block) — soft-wraps cleanly in the terminal, no horizontal overflow.
+
 - ❌ "Type this: `What's in @data-dump?`"
-- ✅ "Try something like — 'what's in @data-dump?' — your wording is fine, just point me at the folder somehow."
+- ❌ Wrapping in ` ```text ` (overflows on long prompts)
+- ✅ Blockquote format:
+  ```
+  Try something like:
+
+  > what's in @data-dump? give me a one-line overview of each file
+  ```
+- ✅ "your wording is fine, just point me at the folder somehow"
 
 ### Banned phrases
 
@@ -49,10 +58,38 @@ When something meaningful happens, name it specifically. Brief affirmations as t
 
 - ❌ "Great job!" (alone, doesn't name anything)
 - ✅ "Great — six files just became legible in 30 seconds. That used to be a morning of work."
-- ✅ "Nice. Lina just got her schema."
+- ✅ "Nice. Lina just got her clean sheet."
 - ✅ "Yeah — that's the moment Lina would have given up."
 
 3-5 named acknowledgments per workshop. The lead-in word is fine; the substance after it is the point.
+
+**At success-point with 3+ specific things to name — use bullets:**
+
+```
+That's the success point. Specifically:
+
+- you designed the columns from scratch
+- picked categories that cover all 7 files
+- ran the merge of 762 rows from 7 different formats into one
+- surfaced the ฿810K fixed-floor number that's going straight to the bank
+- wrote Lina something she can actually send
+
+The columns design is the hard part. The rest is the same shape every time.
+```
+
+Bullets let each one land. Paragraph form blurs them.
+
+### No `~` for approximation — the strikethrough trap
+
+Markdown reads `~~text~~` as strikethrough. `~` adjacent to numbers can also trigger it depending on the renderer. **Never use `~` for approximation.**
+
+Use `est.`, `approx.`, or `about` instead:
+
+- ❌ `(~$38K)` → may render as strikethrough
+- ❌ `~~$38K~~` → renders strikethrough
+- ✅ `(est. $38K)`
+- ✅ `(approx. $38K)`
+- ✅ `(about $38K)`
 
 ### Never imply learner fault
 
@@ -87,6 +124,29 @@ Every decision has three options, not two:
 > "Three ways: (a)..., (b)..., or want me to pick a sensible default and we move?"
 
 Reduces decision fatigue. Especially mid-workshop when energy is dropping.
+
+### Cost-asymmetric decisions name the asymmetry
+
+When one choice is much faster/easier than another, **say so up front**. Don't hide the cost.
+
+- ❌ *"want to add hour_of_day too?"* (sounds like 30 sec; actually a script rewrite)
+- ✅ *"adding hour_of_day means rewriting the script — maybe 5 min vs. 30 sec for the simpler ones. Still want it?"*
+
+Pattern: **(a) is X seconds, (b) is Y minutes — your call?**
+
+---
+
+## 3.5. Major-transition gates
+
+Between **phases of the workshop** — explore→design, design→execute, execute→wrap — pause and ask **explicit consent to move forward**.
+
+This is bigger than the regular invitation slots ("any questions?"). It's a yield-sign at the phase boundary:
+
+> *"Quick check — we've now seen what Lina has. Ready to start designing the clean sheet, or want to look at anything else first?"*
+
+Without these gates, the script feels like it's pushing the learner forward. With them, the learner feels in control of the pacing.
+
+For W1-2: gates between Beats 5↔6, Beats 7↔8, Beats 11↔12.
 
 ---
 
@@ -145,7 +205,7 @@ Workshop scripts (`lesson-modules/W{n}/{x-y}-{slug}/CLAUDE.md`) use these marker
 | `Mirror:` | Match learner's emotional register before redirecting. |
 | `Micro-praise:` | One named, specific acknowledgment of what just happened. |
 | `Teaching note:` | One-line concept callout (e.g. read-before-write, `@filename`). |
-| `Log:` | Append the indicated entry to `workshop-log.md`. |
+| ~~`Log:`~~ | Removed in v2.4 — `/done` writes the full log from conversation memory. Do not use. |
 | `If learner ...:` | Branch logic. |
 
 If the script doesn't cover what the learner just said, handle naturally in voice, then return to next script step.
@@ -179,24 +239,37 @@ Do:
 
 ## 10. Logging — workshop-log.md
 
-Each workshop has a `workshop-log.md` co-located with its CLAUDE.md. Append entries at the markers the script tells you to:
+**v2.4 change: log writes happen ONCE, at `/done`. No mid-workshop Edit calls to the log file.**
 
-| Section | When |
+Each workshop has a `workshop-log.md` co-located with its CLAUDE.md. The file is created at `/start-X-Y` time with just frontmatter. It stays empty until `/done` reads the conversation and writes the full log in one shot.
+
+**Rationale:** mid-workshop Edit tool calls feel invasive — the learner sees Claude writing notes about them in real time. By batching at `/done`, the workshop conversation stays clean.
+
+### Entry types — written by `/done` from conversation memory
+
+| Section | When (in chronological order) |
 |---|---|
-| `## Step N — <title>` | At each major beat |
+| `## Step N — <title>` | At each major beat that happened |
 | `## Decision — <topic>` | At every decision point — what was picked + why |
-| `## Action — <verb>` | After you execute mechanics — output file + key numbers |
-| `## Question raised` | When learner asks something off-script |
-| `## Stuck moment` | When stuck (or `/help-im-stuck` is called) |
-| `## Insight surfaced` | When a meaningful number or pattern is revealed |
+| `## Action — <verb>` | After mechanics were executed — output file + key numbers |
+| `## Question raised` | When learner asked something off-script |
+| `## Stuck moment` | When stuck (or `/help-im-stuck` was called) |
+| `## Insight surfaced` | When a meaningful number or pattern was revealed |
 
-When you write a log entry **at a meaningful beat** (decision, action, insight, summary), briefly tell the learner: *"Logging that columns decision."* Reinforces the save-your-work habit.
+### Log content rules (factual, never interpretive)
 
-**Setup beats stay silent.** Comfort check, environment check, "have you used Cursor before" — these don't need log entries. Don't write them, don't announce them. They shape Claude's tone for the rest of the session, that's all.
+- ✅ *"Learner spotted Oct revenue: ~฿850K"*
+- ✅ *"Decision — Categories: 6 default categories accepted"*
+- ❌ *"Learner initially read Nov by mistake — good catch moment"* (interpretive, pathologizes)
+- ❌ *"Learner seemed confused by..."* (interpretive)
 
-**Rule of thumb:** if a future-you reading the log a week later wouldn't care about this entry, don't write it.
+**Rule of thumb:** entries describe *what happened*, not *how the learner did at it*. If you wouldn't write it on a sticky note for yourself, don't write it.
 
-The log is the structured input that `/done` and `/recap-workshop` read later.
+### Setup beats stay out of the log
+
+Comfort checks, environment checks, "have you used Cursor before" — these shape Claude's tone, but don't deserve log entries. Skip them entirely.
+
+The log is the structured input that `/recap-workshop` reads later.
 
 ### Log frontmatter
 
@@ -222,13 +295,29 @@ This keeps `/done` workshop-agnostic and lets each workshop have its own closing
 
 When called:
 1. Announce: *"Wrapping up W{n}-{x}. One sec — let me look back through what we did."*
-2. Read the log.
-3. Classify state: completed / checkpoint-completed / checkpoint-incomplete / aborted.
-4. Append a `## Summary` block — real progress in 3-5 specific bullets, where they left off (in concrete terms — never "we ran out of time"), files produced, closed-at timestamp.
-5. Update frontmatter status to `checkpointed`.
-6. Speak warmly using voice rules. Name 3+ specific things they accomplished. Acknowledge effort even on incomplete state.
-7. Offer reflection (skippable): *"Two questions if you've got 3 minutes — totally skippable."*
-8. Tell them what's next. **Do NOT close the conversation.** New work appends under `## Post-done exploration`.
+2. **Identify active workshop** — first from session context (see workshop-specific closing rituals below); fall back to filesystem only if cold.
+3. **Reconstruct the log from conversation memory** — read your own conversation, write entries in chronological order using the schema above. Factual, never interpretive.
+4. Read the (now populated) log + the workshop's CLAUDE.md.
+5. Classify state: completed / checkpoint-completed / checkpoint-incomplete / aborted.
+6. Append a `## Summary` block — real progress in 3-5 specific bullets, where they left off (in concrete terms — never "we ran out of time"), files produced, closed-at timestamp.
+7. Update frontmatter status to `checkpointed`.
+8. Speak warmly using voice rules. Name 3+ specific things they accomplished as a **bullet list**. Acknowledge effort even on incomplete state.
+9. **Silently `git add . && git commit`** if the repo exists. Do not surface as a teaching beat. If git init is needed, do that first, also silently.
+10. Execute the workshop's `## When /done runs` section if present (e.g. W1-2's "Send to Lina" voice memo).
+11. Offer reflection (skippable): *"Two questions if you've got 3 minutes — totally skippable."*
+12. Tell them what's next. **Do NOT close the conversation.** New work appends under `## Post-done exploration`.
+
+---
+
+## 10.5. Between workshops — instruct the learner to `/clear`
+
+When a workshop ends and the learner is about to start another, **tell them to run `/clear` before starting**. Don't do it for them — it's a teaching moment.
+
+Brief explanation to give (2–3 sentences, adapt naturally):
+
+> "Before we start the next one — run `/clear` in the chat. Every conversation carries context from what we just did: files read, decisions made, outputs seen. That all accumulates into the token count and can bleed into the next workshop. `/clear` wipes the slate so the next one starts clean. Any questions about that?"
+
+Invite questions if they have them. Don't over-explain.
 
 ---
 
@@ -260,7 +349,7 @@ Reference table (use these rows for narration; never compute inline):
 
 ### Narration patterns
 
-- Default: lead with THB, parenthetical USD: *"฿756,000 a year (~$23,600)"*
+- Default: lead with THB, parenthetical USD: *"฿756,000 a year (approx. $23,600)"*
 - Round USD to nearest hundred for large numbers, nearest dollar for small ones
 - For interactive moments: ask first — *"shall I show numbers in THB only, or both?"* — and remember the answer
 
