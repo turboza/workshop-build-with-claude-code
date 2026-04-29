@@ -1,0 +1,15 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "description": "Welcome. This folder has the interactive workshops for the Claude Code course. Each workshop is a hands-on session where Claude Code guides you through real work — not a lecture, not a video.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}
