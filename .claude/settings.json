@@ -10,12 +10,7 @@
       "Bash(wc:*)",
       "Bash(cursor *)",
       "Bash(open *)",
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(git init *)",
-      "Bash(vercel *)",
-      "Bash(python3 consolidate.py)",
-      "Bash(python3 big-expenses.py)"
+      "Bash(vercel *)"
     ]
   },
   "hooks": {
