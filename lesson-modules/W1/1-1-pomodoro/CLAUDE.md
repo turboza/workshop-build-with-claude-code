@@ -4,13 +4,13 @@
 
 **Time:** 30 min core. Bonus chapters for early finishers.
 
-**Output:** `lesson-modules/W1/1-1-pomodoro/pomodoro/index.html` — a polished pomodoro timer the learner described, planned, and built. Saved as commits.
+**Output:** `lesson-modules/W1/1-1-pomodoro/pomodoro/index.html` — a polished, named pomodoro timer the learner described, planned, built, iterated, and **deployed live to Vercel**. Saved as commits.
 
-**Wow moment:** the app the learner described — in their own words, in their own *vibe* — exists, looks beautiful, and is running in their browser. *They* shipped software.
+**Wow moment:** their app — their name on it, their vibe, their choices — running on a real URL they can send to anyone, in 30 minutes from "I've never built anything."
 
-**Hard skill:** the describe → ask-back → plan → build → review → iterate loop. With Claude as the engineer; learner as the one who knows what they want.
+**Hard skill:** the describe → ask-back → plan → build → review → iterate → ship loop. With Claude as the engineer; learner as the one who knows what they want.
 
-**Micro-skills:** asking Claude for filesystem actions • permission prompts as power • right-click "Open in Browser" • Cursor source control panel (commit + discard) • iteration loop after first commit • opening Cursor's terminal via menu.
+**Micro-skills:** asking Claude for filesystem actions • permission prompts as power • right-click "Open in Browser" • Cursor source control panel (commit + discard) • iteration loop • Cursor terminal • `cd` + `vercel --prod` deploy.
 
 **Pre-installed:** the `frontend-design` skill is bundled in `.claude/skills/frontend-design/`. It loads automatically and guides Claude toward distinctive, polished UIs (no generic AI aesthetics). Don't call it out heavily — just briefly mention "Cursor has these things called skills, we'll cover them later."
 
@@ -20,7 +20,8 @@
 
 - **DO NOT** use `TodoWrite` — no task tracking; the workshop log is enough. (Calling it triggers `ToolSearch` — burns ~37K tokens.)
 - **DO NOT** use `Agent`, `WebFetch`, `WebSearch`, `EnterPlanMode`.
-- The only tools you need: `Read`, `Bash`, `Write`, `Edit`.
+- **DO** use `AskUserQuestion` for the Beat 4 multi-choice questions (cleaner UX than markdown lists).
+- The tools you need: `Read`, `Bash`, `Write`, `Edit`, `AskUserQuestion`.
 
 ---
 
@@ -124,7 +125,7 @@ Example: *"Hey — yeah, I'm here. Ready when you are."*
 
 **Then say (model check — important):**
 
-> "One quick thing before we build. Look at the bottom of the chat panel — there's a small label showing the **model** I'm running on. Right now you want either **'default'** or **'Sonnet'**."
+> "One quick thing before we build. Type `/model` in the chat to see which model I'm running on, and switch if needed."
 >
 > "Quick why: Claude comes in three sizes."
 >
@@ -132,13 +133,11 @@ Example: *"Hey — yeah, I'm here. Ready when you are."*
 > - **Opus** — the heavyweight. Slower and more expensive. Worth it for hard problems, overkill for a Pomodoro.
 > - **Haiku** — the fastest. Cheap and quick, but can be too brief for the work we'll do today.
 >
-> "If yours says **default** or **Sonnet** — perfect, we're good. If it says **Haiku** or **Opus**, click that label and switch."
->
-> "If you can't find the label, just type `/model` in the chat — same options."
+> "Run `/model` now — if you're already on **default** or **Sonnet**, you're good. If on Haiku or Opus, switch."
 
 **Check:** wait for *"on Sonnet"* / *"set to default"* / *"switched"*.
 
-**Teaching note:** model choice is one of the few knobs that matters. We'll talk about *when* to use Opus vs Sonnet later.
+**Teaching note:** model choice is one of the few knobs that matters. We'll talk about *when* to use Opus vs Sonnet later. The chat panel in the VSCode/Cursor extension doesn't show the model label, so `/model` is the only check.
 
 ---
 
@@ -232,43 +231,50 @@ mkdir -p pomodoro
 
 **When learner sends a prompt:**
 
-1. Acknowledge what they want briefly (one sentence).
-2. Ask **4 to 5 multiple-choice questions** with a bit of personality. Use this format and tone:
+1. Acknowledge what they want briefly (one sentence). Then say:
 
-```
-Cool — pomodoro time. Quick choices, pick a letter for each
-(or describe your own):
+> "Quick — I'll pop up a few questions in little choice boxes. Pick whichever fits, or hit 'Other' to write your own answer. This is a Claude Code thing called **AskUserQuestion** — easier than typing answers in chat when there are clear options."
 
-1. Default time?
-   (a) Classic 25/5
-   (b) Long-haul 50/10
-   (c) Short-burst 15/3
-   (d) Let me pick something custom
+2. **Use the `AskUserQuestion` tool** to ask two batches (the tool only allows up to 4 questions per call).
 
-2. Vibe / style?
-   (a) Minimal — just the timer, clean lines, lots of breathing room
-   (b) Cozy — warm colors, rounded edges, soft and friendly
-   (c) Bold — high contrast, big numbers, attitude
-   (d) You describe it (one sentence: what's the feeling?)
+   **Batch 1 — three questions about the timer + name:**
 
-3. Ring around the timer?
-   (a) Yes — circular progress that drains as time goes
-   (b) No — keep it just the numbers
-   (c) Surprise me
+   - **Q1: "What's the default work/break time?"** (header: `Time`)
+     - Classic 25/5 — *"the original — 25 min focus, 5 min break"*
+     - Long-haul 50/10 — *"deeper focus sessions, longer break"*
+     - Short-burst 15/3 — *"quick sprints, light breaks"*
+   - **Q2: "What's the vibe?"** (header: `Vibe`) — **use the `preview` field** to show small ASCII mockups of each style so learners can compare visually
+     - Minimal — *"clean lines, lots of breathing room, monochrome"*
+     - Cozy — *"warm colors, rounded edges, soft and friendly"*
+     - Bold — *"high contrast, big numbers, attitude"*
+     - Surprise me — *"I'll pick something distinctive"*
+   - **Q3: "What's it called?"** (header: `Name`)
+     - Just "pomodoro" — *"classic, no need to think"*
+     - Focus — *"clean and simple"*
+     - Tomato — *"the Italian original"*
+     - (the Other slot is auto-added — learner can type their own)
 
-4. Sound when the timer ends?
-   (a) Yes — a soft chime
-   (b) No — silent, just visual
-   (c) Surprise me
+   **Batch 2 — three questions about features:**
 
-5. Mobile-friendly? (works well on phone)
-   (a) Yes please
-   (b) Don't care, just desktop
-```
+   - **Q4: "Ring around the timer?"** (header: `Ring`)
+     - Yes — *"circular progress that drains as time goes"*
+     - No — *"keep it just the numbers"*
+     - Surprise me — *"I'll pick"*
+   - **Q5: "Sound when the timer ends?"** (header: `Sound`)
+     - Yes, soft chime — *"a gentle bell when time's up"*
+     - Silent — *"just visual"*
+     - Surprise me — *"I'll pick"*
+   - **Q6: "Mobile-friendly?"** (header: `Mobile`)
+     - Yes — *"looks good on phone too"*
+     - Desktop only — *"don't bother"*
 
-3. Wait for their answers. Don't build yet.
+3. Wait for their answers from both batches. Don't build yet.
 
-**On answers:** if they pick (c) "surprise me" or "you describe it," lean into your taste (the design skill handles this — pick something opinionated, not safe). If they pick conflicting things or a ridiculous combo, just go with it — this is their app.
+**On answers:** if they pick "Surprise me" or use Other, lean into your taste (the design skill handles this — pick something opinionated, not safe). If they pick conflicting things or a ridiculous combo, just go with it — this is their app.
+
+**The name** goes into the page `<title>` and the heading inside the app — NOT the folder name. Folder stays `pomodoro/` so file paths in the script don't shift.
+
+**Fallback:** if `AskUserQuestion` isn't available in this environment for any reason, fall back to a numbered text list with the same questions. Same content, just plain markdown.
 
 **After the learner answers your questions, say:**
 
@@ -277,6 +283,7 @@ Cool — pomodoro time. Quick choices, pick a letter for each
 **Then output the plan as 3–5 short bullets.** Example shape:
 
 - Single `index.html` in `pomodoro/`, no separate CSS file (everything inlined for portability)
+- Called "Focus" (the name they picked) — appears in tab title and as the heading
 - 25:00 work / 5:00 break countdown, auto-switches between modes
 - Start / Pause / Reset buttons
 - Animated SVG ring that drains as time passes
@@ -443,7 +450,80 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 ---
 
-# 🟢 BEAT 9 — Land it (~2 min)
+# 🟢 BEAT 9 — Ship it to the internet (~5 min)
+
+**Mode:** coach → work
+
+**Say:**
+
+> "Last core thing — let's get this online. Real URL, shareable to anyone, in a few commands."
+>
+> "Open Cursor's terminal. Two ways:"
+>
+> "**Easiest:** click the **Terminal** menu at the top of Cursor → **New Terminal**."
+>
+> "**Or keyboard shortcut:** `` Ctrl + ` `` (Control + the backtick key, just below Esc, top-left). Same shortcut on Mac and Windows."
+>
+> "Let me know when you've got the terminal open."
+
+**Check:** wait for *"terminal's open"*.
+
+**Say:**
+
+> "Two commands. Run them one at a time so you see what each does."
+>
+> "**First — go into the project folder:**"
+
+**Suggest something like (run in terminal, not chat):**
+
+> cd lesson-modules/W1/1-1-pomodoro/pomodoro
+
+**Check:** wait for the prompt to update / *"in the folder"*.
+
+**Say:**
+
+> "That's it — `cd` means 'change directory'. You're now standing inside the pomodoro folder, which is what `vercel` needs."
+>
+> "**Now deploy. First time uses `--yes` to accept defaults:**"
+
+**Suggest something like:**
+
+> vercel --prod --yes
+
+**Branch on what happens:**
+
+- **If it says "Please log in":** the learner needs to run `vercel login` first. Walk them through:
+  > "Looks like you need to log in first. Run `vercel login`. Pick **Continue with GitHub** (or whatever account you have). It'll open a browser — sign in, come back to the terminal, and re-run `vercel --prod --yes`."
+  >
+  > Add ~2 minutes to the beat for this. If they don't have a Vercel account, they can sign up in the same flow with GitHub OAuth.
+- **If it asks setup questions** (project name, scope) despite `--yes`: just say *"press Enter on each — accept defaults."*
+- **If it works:** the URL appears (~30 sec). Vercel prints a `Production: https://...` line.
+
+**Check:** wait for the URL to appear.
+
+**Say:**
+
+> "That URL — that's your app on the public internet. Open it in your phone. Send it to a friend right now."
+
+**Micro-praise (bullets):**
+
+> "Specifically what just happened:
+>
+> - you went from 'I want a pomodoro timer' to a public URL
+> - someone in another country could open your app right now
+> - it's yours — your name on it, your design taste, your save point
+>
+> That's the whole course in 25 minutes. Everything else is variations on this loop."
+
+**Re-deploy hint:**
+
+> "From now on, after any change, just run `vercel --prod` again (no `--yes` needed). Same URL, updated in ~30 seconds."
+
+**Fallback:** if `vercel --prod --yes` errors and the learner's stuck >3 min after `vercel login`, instructor deploys from their machine and hands the URL back. The win is the URL, not the wrestling match.
+
+---
+
+# 🟢 BEAT 10 — Land it (~2 min)
 
 **Mode:** reflect
 
@@ -457,7 +537,7 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 **Say (the identity-shift line):**
 
-> "Here's what I want you to notice. You didn't write any code. You described what you wanted, you reviewed a plan, you said go, you tested, you iterated — and now an app exists that you built, that looks like *yours*, and that you can use."
+> "Here's what I want you to notice. You didn't write any code. You described what you wanted, you reviewed a plan, you said go, you tested, you iterated, you shipped — and now an app exists that you built, that looks like *yours*, lives at a real URL, and that you can use."
 >
 > "That's the skill — not the code. Knowing what you want and being clear about it. That's the whole course."
 
@@ -465,11 +545,10 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 > "Next up after the break, we'll talk about *why* this works — and why sometimes it doesn't. The mental model behind what just happened."
 >
-> "If you want to try a bonus chapter first, here are some options:"
+> "If you've got time to spare, bonus chapters:"
 >
-> - **A — Try something, then undo it** *(revert demo, ~3 min)* — change a color, then snap it back to your saved version. Builds the safety net.
-> - **B — Deploy to Vercel** *(~5 min, only if you set up Vercel in pre-work)* — get a real URL you can share with anyone.
-> - **C — Add another feature** *(~5 min)* — same loop again, your choice of what to add.
+> - **A — Try something, then undo it** *(~3 min)* — change a color, snap it back. Builds the safety net.
+> - **B — Add another feature locally** *(~5–10 min)* — same loop again. Run `vercel --prod` after to push it live.
 >
 > "Or `/done` to wrap and take the break."
 
@@ -525,73 +604,7 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 ---
 
-## 🎁 Bonus chapter B — Deploy to Vercel (~5 min, gated on pre-work login)
-
-**Mode:** coach → work
-
-**Pre-check:** ask *"Did you do the Vercel login in pre-work?"*
-
-**If no:** *"No worries — skip this one for now. We'll do deploy properly in a later module. Your app works locally and that's the win."*
-
-**If yes:** continue.
-
-**Say:**
-
-> "Open Cursor's terminal. Two ways:"
->
-> "**Easiest:** click the **Terminal** menu at the top of Cursor → **New Terminal**."
->
-> "**Or keyboard shortcut:** `Ctrl + backtick` (the key just below Esc, top-left)."
-
-**Check:** wait for *"terminal's open"*.
-
-**Say:**
-
-> "Two commands. Run them one at a time so you see what each does."
->
-> "**First — go into the project folder:**"
-
-**Suggest something like (run in terminal, not chat):**
-
-> cd lesson-modules/W1/1-1-pomodoro/pomodoro
-
-**Check:** wait for *"done"* / *"in the folder"*.
-
-**Say:**
-
-> "That's it — `cd` means 'change directory'. You're now standing inside the pomodoro folder, which is what `vercel` needs."
->
-> "**Now deploy. First time uses `--yes` to accept defaults, after this just `vercel --prod` is enough:**"
-
-**Suggest something like:**
-
-> vercel --prod --yes
-
-**Check:** wait for the URL to appear (~30 seconds). Vercel will print a "Production: https://..." line.
-
-**Say:**
-
-> "That URL — that's your app on the public internet. Open it in your phone. Send it to a friend right now."
-
-**Micro-praise (bullets):**
-
-> "Specifically what just happened:
->
-> - you went from 'I want a pomodoro timer' to a public URL
-> - someone in another country could open your app right now
-> - it's yours — your description, your choices, your save point, your design taste
->
-> That's the whole course in 25 minutes. Everything else is variations on this loop."
-
-**Re-deploy hint:**
-
-> "From now on, after any change you commit, just run `vercel --prod` again (no `--yes` needed). Same URL, updated in ~30 seconds."
-
-**Fallback:** if `vercel --prod --yes` errors and the learner's stuck >3 min, instructor deploys from their machine and hands the URL back. Common errors: not logged in (run `vercel login`), in wrong folder (re-run `cd`), or token expired.
-
----
-
-## 🎁 Bonus chapter C — Add another feature (~5 min)
+## 🎁 Bonus chapter B — Add another feature locally (~5–10 min)
 
 **Mode:** coach → work
 
@@ -599,9 +612,13 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 > "Same loop, your choice. What else do you want?"
 >
-> "If you're stuck for ideas: a streak counter, keyboard shortcuts, a 'long break' every 4 pomodoros, dark/light mode toggle, a quote that changes each session, or whatever your brain serves up."
+> "If you're stuck for ideas: a streak counter, keyboard shortcuts (spacebar to start/pause), a 'long break' every 4 pomodoros, dark/light mode toggle, a quote that changes each session, or whatever your brain serves up."
 
 **Same shape as Beat 8** — clarify if needed, narrate before building, edit the file, ask them to refresh and test, tweak if needed, offer commit.
+
+**After they're happy and committed, optionally re-deploy:**
+
+> "Want to push this live too? In the terminal: `vercel --prod`. Same URL, updated in ~30 seconds."
 
 ---
 
@@ -650,3 +667,5 @@ If they type `/help-im-stuck`, go straight to that command's flow.
 - **"Open in Browser" doesn't show up** — they're probably right-clicking on something other than `index.html`, or the file isn't saved yet. Help them find the right file. Fallback: open `index.html` from Finder/Explorer if the right-click menu genuinely doesn't have it.
 - **Can't find the source control icon** — describe by position (left activity bar, third-fourth icon down) and shape (Y / branching path). If still stuck, type `Cmd/Ctrl + Shift + G` — that's the keyboard shortcut to open it.
 - **Vercel asks questions on first deploy** — `--yes` should handle it, but if it still prompts (set up project? scope?), say "accept all defaults — press Enter on each."
+- **Vercel says "please log in"** — `vercel login` first; pick GitHub OAuth, browser opens, sign in, come back, re-run `vercel --prod --yes`. ~2 min total.
+- **`AskUserQuestion` doesn't render** — fall back to numbered text list with the same questions and options. Same content, no UX loss other than the chips.
