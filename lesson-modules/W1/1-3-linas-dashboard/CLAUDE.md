@@ -1,8 +1,8 @@
 # Workshop 1-3 — Lina's Coffee: The Dashboard for Friday
 
-> **Read first:** `shared-context/workshop-rules.md` (voice, journaling at `/done`, FX, slash commands, tool discipline). Version: v2.4.
+> **Read first:** `shared-context/workshop-rules.md` (voice, journaling at `/done`, FX, slash commands, tool discipline). Version: v2.5.
 
-**Time:** 30 min core. Bonus chapters for early finishers.
+**Time:** 30–35 min core (Beat 3 Plan-Mode dance often overflows on first cohort — see cut note in Beat 3). Bonus chapters for early finishers.
 
 **Output:** `lesson-modules/W1/1-3-linas-dashboard/dashboard.html` — single-file interactive dashboard for Lina's bank meeting.
 
@@ -59,7 +59,7 @@ This is the default file for W1-3. Same data, same Lina, same seeded leaks — s
 
 **Columns:** `date, type, category, vendor_or_party, description, amount_thb, amount_usd, currency_original, source_file, notes`
 
-**Seeded leaks:**
+**Seeded leaks (use these annualized numbers — they're projections from sample patterns at full revenue volume):**
 
 - A — Void cluster: est. ฿216K/yr (Tue/Wed late afternoon, terminal t02, staff s003)
 - B — Supplier price creep: est. ฿144K/yr (Highland Beans ฿520 → ฿680/kg over 6 months)
@@ -67,11 +67,21 @@ This is the default file for W1-3. Same data, same Lina, same seeded leaks — s
 - D — Loyalty discount abuse: est. ฿96K/yr (4 phone numbers = 60% of all loyalty discounts)
 - **Total: est. ฿756K/yr (est. $23.6K) — bigger than Lina's own draw**
 
+> Note: the *patterns* (which staff, which terminal, which beans, which hours) are real and visible in the CSV. The *amounts* are scaled up to match Lina's full revenue volume — same logic as the ฿700K monthly expense baseline. Frame as "est. ฿X/yr at full transaction volume" in the dashboard.
+
+**Branch-1 baseline for projections (use these, not raw CSV sums):**
+
+- Monthly revenue: **฿950K** (avg of memo rows — Lina's headline)
+- Monthly expense: **฿700K** (~75% cost ratio, typical for an independent Bangkok cafe)
+- Loan amount: **฿4M** (mid-scope expansion line — kiosk-format second location or major branch-1 upgrade)
+
+> Note: `consolidated.csv` shows expense *patterns* and *categories* honestly, but POS + supplier rows are sample-scale (~150× under real volume). For the Branch-2 projection, scale expenses to ฿700K/mo so the math matches Lina's actual revenue. Variable costs scale with revenue% in the projection.
+
 **Branch-2 scenarios (narrated in Beat 7):**
 
-- Conservative (50% of branch-1 revenue, no leak fixes): break-even est. month 11
-- Base (70%, no leak fixes): break-even est. month 7
-- Base + fix leaks first (70%, ฿756K/yr recovered): break-even est. month 4
+- Conservative (50% of branch-1 revenue, no leak fixes): break-even est. month 32
+- Base (70%, no leak fixes): break-even est. month 23
+- Base + fix leaks first (70%, ฿756K/yr recovered): break-even est. month 17
 
 **Currency constant:** 1 USD = 32 THB (locked — see `shared-context/workshop-rules.md`).
 
@@ -175,7 +185,7 @@ Render the voicemail from the "Voicemail:" section above. Italics intact.
 
 **CSV handoff** (new session after `/clear` — TA lost memory, learner didn't):
 
-> "Picking up where we left off — `consolidated.csv` from yesterday. Do you want to use yours from Workshop 1-2, or the default copy in `1-3` at `data/consolidated.csv`? Either works."
+> "Picking up where we left off — `consolidated.csv` from yesterday. Either works — but the default at `data/consolidated.csv` has the cleanest categories. If you want yours from W1-2, we can swap mid-flight if anything looks off."
 
 **Check:** wait for answer. Use `data/consolidated.csv` as the default path unless learner provides their own.
 
@@ -199,6 +209,12 @@ Render the voicemail from the "Voicemail:" section above. Italics intact.
 >
 > This is the same loop you'll use every week from here: Explore → Plan → Code → Commit."
 
+**Curiosity prompt** (before Plan Mode — gives the learner a hypothesis to test):
+
+> "Quick one before we let Claude loose — what are *you* curious about? Anything you'd want to know if it were your shop? No wrong answers; this just gives us something to compare the plan against."
+
+**Check:** wait for an answer (1 sentence is plenty). Mirror it back briefly: *"Good — let's see if Claude surfaces that, or something you didn't expect."*
+
 **Invitation:**
 
 > "Ready to switch to Plan Mode and let Claude read the data?"
@@ -207,31 +223,24 @@ Render the voicemail from the "Voicemail:" section above. Italics intact.
 
 ---
 
-# 🟢 BEAT 3 — Plan Mode: analyze + propose (~5 min)
+# 🟢 BEAT 3 — Plan Mode: analyze + propose (~5–7 min)
 
 **Mode:** coach → work
 
 **Teach the switch:**
 
-> "See the 'Edit automatically' button at the bottom of the chat? Click it and switch to 'Plan'. That tells Claude to think and propose — no code, no writes. Just a plan."
+> "Look at the bottom-right of the chat input — there's a mode dropdown (usually says 'Auto' or 'Edit automatically'). Click it and pick 'Plan'. That tells Claude to think and propose — no code, no writes. Just a plan."
 
-**Check — verify by tool state, not by the learner's word.** Plan Mode is something you (Claude) can detect: when it's active, the `EnterPlanMode` / `ExitPlanMode` tool surface is what governs your behavior, and writes/edits are blocked. Do NOT take *"I switched"* as proof — learners frequently miss the toggle, click the wrong item, or think they switched but didn't.
+**Check — one quick verification, then move on:**
 
-**The verification protocol:**
+1. Ask: *"Send me just the word `ready` so I can confirm Plan Mode is on from my side."*
+2. When you receive `ready`, check your tool state:
+   - **In Plan Mode:** *"Confirmed — I'm in Plan Mode. Go ahead and send the analysis prompt."*
+   - **NOT in Plan Mode:** *"Looks like the toggle didn't take. No problem — I'll behave as if we're in Plan Mode (no writes until you say go). Send the analysis prompt whenever you're ready."*
 
-1. After the learner says they've switched, ask them to send a tiny no-op prompt so you can observe your own state:
+Don't loop on the toggle. If it didn't take the first time, just promise to behave as planned. The lesson is the **discipline of approving before building**, not the UI mechanic. (If learner cares to retry the toggle later, fine — but don't block on it.)
 
-> "Quick sanity check — send me just the word `ready` so I can confirm Plan Mode is on from my side. (No prompts about the data yet — just `ready`.)"
-
-2. When you receive `ready` (or any short message), check whether you are actually in Plan Mode:
-   - If you are in Plan Mode: respond *"Confirmed — I'm in Plan Mode. No code, no writes until you approve a plan. Go ahead and send the analysis prompt."*
-   - If you are NOT in Plan Mode (you can still freely Write/Edit): respond *"I'm not actually in Plan Mode yet — the toggle didn't take. Look at the bottom-right of the chat input: the mode selector should read 'Plan'. If it still says 'Edit automatically' or 'Accept edits', click it and pick 'Plan'. Send `ready` again once it's switched."*
-
-3. Do NOT proceed to the suggested analysis prompt until you have **observed** Plan Mode is on from your own tool state. The learner saying *"yes it says Plan"* is not enough — your behavior must be governed by Plan Mode, not their report of the UI.
-
-If they jumped ahead and sent the analysis prompt before switching:
-
-> "No worries — that one didn't run in Plan Mode, so let's redo it cleanly. Switch the mode first, send `ready`, and once I confirm I'm in Plan Mode you can resend the analysis prompt."
+**Cut note (if behind on time):** skip the `ready` check entirely. Tell learner *"trust me to wait for approval before writing,"* and go straight to the analysis prompt. Saves ~2 min.
 
 **Pre-write narration** (principle #37, only after Plan Mode is verified by tool state):
 
@@ -239,7 +248,7 @@ If they jumped ahead and sent the analysis prompt before switching:
 
 **Suggest something like:**
 
-> Analyze @data/consolidated.csv and propose a dashboard plan for a bank meeting tomorrow. What are the most important things to show? Include: headline financials, spending breakdown, anything that looks like a leak or anomaly, and a branch-2 projection. Give me a plan with sections and specific numbers — no code yet.
+> Analyze @data/consolidated.csv and propose a dashboard plan for a bank meeting tomorrow. What are the most important things to show? Include: headline financials, spending breakdown, anything that looks like a leak or anomaly, and a branch-2 projection with **interactive sliders + payback chart visible from page load** (not hidden behind a button). Give me a plan with sections and specific numbers — no code yet.
 
 **Check:** wait for the learner to send a prompt.
 
@@ -250,8 +259,8 @@ If they jumped ahead and sent the analysis prompt before switching:
   - KPI header: total revenue, total expenses, net margin, ฿810K fixed floor
   - Spending by category (donut or bar) — top 3 categories by ฿
   - Monthly trend: revenue vs. expenses, 6 months
-  - 🚨 Leak cards: 4 cards, each with a headline number (est. ฿216K, ฿144K, ฿300K, ฿96K)
-  - Branch-2 projection: 3 scenarios (month 11 / 7 / 4)
+  - 🚨 Leak cards: 4 cards, each with an annualized projection (est. ฿216K, ฿144K, ฿300K, ฿96K — patterns from sample, scaled to full revenue volume)
+  - Branch-2 projection: sliders + payback chart **visible from page load**, 3 anchor scenarios (month 32 / 23 / 17) using ฿950K rev, ฿700K exp, ฿4M loan
 - Note that leak drill-in (expandable row view) and projection sliders make it interactive
 - NOT code — plan only
 
@@ -259,9 +268,13 @@ If they jumped ahead and sent the analysis prompt before switching:
 
 > "See that? Claude found the specific numbers worth showing. That's the difference between a generic dashboard and one that actually answers the bank's question."
 
-**Major-transition gate:**
+**Compare to curiosity** (callback to Beat 2):
 
-> "Does this plan look right? Anything to add or cut before we approve it?"
+> "Quick check — does this cover the thing you were curious about? If not, now's the moment to add it."
+
+**Major-transition gate** — name the discomfort:
+
+> "Does this plan look right? Anything to add or cut before we approve it? *Approving a plan you didn't write feels weird the first time — that's normal. You're approving the **shape**, not auditing every line.*"
 
 **Check:** wait for approval. One round of adjustments is fine. Don't loop.
 
@@ -305,7 +318,7 @@ If `AskUserQuestion` errors, ask inline as plain text — but always try the too
 **When learner sends a prompt:**
 
 1. Read `data/consolidated.csv` to confirm column names and data shape
-2. Load `frontend-design` skill from `.claude/skills/frontend-design/SKILL.md` (auto-loaded; apply visual polish)
+2. Apply the `frontend-design` skill if the learner mentioned it in the build prompt — otherwise apply sensible defaults (good typography, generous spacing, the chosen palette). Do NOT spawn a separate skill agent; just follow the visual conventions inline.
 3. Build `dashboard.html` with:
   - All 5 sections from the approved plan
   - PapaParse (CDN) to load the CSV in-browser — no hardcoded data
@@ -376,6 +389,10 @@ If `AskUserQuestion` errors, ask inline as plain text — but always try the too
 
 > "Good question — try clicking a card. The drill-in panel shows the actual rows from `consolidated.csv`. The `source_file` column traces every number back to the original file from W1-2."
 
+**One-line callout — bridge to Beat 7:**
+
+> "One thing worth saying out loud: showing leaks to the bank sounds scary, but it's actually the move. Leaks alone would be embarrassing. Leaks + a fix plan + a number that says how much it's worth — that's professional. The bank wants the second story. That's what Beat 7 sets up."
+
 **Open invite** (don't push — let them explore):
 
 > "Anything in there catch your eye? Or any questions about what you're seeing?"
@@ -394,13 +411,13 @@ Give learner space. If they ask about a specific leak, engage it. If they're qui
 
 **Walk the three anchor scenarios:**
 
-> "Here's what the numbers say:
+> "Here's what the numbers say — ฿4M expansion loan, branch-1 doing ~฿950K/mo revenue at ~75% cost ratio:
 >
-> - Conservative — branch 2 at 50% of branch-1 revenue, no leak fixes: break-even est. month 11
-> - Base — 70%, no leak fixes: break-even est. month 7
-> - Base + fix the leaks first — 70%, ฿756K/yr recovered: break-even est. month 4
+> - Conservative — branch 2 at 50% of branch-1 revenue, no leak fixes: break-even est. month 32
+> - Base — 70%, no leak fixes: break-even est. month 23
+> - Base + fix the leaks first — 70%, ฿756K/yr recovered: break-even est. month 17
 >
-> That last one is the conversation with the bank. 'We found est. ฿756K of leaks. Fix them first, branch 2 pays for itself in 4 months instead of 7.' That's Lina walking in with command of the numbers."
+> That last one is the conversation with the bank. 'We found est. ฿756K of leaks — that's ฿63K/mo back to the bottom line whether we open branch 2 or not. Fix them first, the ฿4M loan pays back in 17 months instead of 23 — six months faster.' That's Lina walking in with command of the numbers."
 
 **Pause.** Let it land. Let learner play with the sliders.
 
@@ -422,7 +439,7 @@ Give learner space. If they ask about a specific leak, engage it. If they're qui
 
 **Mirror:**
 
-> "Good. That's the full loop — Explore, Plan, Code, Commit. The same loop you'll run every week from here."
+> "Good. That's the full loop — Explore, Plan, Code, Commit. The same loop you'll run every week from here. **The commit is the ending of the build.** What comes next is bonus — one optional polish round, then we wrap."
 
 ---
 
@@ -567,8 +584,9 @@ There's a CHART. Like a real one. With my actual numbers.
 
 And the leaks — est. ฿756K a year? I'm going to sit with that
 later but honestly right now I'm just — wow. And the branch-2
-thing? Month 4 if we fix the leaks first? That's the number
-I'm walking in with tomorrow.
+thing? Six months faster on the loan if we fix the leaks first —
+17 months instead of 23. That's the number I'm walking in with
+tomorrow.
 
 I actually feel like I know my numbers now.
 I don't know how you did that. Thank you.

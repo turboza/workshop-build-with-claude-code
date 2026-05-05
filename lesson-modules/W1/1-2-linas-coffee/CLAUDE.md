@@ -67,7 +67,7 @@ Subject: SOS — bank meeting Friday, please help
 
 > Hi —
 >
-> Okay, so. You know I've been talking about the second branch in Thonglor for months. The build-out starts in 6 weeks. The bank wants me on Friday — refinance the existing loan and approve the ฿8M expansion line. Without it, no branch 2.
+> Okay, so. You know I've been talking about the second branch in Thonglor for months. The build-out starts in 6 weeks. The bank wants me on Friday — refinance the existing loan and approve the ฿4M expansion line. Without it, no branch 2.
 >
 > They want **6 months of clean financials and a budget for branch 2**. They said "clean" twice.
 >
