@@ -1,0 +1,769 @@
+date,type,category,vendor_or_party,description,amount_thb,amount_usd,currency_original,source_file,notes
+2025-10-01,memo,Sales,Lina's headline,Monthly revenue summary 2025-10,850000,26562.5,THB,monthly_revenue.txt,"Lina's own monthly summary — memo only, not summed"
+2025-10-01,refund,Sales,Customer,Cinnamon Roll,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-01,refund,Sales,Customer,Iced Latte L,-95.0,-2.97,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-01,expense,Dairy & Pastry,GreenLeaf Pastry,INV1001 Mixed pastries,-3780.0,-118.12,THB,supplier_invoices.csv,paid
+2025-10-03,expense,Coffee Beans,,Beans Highland 5kg,-2600.0,-81.25,THB,expenses_2025.csv,
+2025-10-03,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-03,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,24795.0,774.84,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-05,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,14029.0,438.41,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-05,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-05,expense,Rent & Utilities,NK Property,Rent,-45000,-1406.25,THB,rent_utilities.txt,
+2025-10-05,expense,Coffee Beans,Highland Beans Co.,INV1002 Specialty coffee beans,-5200.0,-162.5,THB,supplier_invoices.csv,paid
+2025-10-06,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-06,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1003 Whole milk (litres),-3500.0,-109.38,THB,supplier_invoices.csv,paid
+2025-10-07,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,9782.0,305.69,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-07,refund,Sales,Customer,Croissant,-65.0,-2.03,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-08,transfer,Other,TFR 20251008 TRANSFER 0891234567,TFR 20251008 TRANSFER 0891234567,-4640.0,-145.0,THB,bank_statement_abc.csv,outgoing transfer
+2025-10-08,transfer,Other,TFR 20251008 TRANSFER 0817778899,TFR 20251008 TRANSFER 0817778899,-2600.0,-81.25,THB,bank_statement_abc.csv,outgoing transfer
+2025-10-08,expense,Dairy & Pastry,,Milk delivery weekly,-4200.0,-131.25,THB,expenses_2025.csv,
+2025-10-08,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,refund,Sales,Customer,Latte L,-90.0,-2.81,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-08,expense,Dairy & Pastry,GreenLeaf Pastry,INV1004 Mixed pastries,-4500.0,-140.62,THB,supplier_invoices.csv,paid
+2025-10-09,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-09,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,15685.0,490.16,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-11,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,10287.0,321.47,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-11,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-11,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-8400.0,-262.5,THB,bank_statement_abc.csv,
+2025-10-12,transfer,Other,TFR 20251012 TRANSFER 0823344556,TFR 20251012 TRANSFER 0823344556,-4500.0,-140.62,THB,bank_statement_abc.csv,outgoing transfer
+2025-10-12,expense,Dairy & Pastry,,Pastry order,-3800.0,-118.75,THB,expenses_2025.csv,
+2025-10-12,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-12,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-13,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1005 Whole milk (litres),-3850.0,-120.31,THB,supplier_invoices.csv,paid
+2025-10-14,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,18263.0,570.72,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-14,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,15258.0,476.81,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-14,refund,Sales,Customer,Latte M,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-14,refund,Sales,Customer,Almond Croissant,-85.0,-2.66,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-14,refund,Sales,Customer,Chocolate Cookie,-45.0,-1.41,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-15,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,19779.0,618.09,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-15,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,18864.0,589.5,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-15,expense,Other,,Cleaning supplies,-1850.0,-57.81,THB,expenses_2025.csv,
+2025-10-15,refund,Sales,Customer,Chocolate Cookie,-45.0,-1.41,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-15,refund,Sales,Customer,Mocha M,-95.0,-2.97,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-15,expense,Rent & Utilities,City Water,Water,-800,-25.0,THB,rent_utilities.txt,avg
+2025-10-15,expense,Rent & Utilities,City Power,Electric,-7200,-225.0,THB,rent_utilities.txt,
+2025-10-15,expense,Rent & Utilities,FastNet,Internet,-1290,-40.31,THB,rent_utilities.txt,
+2025-10-15,expense,Rent & Utilities,Insurer,Insurance (annual),-24000,-750.0,THB,rent_utilities.txt,annual
+2025-10-15,expense,Dairy & Pastry,GreenLeaf Pastry,INV1006 Mixed pastries,-3540.0,-110.62,THB,supplier_invoices.csv,paid
+2025-10-16,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-9100.0,-284.38,THB,bank_statement_abc.csv,
+2025-10-16,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-800.0,-25.0,THB,bank_statement_abc.csv,
+2025-10-17,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-10000.0,-312.5,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-10-18,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-18,expense,Coffee Beans,Highland Beans Co.,INV1007 Specialty coffee beans,-5200.0,-162.5,THB,supplier_invoices.csv,paid
+2025-10-19,transfer,Other,TFR 20251019 TRANSFER 0891234567,TFR 20251019 TRANSFER 0891234567,-4500.0,-140.62,THB,bank_statement_abc.csv,outgoing transfer
+2025-10-20,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1008 Whole milk (litres),-3640.0,-113.75,THB,supplier_invoices.csv,paid
+2025-10-21,transfer,Other,TFR 20251021 TRANSFER 0823344556,TFR 20251021 TRANSFER 0823344556,-2600.0,-81.25,THB,bank_statement_abc.csv,outgoing transfer
+2025-10-21,expense,Rent & Utilities,FASTNET INTERNET,FASTNET INTERNET,-9100.0,-284.38,THB,bank_statement_abc.csv,
+2025-10-21,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,refund,Sales,Customer,Latte M,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-21,refund,Sales,Customer,Latte M,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-21,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-21,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-22,expense,Coffee Beans,,Beans Highland 5kg,-2600.0,-81.25,THB,expenses_2025.csv,
+2025-10-22,refund,Sales,Customer,Banana Bread,-55.0,-1.72,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-22,refund,Sales,Customer,Almond Croissant,-85.0,-2.66,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-22,refund,Sales,Customer,Croissant,-65.0,-2.03,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-22,expense,Dairy & Pastry,GreenLeaf Pastry,INV1009 Mixed pastries,-3180.0,-99.38,THB,supplier_invoices.csv,paid
+2025-10-24,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-24,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-24,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-24,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-24,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-24,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-10-24,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-25,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,24420.0,763.12,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-10-25,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-7900.0,-246.88,THB,bank_statement_abc.csv,
+2025-10-27,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1010 Whole milk (litres),-3150.0,-98.44,THB,supplier_invoices.csv,paid
+2025-10-28,transfer,Other,TFR 20251028 TRANSFER 0823344556,TFR 20251028 TRANSFER 0823344556,-6800.0,-212.5,THB,bank_statement_abc.csv,outgoing transfer
+2025-10-28,refund,Sales,Customer,Banana Bread,-55.0,-1.72,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-28,expense,Payroll,Pim,Payroll 2025-10 s001,-18000.0,-562.5,THB,staff_payroll.csv,
+2025-10-28,expense,Payroll,Niran,Payroll 2025-10 s002,-17000.0,-531.25,THB,staff_payroll.csv,
+2025-10-28,expense,Payroll,Maya,Payroll 2025-10 s003,-18500.0,-578.12,THB,staff_payroll.csv,cash extra 2000
+2025-10-28,expense,Payroll,Boom,Payroll 2025-10 s004,-16500.0,-515.62,THB,staff_payroll.csv,
+2025-10-29,refund,Sales,Customer,Cappuccino M,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-29,refund,Sales,Customer,Mocha M,-95.0,-2.97,THB,pos_export_oct2025-mar2026.csv,void
+2025-10-29,expense,Dairy & Pastry,GreenLeaf Pastry,INV1011 Mixed pastries,-3060.0,-95.62,THB,supplier_invoices.csv,paid
+2025-10-31,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-10-31,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-11-01,transfer,Other,TFR 20251101 TRANSFER 0866667788,TFR 20251101 TRANSFER 0866667788,-4640.0,-145.0,THB,bank_statement_abc.csv,outgoing transfer
+2025-11-01,memo,Sales,Lina's headline,Monthly revenue summary 2025-11,920000,28750.0,THB,monthly_revenue.txt,"Lina's own monthly summary — memo only, not summed"
+2025-11-02,expense,Dairy & Pastry,,Milk delivery weekly,-4400.0,-137.5,THB,expenses_2025.csv,
+2025-11-03,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,20105.0,628.28,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-11-03,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-11-03,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1012 Whole milk (litres),-3220.0,-100.62,THB,supplier_invoices.csv,paid
+2025-11-04,refund,Sales,Customer,Latte M,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-11-04,refund,Sales,Customer,Iced Latte L,-95.0,-2.97,THB,pos_export_oct2025-mar2026.csv,void
+2025-11-04,refund,Sales,Customer,Cappuccino M,-75.0,-2.34,THB,pos_export_oct2025-mar2026.csv,void
+2025-11-05,expense,Other,,Equipment service - grinder,-3500.0,-109.38,THB,expenses_2025.csv,
+2025-11-05,expense,Rent & Utilities,NK Property,Rent,-45000,-1406.25,THB,rent_utilities.txt,
+2025-11-05,expense,Coffee Beans,Highland Beans Co.,INV1013 Specialty coffee beans,-5800.0,-181.25,THB,supplier_invoices.csv,paid
+2025-11-05,expense,Dairy & Pastry,GreenLeaf Pastry,INV1014 Mixed pastries,-3180.0,-99.38,THB,supplier_invoices.csv,paid
+2025-11-06,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-11-06,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-07,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-7200.0,-225.0,THB,bank_statement_abc.csv,
+2025-11-07,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,18619.0,581.84,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-11-09,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-8000.0,-250.0,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-11-09,expense,Rent & Utilities,FASTNET INTERNET,FASTNET INTERNET,-1290.0,-40.31,THB,bank_statement_abc.csv,
+2025-11-10,expense,Coffee Beans,,Beans Highland 8kg,-4640.0,-145.0,THB,expenses_2025.csv,
+2025-11-10,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1015 Whole milk (litres),-3780.0,-118.12,THB,supplier_invoices.csv,paid
+2025-11-12,expense,Dairy & Pastry,GreenLeaf Pastry,INV1016 Mixed pastries,-4380.0,-136.88,THB,supplier_invoices.csv,paid
+2025-11-13,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-6800.0,-212.5,THB,bank_statement_abc.csv,
+2025-11-15,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-15,expense,Rent & Utilities,City Water,Water,-800,-25.0,THB,rent_utilities.txt,avg
+2025-11-15,expense,Rent & Utilities,City Power,Electric,-6800,-212.5,THB,rent_utilities.txt,
+2025-11-15,expense,Rent & Utilities,FastNet,Internet,-1290,-40.31,THB,rent_utilities.txt,
+2025-11-15,expense,Rent & Utilities,Govt,Property tax (annual),-18000,-562.5,THB,rent_utilities.txt,annual
+2025-11-16,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-5000.0,-156.25,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-11-16,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-9100.0,-284.38,THB,bank_statement_abc.csv,
+2025-11-17,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1017 Whole milk (litres),-3500.0,-109.38,THB,supplier_invoices.csv,paid
+2025-11-18,expense,Dairy & Pastry,,Pastry order,-4100.0,-128.12,THB,expenses_2025.csv,
+2025-11-18,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-11-18,expense,Coffee Beans,Highland Beans Co.,INV1018 Specialty coffee beans,-4640.0,-145.0,THB,supplier_invoices.csv,paid
+2025-11-19,expense,Dairy & Pastry,GreenLeaf Pastry,INV1019 Mixed pastries,-4020.0,-125.62,THB,supplier_invoices.csv,paid
+2025-11-23,transfer,Other,TFR 20251123 TRANSFER 0866667788,TFR 20251123 TRANSFER 0866667788,-4640.0,-145.0,THB,bank_statement_abc.csv,outgoing transfer
+2025-11-24,transfer,Other,TFR 20251124 TRANSFER 0866667788,TFR 20251124 TRANSFER 0866667788,-4400.0,-137.5,THB,bank_statement_abc.csv,outgoing transfer
+2025-11-24,expense,Rent & Utilities,FASTNET INTERNET,FASTNET INTERNET,-7600.0,-237.5,THB,bank_statement_abc.csv,
+2025-11-24,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1020 Whole milk (litres),-3360.0,-105.0,THB,supplier_invoices.csv,paid
+2025-11-25,expense,Other,,Marketing IG ads,-2500.0,-78.12,THB,expenses_2025.csv,
+2025-11-26,expense,Dairy & Pastry,GreenLeaf Pastry,INV1021 Mixed pastries,-3660.0,-114.38,THB,supplier_invoices.csv,paid
+2025-11-28,expense,Payroll,Pim,Payroll 2025-11 s001,-19500.0,-609.38,THB,staff_payroll.csv,
+2025-11-28,expense,Payroll,Niran,Payroll 2025-11 s002,-18000.0,-562.5,THB,staff_payroll.csv,
+2025-11-28,expense,Payroll,Maya,Payroll 2025-11 s003,-18500.0,-578.12,THB,staff_payroll.csv,cash extra 2000
+2025-11-28,expense,Payroll,Boom,Payroll 2025-11 s004,-17500.0,-546.88,THB,staff_payroll.csv,
+2025-12-01,expense,Dairy & Pastry,,Milk delivery weekly,-4400.0,-137.5,THB,expenses_2025.csv,
+2025-12-01,memo,Sales,Lina's headline,Monthly revenue summary 2025-12,1050000,32812.5,THB,monthly_revenue.txt,"Lina's own monthly summary — memo only, not summed"
+2025-12-01,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1022 Whole milk (litres),-2800.0,-87.5,THB,supplier_invoices.csv,paid
+2025-12-03,expense,Dairy & Pastry,GreenLeaf Pastry,INV1023 Mixed pastries,-3780.0,-118.12,THB,supplier_invoices.csv,paid
+2025-12-04,expense,Coffee Beans,,Beans Highland 8kg,-4640.0,-145.0,THB,expenses_2025.csv,
+2025-12-05,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-8000.0,-250.0,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-12-05,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-12-05,expense,Rent & Utilities,NK Property,Rent,-45000,-1406.25,THB,rent_utilities.txt,
+2025-12-05,expense,Coffee Beans,Highland Beans Co.,INV1024 Specialty coffee beans,-5800.0,-181.25,THB,supplier_invoices.csv,paid
+2025-12-06,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-9100.0,-284.38,THB,bank_statement_abc.csv,
+2025-12-08,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-10000.0,-312.5,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-12-08,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1025 Whole milk (litres),-4060.0,-126.88,THB,supplier_invoices.csv,paid
+2025-12-10,expense,Other,,Holiday decor,-1800.0,-56.25,THB,expenses_2025.csv,
+2025-12-10,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-10,expense,Dairy & Pastry,GreenLeaf Pastry,INV1026 Mixed pastries,-4080.0,-127.5,THB,supplier_invoices.csv,paid
+2025-12-13,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,20630.0,644.69,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-12-15,expense,Dairy & Pastry,,Pastry order,-4500.0,-140.62,THB,expenses_2025.csv,
+2025-12-15,expense,Rent & Utilities,City Water,Water,-800,-25.0,THB,rent_utilities.txt,avg
+2025-12-15,expense,Rent & Utilities,City Power,Electric,-8400,-262.5,THB,rent_utilities.txt,
+2025-12-15,expense,Rent & Utilities,FastNet,Internet,-1290,-40.31,THB,rent_utilities.txt,
+2025-12-15,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1027 Whole milk (litres),-4200.0,-131.25,THB,supplier_invoices.csv,paid
+2025-12-17,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-5000.0,-156.25,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-12-17,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,9279.0,289.97,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-12-17,expense,Dairy & Pastry,GreenLeaf Pastry,INV1028 Mixed pastries,-4200.0,-131.25,THB,supplier_invoices.csv,paid
+2025-12-18,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,12270.0,383.44,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-12-18,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-12-18,expense,Coffee Beans,Highland Beans Co.,INV1029 Specialty coffee beans,-4640.0,-145.0,THB,supplier_invoices.csv,paid
+2025-12-19,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-15000.0,-468.75,THB,bank_statement_abc.csv,owner cash withdrawal
+2025-12-21,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-21,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-22,expense,Coffee Beans,,Beans Highland 8kg,-4960.0,-155.0,THB,expenses_2025.csv,
+2025-12-22,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1030 Whole milk (litres),-3500.0,-109.38,THB,supplier_invoices.csv,paid
+2025-12-24,expense,Dairy & Pastry,GreenLeaf Pastry,INV1031 Mixed pastries,-4260.0,-133.12,THB,supplier_invoices.csv,paid
+2025-12-25,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,11201.0,350.03,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-12-25,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-9100.0,-284.38,THB,bank_statement_abc.csv,
+2025-12-25,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2025-12-25,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2025-12-26,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,21390.0,668.44,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2025-12-28,expense,Other,,Cleaning supplies,-1650.0,-51.56,THB,expenses_2025.csv,
+2025-12-28,expense,Payroll,Pim,Payroll 2025-12 s001,-18000.0,-562.5,THB,staff_payroll.csv,
+2025-12-28,expense,Payroll,Niran,Payroll 2025-12 s002,-17000.0,-531.25,THB,staff_payroll.csv,
+2025-12-28,expense,Payroll,Maya,Payroll 2025-12 s003,-18500.0,-578.12,THB,staff_payroll.csv,cash extra 2000
+2025-12-28,expense,Payroll,Boom,Payroll 2025-12 s004,-16500.0,-515.62,THB,staff_payroll.csv,
+2025-12-29,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-7200.0,-225.0,THB,bank_statement_abc.csv,
+2025-12-29,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2025-12-29,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1032 Whole milk (litres),-3920.0,-122.5,THB,supplier_invoices.csv,paid
+2025-12-31,expense,Dairy & Pastry,GreenLeaf Pastry,INV1033 Mixed pastries,-3900.0,-121.88,THB,supplier_invoices.csv,paid
+2026-01-01,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,13071.0,408.47,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-01-01,expense,Rent & Utilities,FASTNET INTERNET,FASTNET INTERNET,-8400.0,-262.5,THB,bank_statement_abc.csv,
+2026-01-01,memo,Sales,Lina's headline,Monthly revenue summary 2026-01,890000,27812.5,THB,monthly_revenue.txt,"Lina's own monthly summary — memo only, not summed"
+2026-01-02,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-02,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-01-03,expense,Coffee Beans,,Beans Highland 8kg,-4960.0,-155.0,THB,expenses_2025.csv,
+2026-01-05,expense,Dairy & Pastry,,Milk weekly,-4400.0,-137.5,THB,expenses_2025.csv,
+2026-01-05,expense,Rent & Utilities,NK Property,Rent,-45000,-1406.25,THB,rent_utilities.txt,
+2026-01-05,expense,Coffee Beans,Highland Beans Co.,INV1034 Specialty coffee beans,-6200.0,-193.75,THB,supplier_invoices.csv,paid
+2026-01-05,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1035 Whole milk (litres),-3640.0,-113.75,THB,supplier_invoices.csv,paid
+2026-01-06,transfer,Other,TFR 20260106 TRANSFER 0866667788,TFR 20260106 TRANSFER 0866667788,-4500.0,-140.62,THB,bank_statement_abc.csv,outgoing transfer
+2026-01-06,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-15000.0,-468.75,THB,bank_statement_abc.csv,owner cash withdrawal
+2026-01-07,expense,Dairy & Pastry,GreenLeaf Pastry,INV1036 Mixed pastries,-4140.0,-129.38,THB,supplier_invoices.csv,paid
+2026-01-08,expense,Coffee Beans,,Italian Espresso Parts gasket kit,-4640.0,-145.0,USD,expenses_2025.csv,FX 1 USD = 32 THB
+2026-01-10,transfer,Other,TFR 20260110 TRANSFER 0866667788,TFR 20260110 TRANSFER 0866667788,-4200.0,-131.25,THB,bank_statement_abc.csv,outgoing transfer
+2026-01-10,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,11902.0,371.94,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-01-10,expense,Dairy & Pastry,,Pastry order,-4200.0,-131.25,THB,expenses_2025.csv,
+2026-01-10,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-01-10,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-11,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-10000.0,-312.5,THB,bank_statement_abc.csv,owner cash withdrawal
+2026-01-11,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,24657.0,770.53,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-01-12,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1037 Whole milk (litres),-3430.0,-107.19,THB,supplier_invoices.csv,paid
+2026-01-13,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-13,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-14,expense,Dairy & Pastry,GreenLeaf Pastry,INV1038 Mixed pastries,-3840.0,-120.0,THB,supplier_invoices.csv,paid
+2026-01-15,expense,Other,,Cleaning supplies,-1900.0,-59.38,THB,expenses_2025.csv,
+2026-01-15,expense,Rent & Utilities,City Water,Water,-800,-25.0,THB,rent_utilities.txt,avg
+2026-01-15,expense,Rent & Utilities,City Power,Electric,-7900,-246.88,THB,rent_utilities.txt,
+2026-01-15,expense,Rent & Utilities,FastNet,Internet,-1290,-40.31,THB,rent_utilities.txt,
+2026-01-16,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,8173.0,255.41,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-01-17,expense,Rent & Utilities,FASTNET INTERNET,FASTNET INTERNET,-7600.0,-237.5,THB,bank_statement_abc.csv,
+2026-01-18,expense,Coffee Beans,,Beans Highland 10kg,-6200.0,-193.75,THB,expenses_2025.csv,
+2026-01-18,expense,Coffee Beans,Highland Beans Co.,INV1039 Specialty coffee beans,-4960.0,-155.0,THB,supplier_invoices.csv,paid
+2026-01-19,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-19,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1040 Whole milk (litres),-4200.0,-131.25,THB,supplier_invoices.csv,paid
+2026-01-21,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-21,expense,Dairy & Pastry,GreenLeaf Pastry,INV1041 Mixed pastries,-4500.0,-140.62,THB,supplier_invoices.csv,paid
+2026-01-22,transfer,Other,TFR 20260122 TRANSFER 0817778899,TFR 20260122 TRANSFER 0817778899,-4200.0,-131.25,THB,bank_statement_abc.csv,outgoing transfer
+2026-01-22,expense,Other,POS PURCHASE BIGMART 0000123,POS PURCHASE BIGMART 0000123,-1035.0,-32.34,THB,bank_statement_abc.csv,
+2026-01-22,expense,Coffee Beans,,Imported beans Ethiopia (Ethiopian Beans Direct),-8960.0,-280.0,USD,expenses_2025.csv,FX 1 USD = 32 THB
+2026-01-22,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-22,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-23,transfer,Other,TFR 20260123 TRANSFER 0866667788,TFR 20260123 TRANSFER 0866667788,-2600.0,-81.25,THB,bank_statement_abc.csv,outgoing transfer
+2026-01-25,expense,Other,,Marketing IG ads,-3000.0,-93.75,THB,expenses_2025.csv,
+2026-01-25,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-25,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,24729.0,772.78,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-01-26,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-1290.0,-40.31,THB,bank_statement_abc.csv,
+2026-01-26,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-26,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1042 Whole milk (litres),-3500.0,-109.38,THB,supplier_invoices.csv,paid
+2026-01-28,expense,Dairy & Pastry,,Milk weekly,-4400.0,-137.5,THB,expenses_2025.csv,
+2026-01-28,expense,Payroll,Pim,Payroll 2026-01 s001,-20000.0,-625.0,THB,staff_payroll.csv,
+2026-01-28,expense,Payroll,Niran,Payroll 2026-01 s002,-18500.0,-578.12,THB,staff_payroll.csv,
+2026-01-28,expense,Payroll,Maya,Payroll 2026-01 s003,-19500.0,-609.38,THB,staff_payroll.csv,cash extra 2000
+2026-01-28,expense,Payroll,Boom,Payroll 2026-01 s004,-18000.0,-562.5,THB,staff_payroll.csv,
+2026-01-28,expense,Dairy & Pastry,GreenLeaf Pastry,INV1043 Mixed pastries,-3780.0,-118.12,THB,supplier_invoices.csv,paid
+2026-01-30,expense,Other,POS PURCHASE BIGMART 0000123,POS PURCHASE BIGMART 0000123,-2436.0,-76.12,THB,bank_statement_abc.csv,
+2026-01-31,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-01-31,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-02-01,memo,Sales,Lina's headline,Monthly revenue summary 2026-02,970000,30312.5,THB,monthly_revenue.txt,"Lina's own monthly summary — memo only, not summed"
+2026-02-02,expense,Coffee Beans,,Highland Beans Co.,-6800.0,-212.5,THB,expenses_2025.csv,10kg @ 680
+2026-02-02,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1044 Whole milk (litres),-4200.0,-131.25,THB,supplier_invoices.csv,paid
+2026-02-04,expense,Other,POS PURCHASE BIGMART 0000123,POS PURCHASE BIGMART 0000123,-3051.0,-95.34,THB,bank_statement_abc.csv,
+2026-02-04,expense,Dairy & Pastry,GreenLeaf Pastry,INV1045 Mixed pastries,-4140.0,-129.38,THB,supplier_invoices.csv,paid
+2026-02-05,expense,Dairy & Pastry,,Bangkok Dairy Co.,-4400.0,-137.5,THB,expenses_2025.csv,weekly milk
+2026-02-05,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-05,expense,Rent & Utilities,NK Property,Rent,-45000,-1406.25,THB,rent_utilities.txt,
+2026-02-05,expense,Coffee Beans,Highland Beans Co.,INV1046 Specialty coffee beans,-3400.0,-106.25,THB,supplier_invoices.csv,paid
+2026-02-06,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,17060.0,533.12,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-02-06,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,14374.0,449.19,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-02-08,expense,Dairy & Pastry,,GreenLeaf Pastry,-4500.0,-140.62,THB,expenses_2025.csv,weekly pastry
+2026-02-08,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-09,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1047 Whole milk (litres),-3150.0,-98.44,THB,supplier_invoices.csv,paid
+2026-02-10,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-10,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-11,expense,Dairy & Pastry,GreenLeaf Pastry,INV1048 Mixed pastries,-3600.0,-112.5,THB,supplier_invoices.csv,paid
+2026-02-12,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-12,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-02-12,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-12,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-12,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-02-12,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-12,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,expense,Coffee Beans,,Highland Beans Co.,-6800.0,-212.5,THB,expenses_2025.csv,10kg @ 680
+2026-02-15,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-15,expense,Rent & Utilities,City Water,Water,-800,-25.0,THB,rent_utilities.txt,avg
+2026-02-15,expense,Rent & Utilities,City Power,Electric,-7600,-237.5,THB,rent_utilities.txt,
+2026-02-15,expense,Rent & Utilities,FastNet,Internet,-1290,-40.31,THB,rent_utilities.txt,
+2026-02-16,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1049 Whole milk (litres),-3290.0,-102.81,THB,supplier_invoices.csv,paid
+2026-02-18,expense,Other,,Cleaning Plus,-1900.0,-59.38,THB,expenses_2025.csv,
+2026-02-18,expense,Coffee Beans,Highland Beans Co.,INV1050 Specialty coffee beans,-5440.0,-170.0,THB,supplier_invoices.csv,paid
+2026-02-18,expense,Dairy & Pastry,GreenLeaf Pastry,INV1051 Mixed pastries,-3480.0,-108.75,THB,supplier_invoices.csv,paid
+2026-02-19,transfer,Other,TFR 20260219 TRANSFER 0866667788,TFR 20260219 TRANSFER 0866667788,-4500.0,-140.62,THB,bank_statement_abc.csv,outgoing transfer
+2026-02-19,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-7900.0,-246.88,THB,bank_statement_abc.csv,
+2026-02-20,transfer,Other,TFR 20260220 TRANSFER 0891234567,TFR 20260220 TRANSFER 0891234567,-6800.0,-212.5,THB,bank_statement_abc.csv,outgoing transfer
+2026-02-20,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,10213.0,319.16,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-02-21,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-02-21,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,transfer,Other,TFR 20260222 TRANSFER 0823344556,TFR 20260222 TRANSFER 0823344556,-4640.0,-145.0,THB,bank_statement_abc.csv,outgoing transfer
+2026-02-22,expense,Other,,IG Ads,-3500.0,-109.38,THB,expenses_2025.csv,marketing
+2026-02-22,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Matcha Latte/M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-02-22,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-02-23,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1052 Whole milk (litres),-4130.0,-129.06,THB,supplier_invoices.csv,paid
+2026-02-25,expense,Dairy & Pastry,,Bangkok Dairy Co.,-4500.0,-140.62,THB,expenses_2025.csv,
+2026-02-25,expense,Dairy & Pastry,GreenLeaf Pastry,INV1053 Mixed pastries,-4200.0,-131.25,THB,supplier_invoices.csv,paid
+2026-02-26,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,11047.0,345.22,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-02-26,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,19206.0,600.19,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-02-28,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,15161.0,473.78,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-02-28,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-8000.0,-250.0,THB,bank_statement_abc.csv,owner cash withdrawal
+2026-02-28,expense,Payroll,Pim,Payroll 2026-02 s001,-19000.0,-593.75,THB,staff_payroll.csv,
+2026-02-28,expense,Payroll,Niran,Payroll 2026-02 s002,-17000.0,-531.25,THB,staff_payroll.csv,
+2026-02-28,expense,Payroll,Maya,Payroll 2026-02 s003,-19000.0,-593.75,THB,staff_payroll.csv,cash extra 2500
+2026-02-28,expense,Payroll,Boom,Payroll 2026-02 s004,-17000.0,-531.25,THB,staff_payroll.csv,
+2026-03-01,memo,Sales,Lina's headline,Monthly revenue summary 2026-03,1020000,31875.0,THB,monthly_revenue.txt,"Lina's own monthly summary — memo only, not summed"
+2026-03-02,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-6800.0,-212.5,THB,bank_statement_abc.csv,
+2026-03-02,expense,Coffee Beans,,Highland Beans Co.,-6800.0,-212.5,THB,expenses_2025.csv,10kg
+2026-03-02,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1054 Whole milk (litres),-3640.0,-113.75,THB,supplier_invoices.csv,paid
+2026-03-03,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,14644.0,457.62,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-03-03,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-8000.0,-250.0,THB,bank_statement_abc.csv,owner cash withdrawal
+2026-03-04,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Cappuccino/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-04,expense,Dairy & Pastry,GreenLeaf Pastry,INV1055 Mixed pastries,-3480.0,-108.75,THB,supplier_invoices.csv,paid
+2026-03-05,expense,Dairy & Pastry,,GreenLeaf Pastry,-4800.0,-150.0,THB,expenses_2025.csv,
+2026-03-05,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-05,expense,Rent & Utilities,NK Property,Rent,-45000,-1406.25,THB,rent_utilities.txt,
+2026-03-05,expense,Coffee Beans,Highland Beans Co.,INV1056 Specialty coffee beans,-5440.0,-170.0,THB,supplier_invoices.csv,paid
+2026-03-06,transfer,Other,TFR 20260306 TRANSFER 0891234567,TFR 20260306 TRANSFER 0891234567,-6800.0,-212.5,THB,bank_statement_abc.csv,outgoing transfer
+2026-03-06,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,18335.0,572.97,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-03-08,expense,Rent & Utilities,FASTNET INTERNET,FASTNET INTERNET,-8400.0,-262.5,THB,bank_statement_abc.csv,
+2026-03-08,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,12202.0,381.31,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-03-08,expense,Dairy & Pastry,,Bangkok Dairy Co.,-4500.0,-140.62,THB,expenses_2025.csv,
+2026-03-08,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-08,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-09,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1057 Whole milk (litres),-4060.0,-126.88,THB,supplier_invoices.csv,paid
+2026-03-10,expense,Other,POS PURCHASE BIGMART 0000123,POS PURCHASE BIGMART 0000123,-933.0,-29.16,THB,bank_statement_abc.csv,
+2026-03-10,expense,Rent & Utilities,CITY WATER UTIL,CITY WATER UTIL,-1290.0,-40.31,THB,bank_statement_abc.csv,
+2026-03-11,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-11,expense,Dairy & Pastry,GreenLeaf Pastry,INV1058 Mixed pastries,-3960.0,-123.75,THB,supplier_invoices.csv,paid
+2026-03-12,expense,Other,,Equipment service - espresso machine,-4200.0,-131.25,THB,expenses_2025.csv,
+2026-03-15,expense,Coffee Beans,,Highland Beans Co.,-6800.0,-212.5,THB,expenses_2025.csv,10kg
+2026-03-15,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-15,expense,Rent & Utilities,City Water,Water,-800,-25.0,THB,rent_utilities.txt,avg
+2026-03-15,expense,Rent & Utilities,City Power,Electric,-9100,-284.38,THB,rent_utilities.txt,
+2026-03-15,expense,Rent & Utilities,FastNet,Internet,-1290,-40.31,THB,rent_utilities.txt,
+2026-03-16,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1059 Whole milk (litres),-3780.0,-118.12,THB,supplier_invoices.csv,paid
+2026-03-18,expense,Other,,Marketing - flyer print,-2200.0,-68.75,THB,expenses_2025.csv,branch 2 announcement
+2026-03-18,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-18,expense,Coffee Beans,Highland Beans Co.,INV1060 Specialty coffee beans,-5440.0,-170.0,THB,supplier_invoices.csv,paid
+2026-03-18,expense,Dairy & Pastry,GreenLeaf Pastry,INV1061 Mixed pastries,-3240.0,-101.25,THB,supplier_invoices.csv,paid
+2026-03-20,expense,Rent & Utilities,CITY POWER ELECTRIC,CITY POWER ELECTRIC,-8400.0,-262.5,THB,bank_statement_abc.csv,
+2026-03-21,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Americano/M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Latte L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Cold Brew/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Americano L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-21,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-23,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1062 Whole milk (litres),-3290.0,-102.81,THB,supplier_invoices.csv,paid
+2026-03-25,expense,Dairy & Pastry,,Bangkok Dairy Co.,-4500.0,-140.62,THB,expenses_2025.csv,
+2026-03-25,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Espresso/S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,revenue,Sales,Customer,Cold Brew L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-25,expense,Dairy & Pastry,GreenLeaf Pastry,INV1063 Mixed pastries,-4260.0,-133.12,THB,supplier_invoices.csv,paid
+2026-03-26,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,21126.0,660.19,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-03-26,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,13894.0,434.19,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-03-27,revenue,Sales,Customer,Latte/M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Americano/L,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Matcha Latte M,100.0,3.12,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Iced Latte L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Cinnamon Roll -,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-27,revenue,Sales,Customer,Cappuccino M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-28,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-8000.0,-250.0,THB,bank_statement_abc.csv,owner cash withdrawal
+2026-03-28,expense,Other,,Cleaning Plus,-1850.0,-57.81,THB,expenses_2025.csv,
+2026-03-28,expense,Payroll,Pim,Payroll 2026-03 s001,-20500.0,-640.62,THB,staff_payroll.csv,
+2026-03-28,expense,Payroll,Niran,Payroll 2026-03 s002,-19000.0,-593.75,THB,staff_payroll.csv,
+2026-03-28,expense,Payroll,Maya,Payroll 2026-03 s003,-20500.0,-640.62,THB,staff_payroll.csv,cash extra 2500
+2026-03-28,expense,Payroll,Boom,Payroll 2026-03 s004,-18500.0,-578.12,THB,staff_payroll.csv,
+2026-03-29,transfer,Other,ATM WITHDRAWAL LINA,ATM WITHDRAWAL LINA,-10000.0,-312.5,THB,bank_statement_abc.csv,owner cash withdrawal
+2026-03-29,transfer,Other,POS DEPOSIT MERCHANT,POS DEPOSIT MERCHANT,12900.0,403.12,THB,bank_statement_abc.csv,POS settlement deposit (also in POS export)
+2026-03-30,revenue,Sales,Customer,Americano M,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Espresso S,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Chocolate Cookie -,45.0,1.41,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Latte M,75.0,2.34,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Mocha/M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Latte/L,90.0,2.81,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Croissant -,65.0,2.03,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Banana Bread -,55.0,1.72,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Mocha M,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Almond Croissant -,85.0,2.66,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,revenue,Sales,Customer,Iced Latte/L,95.0,2.97,THB,pos_export_oct2025-mar2026.csv,
+2026-03-30,expense,Dairy & Pastry,Bangkok Dairy Co.,INV1064 Whole milk (litres),-3360.0,-105.0,THB,supplier_invoices.csv,paid
