@@ -147,7 +147,7 @@ If the workshop has no closing-ritual section, skip this step.
 
 ## Step 9 — Offer reflection (skippable)
 
-> "Two questions if you've got 3 minutes — totally skippable: what surprised you in the data? what would you do differently next time?"
+> "Two questions if you've got 3 minutes — totally skippable: what surprised you? what would you do differently next time?"
 
 If they answer, append to log under `## Reflection`.
 

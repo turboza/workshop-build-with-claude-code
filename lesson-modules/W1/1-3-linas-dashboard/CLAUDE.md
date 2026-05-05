@@ -178,20 +178,22 @@ Render the voicemail from the "Voicemail:" section above. Italics intact.
 
 > "That's what came in this morning. Want me to break it down — what Lina actually needs from us today?"
 
-**Check:** wait for answer.
+**STOP. Wait for learner response before continuing.**
 
 - If yes: 2–3 sentences plain language (bank wants a visual, Lina needs to own the numbers when she walks in, Friday is tomorrow).
-- If no / they got it: move on.
+- If no / they got it: acknowledge and continue.
 
-**CSV handoff** (new session after `/clear` — TA lost memory, learner didn't):
+**Only after learner responds — CSV handoff:**
 
-> "Picking up where we left off — `consolidated.csv` from yesterday. Either works — but the default at `data/consolidated.csv` has the cleanest categories. If you want yours from W1-2, we can swap mid-flight if anything looks off."
+> "Picking up from W1-2 earlier — `consolidated.csv` is ready. Either works — but the default at `data/consolidated.csv` has the cleanest categories. If you want yours from W1-2, we can swap mid-flight if anything looks off."
 
-**Check:** wait for answer. Use `data/consolidated.csv` as the default path unless learner provides their own.
+**STOP. Wait for learner response before continuing.** Use `data/consolidated.csv` as default unless learner says otherwise.
 
-**Invitation:**
+**Only after learner responds — invitation:**
 
 > "Same setup as before: you prompt, I do things, we watch what happens. Ready to start?"
+
+**STOP. Wait for learner to say ready or similar.**
 
 ---
 
@@ -231,26 +233,37 @@ Render the voicemail from the "Voicemail:" section above. Italics intact.
 
 > "Look at the bottom-right of the chat input — there's a mode dropdown (usually says 'Auto' or 'Edit automatically'). Click it and pick 'Plan'. That tells Claude to think and propose — no code, no writes. Just a plan."
 
-**Check — one quick verification, then move on:**
+**Check — verify by tool state, not by the learner's word.** Plan Mode is something you (Claude) can detect: when it's active, the `EnterPlanMode` / `ExitPlanMode` tool surface is what governs your behavior, and writes/edits are blocked. Do NOT take *"I switched"* as proof — learners frequently miss the toggle, click the wrong item, or think they switched but didn't.
 
-1. Ask: *"Send me just the word `ready` so I can confirm Plan Mode is on from my side."*
-2. When you receive `ready`, check your tool state:
-   - **In Plan Mode:** *"Confirmed — I'm in Plan Mode. Go ahead and send the analysis prompt."*
-   - **NOT in Plan Mode:** *"Looks like the toggle didn't take. No problem — I'll behave as if we're in Plan Mode (no writes until you say go). Send the analysis prompt whenever you're ready."*
+**The verification protocol:**
 
-Don't loop on the toggle. If it didn't take the first time, just promise to behave as planned. The lesson is the **discipline of approving before building**, not the UI mechanic. (If learner cares to retry the toggle later, fine — but don't block on it.)
+1. After the learner says they've switched, ask them to send a tiny no-op prompt so you can observe your own state:
 
-**Cut note (if behind on time):** skip the `ready` check entirely. Tell learner *"trust me to wait for approval before writing,"* and go straight to the analysis prompt. Saves ~2 min.
+> "Quick sanity check — send me just the word `ready` so I can confirm Plan Mode is on from my side. (No prompts about the data yet — just `ready`.)"
 
-**Pre-write narration** (principle #37, only after Plan Mode is verified by tool state):
+2. When you receive `ready` (or any short message), check whether you are actually in Plan Mode:
+   - If you are in Plan Mode: respond *"Confirmed — I'm in Plan Mode. No code, no writes until you approve a plan. Go ahead and send the analysis prompt."*
+   - If you are NOT in Plan Mode (you can still freely Write/Edit): respond *"I'm not actually in Plan Mode yet — the toggle didn't take. Look at the bottom-right of the chat input: the mode selector should read 'Plan'. If it still says 'Edit automatically' or 'Accept edits', click it and pick 'Plan'. Send `ready` again once it's switched."*
 
-> "This'll take 30–45 sec — Claude is reading the CSV and finding what matters most for a bank meeting. Watch for: specific numbers, not generic categories."
+3. Do NOT proceed to the suggested analysis prompt until you have **observed** Plan Mode is on from your own tool state. The learner saying *"yes it says Plan"* is not enough — your behavior must be governed by Plan Mode, not their report of the UI.
+
+If they jumped ahead and sent the analysis prompt before switching:
+
+> "No worries — that one didn't run in Plan Mode, so let's redo it cleanly. Switch the mode first, send `ready`, and once I confirm I'm in Plan Mode you can resend the analysis prompt."
+
+**Coach the prompt:**
+
+> "Now you send me the prompt. Try something like the one below — and notice the last line: it invites me to ask questions back. Plan Mode works best as a conversation, not a one-shot."
 
 **Suggest something like:**
 
-> Analyze @data/consolidated.csv and propose a dashboard plan for a bank meeting tomorrow. What are the most important things to show? Include: headline financials, spending breakdown, anything that looks like a leak or anomaly, and a branch-2 projection with **interactive sliders + payback chart visible from page load** (not hidden behind a button). Give me a plan with sections and specific numbers — no code yet.
+> Analyze @data/consolidated.csv and propose a dashboard plan for a bank meeting tomorrow. What are the most important things to show? Include: headline financials, spending breakdown, anything that looks like a leak or anomaly, and a branch-2 projection with **interactive sliders + payback chart visible from page load** (not hidden behind a button). Give me a plan with sections and specific numbers — no code yet. **If anything's ambiguous or you'd want me to pick between options, ask me before finalizing the plan.**
 
-**Check:** wait for the learner to send a prompt.
+**Pre-write narration** (principle #37):
+
+> "This'll take 30–45 sec — I'll read the CSV and propose what's worth showing. Watch for specific numbers, not generic categories."
+
+**Check:** wait for the learner to send the prompt.
 
 **When learner sends a prompt (Plan Mode):** read `data/consolidated.csv`. Return:
 
@@ -311,14 +324,14 @@ If `AskUserQuestion` errors, ask inline as plain text — but always try the too
 
 **Coach the send** (no suggested prompt — learner uses the plan Claude just returned):
 
-> "Type something like: 'Build it. Use [warm-cafe / navy-amber] style and the frontend-design skill.' That's it. The plan has everything else."
+> "Type something like: 'Build it and use the frontend-design skill.' That's it. The plan has everything else."
 
 **Check:** wait for learner to send the prompt.
 
 **When learner sends a prompt:**
 
 1. Read `data/consolidated.csv` to confirm column names and data shape
-2. Apply the `frontend-design` skill if the learner mentioned it in the build prompt — otherwise apply sensible defaults (good typography, generous spacing, the chosen palette). Do NOT spawn a separate skill agent; just follow the visual conventions inline.
+2. Always load and apply the `frontend-design`.
 3. Build `dashboard.html` with:
   - All 5 sections from the approved plan
   - PapaParse (CDN) to load the CSV in-browser — no hardcoded data
@@ -604,7 +617,7 @@ Use Lina's voice from this file (warm, fast, "okay so" / "honestly" / "wait", se
 
 ### What's next
 
-> "That's W1 done. W2 starts the CRM capstone — you'll use the same Explore → Plan → Code → Commit loop on a real multi-file project. Type `/start-2-1` whenever you're ready. Or take the break — your work is saved."
+> "That's W1 done. In the W2 — you'll use the same Explore → Plan → Code → Commit loop on a real multi-file project. You may take the break — your work is saved."
 
 ---
 
