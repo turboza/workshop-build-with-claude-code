@@ -277,6 +277,7 @@ If they jumped ahead and sent the analysis prompt before switching:
 - Note that leak drill-in (expandable row view) and projection sliders make it interactive
 - NOT code — plan only
 
+
 **Mirror:**
 
 > "See that? Claude found the specific numbers worth showing. That's the difference between a generic dashboard and one that actually answers the bank's question."
@@ -334,8 +335,8 @@ If `AskUserQuestion` errors, ask inline as plain text — but always try the too
 2. Always load and apply the `frontend-design`.
 3. Build `dashboard.html` with:
   - All 5 sections from the approved plan
-  - PapaParse (CDN) to load the CSV in-browser — no hardcoded data
-  - Chart.js (CDN) for charts
+  - Note to build html single file, no fetch calls — embed all data inline. 
+  - Chart.js (CDN) for charts. Guard any Chart.js plugins against charts that don't have x/y scales.
   - Interactive elements:
     - Click-filter on category chart (click a slice → filters the monthly trend)
     - Month range slider on the trend chart
@@ -446,7 +447,7 @@ Give learner space. If they ask about a specific leak, engage it. If they're qui
 
 **Commit ritual:**
 
-> "Open the Source Control panel — Y-shaped icon on the left activity bar, or `Cmd/Ctrl+Shift+G`. Stage `dashboard.html`. Commit message: `linas dashboard v1`."
+> "Open the Source Control panel — Y-shaped icon on the left activity bar, or `Ctrl+Shift+G`. Stage `dashboard.html`. Commit message: `linas dashboard v1`."
 
 **Check** (confirm-after-click, principle #38): wait for *"done"* / *"committed"*.
 
