@@ -9,8 +9,7 @@
       "Bash(head:*)",
       "Bash(wc:*)",
       "Bash(cursor *)",
-      "Bash(open *)",
-      "Bash(vercel *)"
+      "Bash(open *)"
     ]
   },
   "hooks": {

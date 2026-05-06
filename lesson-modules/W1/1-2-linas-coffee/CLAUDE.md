@@ -361,6 +361,8 @@ Example:
 
 # 🟢 BEAT 6 — Decide what columns we want (~3 min)
 
+**Mode:** coach → work
+
 **Major-transition gate:**
 
 > "Quick check — we've now seen what Lina has, opened a couple of files, and got the lay of the land."
@@ -375,7 +377,15 @@ Example:
 
 **Say:**
 
-> "Here's a column shape that fits all 7 files cleanly:"
+> "First decision is what columns the clean sheet has. Faster if you ask me to propose a shape based on the 7 files I just looked at — then we tweak."
+
+**Suggest something like:**
+
+> we need to merge @data-dump into one clean sheet for lina's bank meeting. suggest a column shape that fits all 7 files. keep it simple
+
+**Check:** wait for the learner to actually send a prompt like that.
+
+**When learner sends a prompt:** propose the column shape below. Lead with one short framing line ("Here's a shape that fits all 7 files cleanly:"), then the table, then the two "worth noticing" points. Then offer the decision.
 
 | Column              | What it holds                                          |
 | ------------------- | ------------------------------------------------------ |
@@ -390,7 +400,7 @@ Example:
 | `source_file`       | which file this row came from                          |
 | `notes`             | flags, anomalies                                       |
 
-**Say:**
+**Then say:**
 
 > "Two things worth noticing."
 >
@@ -407,6 +417,8 @@ Three ways:
 - **(c)** Want me to pick a sensible default and we move?
 
 **Check:** wait for choice. If (b), adjust based on input. If (c), confirm the default and move.
+
+**Teaching note:** "ask me to propose, then react" — faster than designing from a blank sheet. The shape `based on @X, suggest Y` is one you'll reuse constantly.
 
 ---
 
