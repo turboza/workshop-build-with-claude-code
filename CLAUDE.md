@@ -13,20 +13,27 @@ workshop/
 ├── .claude/
 │   ├── SCRIPT_INSTRUCTIONS.md   # How Claude runs a workshop script
 │   ├── settings.json            # Minimal permissions
-│   └── commands/                # Slash commands (start-X-Y, done-X-Y, help-im-stuck)
+│   └── commands/                # Slash commands: start-1-1, start-1-2, start-1-3, done, wrap-up, help-im-stuck
 ├── shared-context/           # Reusable rules across all workshops
 │   └── workshop-rules.md            # Consolidated: voice + journaling + FX + slash commands + Cursor basics
 └── lesson-modules/
     └── W1/
-        └── 1-2-linas-coffee/
-            ├── SCRIPT.md             # The teaching script (Say/Check/Action)
-            ├── scenario/             # Lina email, voicemail transcript, character voice
-            ├── data-dump/            # 6 messy files learner consolidates
-            ├── data/                 # Output: consolidated.csv (built during workshop)
-            └── workshop-log.md       # Auto-generated during workshop
+        ├── CLAUDE.md                # W1 session agenda (used by /wrap-up)
+        ├── 1-1-pomodoro/
+        │   ├── CLAUDE.md            # Workshop script (beats, voice, /done ritual)
+        │   └── workshop-log.md      # Auto-generated at /done
+        ├── 1-2-linas-coffee/
+        │   ├── CLAUDE.md            # Workshop script
+        │   ├── data-dump/           # 7 messy source files
+        │   ├── data/                # Output: consolidated.csv
+        │   └── workshop-log.md      # Auto-generated at /done
+        └── 1-3-linas-dashboard/
+            ├── CLAUDE.md            # Workshop script
+            ├── data/                # consolidated.csv (default, ships with repo)
+            └── workshop-log.md      # Auto-generated at /done
 ```
 
-W1-3 (Lina's Dashboard) and other weeks follow the same shape.
+Each workshop folder follows the same shape. Instructor runs `/wrap-up` at end of class day to collect the week's logs into a reflection file.
 
 ---
 
@@ -37,7 +44,7 @@ W1-3 (Lina's Dashboard) and other weeks follow the same shape.
 3. Claude announces "Starting W1-2 — one sec" then reads `shared-context/workshop-rules.md` + the workshop's `CLAUDE.md` (2 file reads, not 5)
 4. Claude begins in character — Beat 1 starts
 5. Workshop produces real artifacts in the workshop folder, all committed to git
-6. End-of-workshop: learner types `/done-1-2` to checkpoint
+6. End-of-workshop: learner types `/done` to checkpoint
 
 ---
 
@@ -75,10 +82,12 @@ Keep `shared-context/workshop-rules.md` in this repo in sync with the design rep
 
 - ✅ Repo scaffold (`.claude/`, `shared-context/`, `lesson-modules/W1/`)
 - ✅ Consolidated `shared-context/workshop-rules.md` (single file, replaces 5)
-- ✅ Slash commands: `start-1-2`, `done-1-2`, `help-im-stuck` (announce-then-read pattern)
+- ✅ Slash commands: `start-1-1`, `start-1-2`, `start-1-3`, `done`, `wrap-up`, `help-im-stuck`
+- ✅ W1-1 Pomodoro — full script, Vercel deploy beat, bonus chapters
 - ✅ W1-2 Lina's Coffee — full v2 script, data generated, ready to dry-run
-- ⬜ W1-1 Pomodoro (not started)
-- ⬜ W1-3 Lina's Dashboard (not started)
-- ⬜ `/recap-workshop` and `/instructor-status` slash commands (not yet)
+- ✅ W1-3 Lina's Dashboard — full script, Plan Mode beat, Chart.js dashboard, branch-2 projection
+- ✅ `lesson-modules/W1/CLAUDE.md` — W1 session agenda for `/wrap-up`
+- ⬜ W2–W8 `lesson-modules/W{n}/CLAUDE.md` session agendas (needed for `/wrap-up` mirror-back)
+- ⬜ Form URLs for W2–W8 in `wrap-up.md`
 
 See `workshop-1-2-and-1-3-spec.md` in the design repo for the full plan.
