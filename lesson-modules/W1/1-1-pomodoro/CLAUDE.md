@@ -310,7 +310,7 @@ mkdir -p pomodoro
 
 > "Cool — building now. This'll take maybe 30–60 seconds while I write the file. The `frontend-design` skill that's loaded in this project will help me make it actually look good — not like a generic AI thing."
 >
-> "While I work — quick thing to know: those folders called `skills/` you might have noticed? Those are little instruction packs that give me extra taste or know-how. We've got one for frontend design pre-loaded. We'll cover skills properly later in the course; for now just know they exist."
+> "While I work — quick thing to know: those folders called `skills/` (under `.claude/`) you might have noticed? Those are little instruction packs that give me extra taste or know-how. We've got one for frontend design pre-loaded. We'll cover skills properly later in the course; for now just know they exist."
 >
 > "Hang tight. Be back with your timer in a sec."
 
@@ -373,7 +373,7 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 > "Before we touch anything else — let's save this version. This is the most important habit in the whole course."
 >
-> "On Cursor's left activity bar (the icons running down the far left edge), find the **source control icon**. It's a small Y-shaped icon — looks like a branching path, two dots connected by a line splitting off. Third or fourth icon down from the top, depending on your version."
+> "On Cursor's left activity bar (the icons running down the far left edge), find the **source control icon**. It's a small V-shaped icon — looks like a branching path, two dots connected by a line splitting off. Third or fourth icon down from the top, depending on your version."
 >
 > "Click it. Let me know when you've clicked."
 
@@ -468,38 +468,62 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 **Check:** wait for *"terminal's open"*.
 
+**Say (terminal-vs-chat callout — important, this is the first beat where the learner runs commands themselves):**
+
+> "Heads up before we start — for this beat, you're typing into the **terminal panel** (the one we just opened), not into this chat with me."
+>
+> "Two different boxes, two different jobs. The terminal runs commands like `cd` and `vercel`. I can't run those from chat — only the terminal can."
+>
+> "You'll see the difference in the script too: **terminal commands show up as code blocks**; chat prompts to me stay as plain text quotes."
+>
+> "Also — quick option: if anything in the terminal looks weird, you're unsure what to type, or something errors out, **screenshot the terminal and drop it into this chat**. I'll read what it actually says and tell you the next move. Faster than describing it."
+
 **Say:**
 
 > "Two commands. Run them one at a time so you see what each does."
 >
-> "**First — go into the project folder:**"
+> "**First — go into the project folder. Type this in the terminal:**"
 
-**Suggest something like (run in terminal, not chat):**
+**Suggest something like (terminal command, code block):**
 
-> cd lesson-modules/W1/1-1-pomodoro/pomodoro
+```bash
+cd lesson-modules/W1/1-1-pomodoro/pomodoro
+```
 
-**Check:** wait for the prompt to update / *"in the folder"*.
+**Check:** wait for the terminal prompt to update / *"in the folder"*.
+
+**If learner pastes the command into the chat instead:** they sent the literal command (e.g. `cd lesson-modules/...`) as a chat message to you. Do NOT acknowledge it as if it ran. Respond:
+
+> "Ah — that came into the chat with me, not the terminal. I can't run `cd` from here, only the terminal can. Same command, just paste it into the terminal panel (the one with the `$` prompt at the bottom of Cursor). Let me know what it shows."
 
 **Say:**
 
 > "That's it — `cd` means 'change directory'. You're now standing inside the pomodoro folder, which is what `vercel` needs."
 >
-> "**Now deploy. First time uses `--yes` to accept defaults:**"
+> "**Now deploy. First time uses `--yes` to accept defaults. In the terminal:**"
 
-**Suggest something like:**
+**Suggest something like (terminal command, code block):**
 
-> vercel --prod --yes
+```bash
+vercel --prod --yes
+```
+
+**If learner pastes this into chat too:** same redirect:
+
+> "Same thing — that needs to go in the terminal, not chat. I can't deploy from here. Drop it in the terminal panel and tell me what shows up (or screenshot it)."
 
 **Branch on what happens:**
 
 - **If it says "Please log in":** the learner needs to run `vercel login` first. Walk them through:
-  > "Looks like you need to log in first. Run `vercel login`. Pick **Continue with GitHub** (or whatever account you have). It'll open a browser — sign in, come back to the terminal, and re-run `vercel --prod --yes`."
+  > "Looks like you need to log in first. Run `vercel login` in the terminal. Pick **Continue with GitHub** (or whatever account you have). It'll open a browser — sign in, come back to the terminal, and re-run `vercel --prod --yes`."
   >
   > Add ~2 minutes to the beat for this. If they don't have a Vercel account, they can sign up in the same flow with GitHub OAuth.
 - **If it asks setup questions** (project name, scope) despite `--yes`: just say *"press Enter on each — accept defaults."*
 - **If it works:** the URL appears (~30 sec). Vercel prints a `Production: https://...` line.
+- **If learner reports it worked but doesn't share the URL** (e.g. "done deploying" with no URL): don't fire the celebration yet. Ask:
+  > "Nice — can you paste the `https://...` line back, or screenshot the terminal? I want to see the actual URL so we can open it together."
 
-**Check:** wait for the URL to appear.
+**Check:** wait for the URL to appear in chat — either pasted or visible in a screenshot. The celebration in the next step depends on Claude actually seeing the URL, not just being told it deployed.
 
 **Say:**
 
@@ -618,7 +642,13 @@ Single `index.html` in the `pomodoro/` folder. Vanilla HTML/CSS/JS, no framework
 
 **After they're happy and committed, optionally re-deploy:**
 
-> "Want to push this live too? In the terminal: `vercel --prod`. Same URL, updated in ~30 seconds."
+> "Want to push this live too? In the terminal panel:
+>
+> ```bash
+> vercel --prod
+> ```
+>
+> Same URL, updated in ~30 seconds. (Reminder: terminal panel, not chat — and screenshot it if anything looks off.)"
 
 ---
 
