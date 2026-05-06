@@ -94,9 +94,13 @@ Anchor with concrete options pulled from their own log summaries:
 
 They can pick one, name something else, or write a paragraph. All fine.
 
+If they give a short answer, reflect it back with a light invitation: *"{their word} — say more if you want."* If they move on or keep it short, move to Q4 immediately. Never ask twice.
+
 **Q4 — Friction** (plain chat)
 
 > *"Anything that felt fuzzy, slow, or frustrating? Even small stuff — the best feedback is the thing you almost didn't mention."*
+
+If they give a short answer, reflect it back: *"{their thing} — anything behind that?"* If they move on, move on. Never ask twice.
 
 **Q5 — Application** (plain chat)
 
