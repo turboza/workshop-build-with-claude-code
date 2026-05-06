@@ -537,6 +537,10 @@ Detect via `python3 --version` early. If it errors:
 
 > "Looks like Python isn't installed yet. Two options: (a) we do the merge in chat — slower but works right now; (b) you install Python (5 min) and we use the fast path. Your call."
 
+**If the script crashes with `UnicodeEncodeError` on Windows:**
+
+The template's first lines include `sys.stdout.reconfigure(encoding="utf-8")` to prevent this. If a learner hits it anyway (e.g. they rewrote the script from scratch), add that line right after the imports. Don't strip currency symbols from the data — fix the print encoding instead.
+
 ---
 
 # 🟢 BEAT 9 — Open the output, see the shape (~2 min)
@@ -578,6 +582,12 @@ Detect via `python3 --version` early. If it errors:
 **Check:** wait for prompt.
 
 **When learner sends a prompt:** read the consolidated file. Output 3 specific insights with numbers in both currencies. **Important: when writing currency parentheticals, never put `~~` adjacent to `$` — the markdown renders as strikethrough. Use `(~$25K)` not `(~$25K)~~`.**
+
+**Two revenue types — read carefully:**
+
+- `type=revenue_summary` rows (6 of them, from `monthly_revenue.txt`) hold Lina's **headline monthly totals**. Use these for the ฿5.7M revenue number.
+- `type=revenue` rows (the POS transactions) are **transaction-level detail** — use these for patterns (voids, peaks, hourly trends), not for totals.
+- **Do not sum both types together** — that double-counts. The script tags them differently exactly to prevent this.
 
 Example shape:
 
