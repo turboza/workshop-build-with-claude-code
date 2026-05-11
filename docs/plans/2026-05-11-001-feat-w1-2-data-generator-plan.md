@@ -1,9 +1,17 @@
 ---
 date: 2026-05-11
 type: feat
-status: active
+status: completed
 origin: docs/brainstorms/2026-05-11-w1-2-data-generator-requirements.md
 ---
+
+## Implementation notes (2026-05-11)
+
+- **U3 row count.** Planning estimate of 1,800–2,200 POS rows under-counted: hitting ฿5.7M at ~฿95–฿130 avg ticket over 182 days requires ~250 tx/day → ~46K rows. Generator emits 43,843 sale + 280 void rows; revenue and all other invariants still pass. The test-scenario bound in U3 is wrong, not the generator.
+- **U6 invariants.** Generator runs 9 checks, not the 7 listed in the plan — adds AE4 (void cluster ≥80% on Maya/t02/Tue-Wed/16–18) and AE5 (Highland price arc 520→580→620→680) as direct disk-read assertions alongside R20–R26. All 9 pass on `--seed 42`.
+- **U8 audit outcome.** No W1-3 prose changes required. The plan recommended moving from "~75% cost ratio" to "~86%" based on R20+R26 implying ~86% total expense; on inspection, R26 is fixed-floor only (payroll + rent/util over 6 months), not total expense. The `consolidated.csv` carries bookkeeper-tracked expenses only (~30% of revenue) and W1-3's own line 78 already documents that the ฿700K/mo expense baseline is a narrative anchor, not a CSV-derived figure. Leak patterns (void cluster on Maya, Highland 520→680, scaled dead-zone framing, scaled loyalty abuse) remain empirically supportable against the new data.
+- **AE2 determinism.** Verified across processes: `--seed 42 --out-dir /tmp/a` and `--out-dir /tmp/b` produce byte-identical output.
+
 
 # feat: W1-2 Lina's Coffee — Deterministic Data Generator
 

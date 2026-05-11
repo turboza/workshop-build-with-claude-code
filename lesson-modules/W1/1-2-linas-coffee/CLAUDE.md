@@ -4,7 +4,7 @@
 
 **Time:** 30 min core. Bonus chapters for early finishers.
 
-**Output:** `lesson-modules/W1/1-2-linas-coffee/data/consolidated.csv` — 7 files merged into one, with provenance + dual currency.
+**Output:** `lesson-modules/W1/1-2-linas-coffee/data/consolidated.csv` — 6 files merged into one, with provenance + dual currency.
 
 **Wow moment:** seven messy files become one clean sheet in ~25 minutes — work that took Lina's accountant a week.
 
@@ -197,9 +197,9 @@ Render the voicemail body from the "Voicemail:" section above. Italics intact fo
 
 **Check:** wait for _"I see it"_ / _"got it"_.
 
-**Mirror (when learner sees 7 files):**
+**Mirror (when learner sees 6 files):**
 
-> "Right? Seven files is a lot. Way easier if we just ask me to skim them — much faster than clicking through one by one."
+> "Right? Six files is a lot. Way easier if we just ask me to skim them — much faster than clicking through one by one."
 
 **Suggest something like:**
 
@@ -217,19 +217,18 @@ Render the voicemail body from the "Voicemail:" section above. Italics intact fo
 
 Example shape (your wording — adapt):
 
-| #   | File                                | What's in it                              | Heads up                          |
-| --- | ----------------------------------- | ----------------------------------------- | --------------------------------- |
-| 1   | `monthly_revenue.txt`               | Lina's headline numbers Oct 2025–Mar 2026 | ~฿5.7M total                      |
-| 2   | `pos_export_oct2025-mar2026.csv`    | ~520 sample transactions                  | Has voids (negative rows)         |
-| 3   | `expenses_2025.csv`                 | 40 rows from a 3-tab spreadsheet          | Some entries in USD               |
-| 4   | `bank_statement_abc.csv`            | 89 rows from ABC Bank                     | Cryptic transfer descriptions     |
-| 5   | `supplier_invoices.csv`             | 64 rows                                   | Vendor name spelled multiple ways |
-| 6   | `staff_payroll.csv`                 | 24 rows, 4 staff × 6 months               | Some "cash" extras noted          |
-| 7   | `rent_utilities.txt`                | Plain text monthly fixed costs            | —                                 |
+| #   | File                                | What's in it                                  | Heads up                          |
+| --- | ----------------------------------- | --------------------------------------------- | --------------------------------- |
+| 1   | `pos_export_oct2025-mar2026.csv`    | ~43K receipts (Loyverse export, 6 months)     | Has voids (negative rows)         |
+| 2   | `expenses_2025.csv`                 | ~90 rows of bookkeeper-tracked expenses       | Some entries in USD               |
+| 3   | `bank_statement_abc.csv`            | ~400 rows from Bangkok Bank                   | Cryptic transfer descriptions     |
+| 4   | `supplier_invoices.csv`             | ~130 rows                                     | Vendor name spelled multiple ways |
+| 5   | `staff_payroll.csv`                 | 24 rows, 4 staff × 6 months                   | Some "cash" extras noted          |
+| 6   | `rent_utilities.txt`                | Plain text monthly fixed costs                | —                                 |
 
 **Micro-praise:**
 
-> "Great — seven files just became legible in 30 seconds. That used to take Lina's accountant a morning."
+> "Great — six files just became legible in 30 seconds. That used to take Lina's accountant a morning."
 
 **Say:**
 
@@ -239,7 +238,7 @@ Example shape (your wording — adapt):
 
 ---
 
-# 🟢 BEAT 3 — Open monthly_revenue.txt and read it ourselves (~2 min)
+# 🟢 BEAT 3 — Open rent_utilities.txt and read it ourselves (~2 min)
 
 **Mode:** coach
 
@@ -247,19 +246,19 @@ Example shape (your wording — adapt):
 
 > "Before we go further — let's open one file ourselves. Reading the file directly in Cursor is different from asking me to summarize it."
 >
-> "Click `data-dump/monthly_revenue.txt` in the sidebar. It opens in a tab to the right."
+> "Click `data-dump/rent_utilities.txt` in the sidebar. It opens in a tab to the right."
 
 **Check:** wait for _"open"_ / _"I see it"_.
 
 **Say:**
 
-> "Quick check — what was Lina's revenue in October 2025?"
+> "Quick check — what's Lina's monthly rent?"
 
-**Check:** wait for answer (~฿850,000).
+**Check:** wait for answer (฿45,000 / month).
 
 **Micro-praise:**
 
-> "Yeah — that's the number Lina would quote if you asked her. Headline summaries like this are her own mental model. The detail files are where the real story is."
+> "Yeah — and notice this is Lina's own notes, in her voice. Plain text, no schema, the human is talking. The CSVs are where the structured data lives. We'll open one of those next."
 
 **Re-anchor:**
 
@@ -347,9 +346,9 @@ open lesson-modules/W1/1-2-linas-coffee/assets/cursor-csv-extension-install.png
 
 Example:
 
-- _"Three tabs (Q4-2025, Jan-2026, Feb-Mar-2026) jammed into one CSV"_
-- _"~6 entries are in USD instead of THB — Italian Espresso Parts, imported beans"_
-- _"Some category labels are blank, others use mixed cases ('Pastry' vs 'pastry')"_
+- _"~90 rows of expenses Lina's bookkeeper kept — supplier mirrors plus cleaning, marketing, equipment service, decor"_
+- _"3 entries are in USD instead of THB — Italian Espresso Parts (gasket kit, service fee), Ethiopian Beans Direct (imported beans)"_
+- _"Some category labels are blank, others use mixed cases ('Pastry' vs 'pastry') — looks like data-entry drift"_
 
 **Say:**
 
@@ -377,15 +376,15 @@ Example:
 
 **Say:**
 
-> "First decision is what columns the clean sheet has. Faster if you ask me to propose a shape based on the 7 files I just looked at — then we tweak."
+> "First decision is what columns the clean sheet has. Faster if you ask me to propose a shape based on the 6 files I just looked at — then we tweak."
 
 **Suggest something like:**
 
-> we need to merge @data-dump into one clean sheet for lina's bank meeting. suggest a column shape that fits all 7 files. keep it simple
+> we need to merge @data-dump into one clean sheet for lina's bank meeting. suggest a column shape that fits all 6 files. keep it simple
 
 **Check:** wait for the learner to actually send a prompt like that.
 
-**When learner sends a prompt:** propose the column shape below. Lead with one short framing line ("Here's a shape that fits all 7 files cleanly:"), then the table, then the two "worth noticing" points. Then offer the decision.
+**When learner sends a prompt:** propose the column shape below. Lead with one short framing line ("Here's a shape that fits all 6 files cleanly:"), then the table, then the two "worth noticing" points. Then offer the decision.
 
 | Column              | What it holds                                          |
 | ------------------- | ------------------------------------------------------ |
@@ -473,7 +472,7 @@ Three ways:
 >
 > **Fast:**
 >
-> - I write a small program that reads all 7 files, normalizes them into the columns we picked, and saves to `data/consolidated.csv` in one shot.
+> - I write a small program that reads all 6 files, normalizes them into the columns we picked, and saves to `data/consolidated.csv` in one shot.
 > - Reusable — re-run if any source file changes.
 > - Takes ~30 seconds.
 >
@@ -482,7 +481,7 @@ Three ways:
 > - I do it row-by-row in chat so we watch each transformation.
 > - Way more visible but takes 5–10× longer (~10 minutes).
 >
-> "For 700+ rows across 7 different formats, fast is genuinely better. Slow is for when you want to see every step."
+> "For ~45K rows across 6 different formats, fast is genuinely better. Slow is for when you want to see every step."
 >
 > "Your call?"
 
@@ -520,8 +519,8 @@ Three ways:
 
 4. The script's output is intentionally short — ~10 lines: row count per source, totals, net. Read the output to the learner briefly:
 
-   > "Done — 762 rows merged from 7 files. POS 519, Expenses 40, Bank 89, Suppliers 64, Payroll 24, Rent/Utilities 26."
-   > "Revenue ฿580K, expenses ฿1.13M (negative because we recorded outflows as negative). Looks right."
+   > "Done — ~44,500 rows merged from 6 files. POS ~43,800, Expenses ~90, Bank ~400, Suppliers ~130, Payroll 24, Rent/Utilities 26."
+   > "Revenue ฿5.68M, expenses ฿1.68M (negative because we recorded outflows as negative). Looks right."
 
 **Permission prompt teaching moment** (when Cursor asks for write/run approval):
 
@@ -555,7 +554,7 @@ The template's first lines include `sys.stdout.reconfigure(encoding="utf-8")` to
 
 **Mirror (when they react):**
 
-> "Right? That's the moment. Seven files of mess turned into one sheet you can actually read."
+> "Right? That's the moment. Six files of mess turned into one sheet you can actually read."
 
 **Micro-praise:**
 
@@ -583,17 +582,13 @@ The template's first lines include `sys.stdout.reconfigure(encoding="utf-8")` to
 
 **When learner sends a prompt:** read the consolidated file. Output 3 specific insights with numbers in both currencies. **Important: when writing currency parentheticals, never put `~~` adjacent to `$` — the markdown renders as strikethrough. Use `(~$25K)` not `(~$25K)~~`.**
 
-**Two revenue types — read carefully:**
-
-- `type=revenue_summary` rows (6 of them, from `monthly_revenue.txt`) hold Lina's **headline monthly totals**. Use these for the ฿5.7M revenue number.
-- `type=revenue` rows (the POS transactions) are **transaction-level detail** — use these for patterns (voids, peaks, hourly trends), not for totals.
-- **Do not sum both types together** — that double-counts. The script tags them differently exactly to prevent this.
+Revenue is the sum of `type=revenue` rows (POS detail). One source of truth — no headline-vs-detail double-counting to worry about.
 
 Example shape:
 
-1. _Revenue Oct–Mar: ~฿5.7M (~$178K). Expenses: ~฿4.9M (~$153K). Net: ~฿800K (~$25K)._
-2. _Fixed floor: payroll ~฿440K + rent/utilities ~฿370K = **฿810K (~$25K) every 6 months**, before a single bean. That's the conversation with the bank._
-3. _Heads up: 3 different spellings of "Highland Beans" merged in cleanup. Plus 20 void POS transactions clustered on Tue/Wed evenings. Worth a closer look in W1-3._
+1. _Revenue Oct–Mar: ~฿5.68M (~$178K). Bookkeeper-tracked expenses (rent, payroll, suppliers, etc.): ~฿1.68M (~$52K). Operating margin: ~฿4.0M (~$125K) — much healthier than Lina realizes, which is good news for the bank meeting._
+2. _Fixed floor: payroll ~฿447K + rent/utilities ~฿371K = **฿818K (~$26K) every 6 months**, before a single bean. That's the conversation with the bank — that's what she must cover whether branch 2 happens or not._
+3. _Heads up: 3 different spellings of "Highland Beans" merged in cleanup. Plus ~280 void POS receipts clustered on Tue/Wed late afternoons — ~84% on terminal t02. Worth a closer look in W1-3._
 
 **Mirror:**
 
@@ -636,9 +631,9 @@ Example shape:
 > "Specifically what just happened today:
 >
 > - you designed columns from scratch
-> - picked categories that cover all 7 files cleanly
-> - drove the merge of 762 rows from 7 different formats into one
-> - surfaced the ฿810K fixed-floor number that's going straight to the bank
+> - picked categories that cover all 6 files cleanly
+> - drove the merge of ~44,500 rows from 6 different formats into one
+> - surfaced the ฿818K fixed-floor number that's going straight to the bank
 > - wrote Lina something she can actually send
 >
 > The columns design is the hard part — the rest is the same shape every time. You did the hard part."
@@ -650,7 +645,7 @@ Example shape:
 > "If you want to keep going, here are some bonus chapters — pick whichever sounds fun:"
 >
 > - **A — Spot one more pattern.** _Find one thing in the data Lina probably doesn't know._ (~5 min, produces a real insight)
-> - **B — Find the void cluster.** _About 20 transactions are voided. Where do they cluster? This directly previews W1-3._ (~7 min, produces a small chart-style summary)
+> - **B — Find the void cluster.** _About 280 receipts are voided. Where do they cluster? This directly previews W1-3._ (~7 min, produces a small chart-style summary)
 > - **C — Filter the big expenses.** _Show all expenses over ฿10,000, sorted. Anything surprise you?_ (~5 min, produces a small filtered table)
 >
 > "Or `/done` and we wrap with Lina's reaction."
@@ -687,24 +682,24 @@ Example:
 
 **Say:**
 
-> "Here's a fun one — about 20 transactions in the POS file are marked as voids (negative amounts, `notes` says "void"). Let's see if there's a pattern. If there is, this is exactly the kind of thing Lina would want to know — and it directly previews W1-3 where we build the dashboard."
+> "Here's a fun one — about 280 receipts in the POS file are marked as voids (`Receipt type = Void`, negative `Net sales`, `notes` says "void"). Let's see if there's a pattern. If there is, this is exactly the kind of thing Lina would want to know — and it directly previews W1-3 where we build the dashboard."
 
 **Suggest something like:**
 
 > look at the void rows in @data-dump/pos_export_oct2025-mar2026.csv. is there a pattern? when do voids happen, on which terminal, by which staff?
 
-**When learner sends a prompt:** read the POS file, filter for `notes=void` rows, surface the cluster:
+**When learner sends a prompt:** read the POS file, filter for `Receipt type=Void` rows, surface the cluster:
 
-- ~85% on terminal `t02`
-- mostly Tue/Wed evenings (16:00-18:00)
+- ~84% on terminal `t02`
+- mostly Tue/Wed late afternoon (16:00-18:00)
 - mostly staff `s003` (Maya)
 
 Output a small table:
 
-| When                | Where             | Who          | Count     |
-| ------------------- | ----------------- | ------------ | --------- |
-| Tue/Wed 16:00-18:00 | t02 (mobile till) | Maya (s003)  | ~17 of 20 |
-| Other               | t01 main bar      | Mixed        | ~3 of 20  |
+| When                | Where             | Who          | Count       |
+| ------------------- | ----------------- | ------------ | ----------- |
+| Tue/Wed 16:00-18:00 | t02 (mobile till) | Maya (s003)  | ~235 of 280 |
+| Other               | t01 main bar      | Mixed        | ~45 of 280  |
 
 **Mirror:**
 
