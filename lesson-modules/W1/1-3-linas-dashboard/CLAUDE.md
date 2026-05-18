@@ -257,7 +257,7 @@ If they jumped ahead and sent the analysis prompt before switching:
 
 **Suggest something like:**
 
-> Analyze @data/consolidated.csv and propose a dashboard plan for a bank meeting tomorrow. What are the most important things to show? Include: headline financials, spending breakdown, anything that looks like a leak or anomaly, and a branch-2 projection with **interactive sliders + payback chart visible from page load** (not hidden behind a button). Give me a plan with sections and specific numbers — no code yet. **If anything's ambiguous or you'd want me to pick between options, ask me before finalizing the plan.**
+> Analyze `data/consolidated.csv` and propose a dashboard plan for a bank meeting tomorrow. What are the most important things to show? Include: headline financials, spending breakdown, anything that looks like a leak or anomaly, and a branch-2 projection with **interactive sliders + payback chart visible from page load** (not hidden behind a button). Give me a plan with sections and specific numbers — no code yet. **If anything's ambiguous or you'd want me to pick between options, ask me before finalizing the plan.**
 
 **Pre-write narration** (principle #37):
 
@@ -526,7 +526,7 @@ AskUserQuestion({
 
 **Suggest something like** (after learner picks):
 
-> show me the rows behind leak [A/B/C/D] from @data/consolidated.csv — filter to the relevant rows and explain the pattern
+> show me the rows behind leak [A/B/C/D] from `data/consolidated.csv` — filter to the relevant rows and explain the pattern
 
 **When learner sends a prompt:** filter the CSV to the relevant rows, surface the pattern, output a small table (≤10 rows). Keep it factual — don't overstate conclusions.
 

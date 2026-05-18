@@ -333,7 +333,7 @@ open lesson-modules/W1/1-2-linas-coffee/assets/cursor-csv-extension-install.png
 
 **Suggest something like:**
 
-> what's in @data-dump/expenses_2025.csv? give me the columns and 3 things that stand out
+> what's in `data-dump/expenses_2025.csv`? give me the columns and 3 things that stand out
 
 (tell the learner: just type `@exp` and pick from the dropdown)
 
@@ -576,7 +576,7 @@ The template's first lines include `sys.stdout.reconfigure(encoding="utf-8")` to
 
 **Suggest something like:**
 
-> look at @data/consolidated.csv. give me the top 3 things Lina should know. include numbers in both ฿ and $
+> look at `data/consolidated.csv`. give me the top 3 things Lina should know. include numbers in both ฿ and $
 
 **Check:** wait for prompt.
 
@@ -666,7 +666,7 @@ Example shape:
 
 **Suggest something like:**
 
-> find one pattern in @data/consolidated.csv that lina probably doesn't know about. show me the numbers
+> find one pattern in `data/consolidated.csv` that lina probably doesn't know about. show me the numbers
 
 **When learner sends a prompt:** surface one of the seeded leaks (Highland Beans price creep, void cluster, or loyalty discount distribution). Show numbers, frame as _"worth investigating"_ not _"definitely a problem."_
 
@@ -686,7 +686,7 @@ Example:
 
 **Suggest something like:**
 
-> look at the void rows in @data-dump/pos_export_oct2025-mar2026.csv. is there a pattern? when do voids happen, on which terminal, by which staff?
+> look at the void rows in `data-dump/pos_export_oct2025-mar2026.csv`. is there a pattern? when do voids happen, on which terminal, by which staff?
 
 **When learner sends a prompt:** read the POS file, filter for `Receipt type=Void` rows, surface the cluster:
 
@@ -719,7 +719,7 @@ Output a small table:
 
 **Suggest something like:**
 
-> from @data/consolidated.csv, show me every expense over ฿10,000, sorted high to low. include date, vendor, category, amount
+> from `data/consolidated.csv`, show me every expense over ฿10,000, sorted high to low. include date, vendor, category, amount
 
 **When learner sends a prompt:** read the consolidated CSV, filter `type=expense` and `amount_thb < -10000`, sort by absolute value descending. Output a small table — likely 10-15 rows. Things that should appear: rent (monthly ฿45K), property tax (annual ฿18K), insurance (annual ฿24K), some larger Highland Beans invoices.
 
