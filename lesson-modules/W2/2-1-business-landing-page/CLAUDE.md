@@ -26,7 +26,7 @@
 ## Tool discipline (you, Claude)
 
 - **DO NOT** use `TodoWrite` — workshop-log.md is the tracking system.
-- **DO NOT** use `Agent`, `WebFetch`, `WebSearch`.
+- **DO NOT** use `Agent`, `WebSearch`.
 - `EnterPlanMode` / `ExitPlanMode` — **not used in this slice** (Plan Mode is in the build half).
 - `AskUserQuestion` — used in Beat 1 (story pick) and Beat 6 (style pick after previews).
 - Tools you need: `Read`, `Bash`, `Write`, `Edit`, `AskUserQuestion`.
@@ -142,7 +142,7 @@ Text fallback:
 - **Lina:** *"Lina runs a specialty coffee shop in Ari — regulars, pour-over, slow mornings. She wants a page that feels like the shop. Warm, not corporate. That's the brief."*
 - **Different business:** *"Two sentences — who, where, what they sell, the vibe."* Mirror back in one sentence, ask *"close enough?"*
 - **Own thing:** *"Two sentences — what is it, who's it for?"* Mirror back, confirm.
-- **Surprise me:** Generate a Thai SME brief (business type, Bangkok neighbourhood, 2-sentence vibe). Then ask *"sound good, or want a different one?"* — don't proceed silently.
+- **Surprise me:** Ask *"Which city?"* first — one word is enough. Then generate a brief (business type, neighbourhood, 2-sentence vibe) anchored to that city. Ask *"sound good, or want a different one?"* — don't proceed silently.
 
 **Check:** wait for brief confirmed.
 
@@ -174,27 +174,38 @@ Text fallback:
 
 **Say (chunk 4):**
 
-> "Now prompt me to create the folder and scaffold the project inside it. Try something like:"
+> "Two prompts — first we create the folder, then scaffold inside it. First one:"
 
 **Suggest something like:**
 
-> create a folder called `course-workspace` one level above this workshop folder. inside it, scaffold a new Next.js app called `website-xxx` — TypeScript, Tailwind, App Router. don't open the dev server yet.
+> create a folder called `course-workspace` one level above this workshop folder.
+
+**When learner sends prompt 1:** run `mkdir -p ../course-workspace`. Confirm it was created. Report: *"Done — `course-workspace/` is ready beside the workshop."*
+
+**Check:** wait for *"ok"* / *"done"*.
+
+**Say (chunk 5):**
+
+> "Now the scaffold — this one takes 30–60 sec while it downloads packages. Try:"
+
+**Suggest something like:**
+
+> inside `course-workspace`, scaffold a new Next.js app called `website-xxx` — TypeScript, Tailwind, App Router. don't open the dev server.
 
 **Pre-write narration:**
 
-> "This takes 30–60 sec — `create-next-app` downloads packages. While it runs: Tailwind is the styling system you'll be writing class names against — things like `text-2xl font-semibold`. We'll use it properly once the build starts."
+> "While it runs: Tailwind is the styling system you'll write class names against — things like `text-2xl font-semibold`. We'll use it properly once the build starts."
 
-**When learner sends a prompt:**
+**When learner sends prompt 2:**
 
-1. From the workshop root, run `mkdir -p ../course-workspace`.
-2. `cd ../course-workspace` and run:
+1. `cd ../course-workspace` and run:
    ```
    npx create-next-app@latest <name> --typescript --tailwind --app --eslint --src-dir --import-alias "@/*" --no-turbo --use-npm --yes
    ```
-3. After scaffold completes, `cd <name>` and `ls` so learner sees the file tree.
-4. Capture the **absolute path** of the project root (`pwd`) — you'll need it for the continuation prompt in Beat 4.
-5. Read `package.json` to confirm `"dev"` script exists.
-6. Report done: one line — project name, absolute path, file count.
+2. After scaffold completes, `cd <name>` and `ls` so learner sees the file tree.
+3. Capture the **absolute path** of the project root (`pwd`) — needed for the continuation prompt in Beat 3.
+4. Read `package.json` to confirm `"dev"` script exists.
+5. Report done: one line — project name, absolute path, file count.
 
 **Micro-praise (bullets):**
 
@@ -262,15 +273,15 @@ brief: <one-sentence brief from Beat 1>
 
 *(This beat runs in the learner's project Cursor window.)*
 
-**Say (chunk 0 — acknowledge the arrival):**
+**Say (chunk 0 — acknowledge + skill install):**
 
-> "Got it — you're in the project window. This is home from now on."
+> "Got it — you're in the project window. This is home from now on. Before we do anything else, install one skill we'll need — the `frontend-design` skill. In Cursor, open the command palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) → search 'Install Skill' → search for `frontend-design` and install it."
 
-**Check:** wait for *"ok"* / nod.
+**Check:** wait for *"installed"* / *"done"*. If they can't find it: *"Try Extensions panel instead — search 'frontend-design skill'."*
 
 **Say (chunk 1 — verify it runs):**
 
-> "First thing you do every time you open a project folder: confirm the dev server starts. Open the terminal here — bottom panel, or `Ctrl + \``. You're already in the right folder because this is the project window. Run:"
+> "First thing you do every time you open a project folder: confirm the dev server starts. Open the terminal — top menu: Terminal → New Terminal. You're already in the right folder because this is the project window. Run:"
 
 ```
 npm run dev
@@ -294,16 +305,13 @@ npm run dev
 
 **Say (chunk 3):**
 
-> "`create-next-app` may have already done `git init` for you — let's check. Run `git status` in the terminal. If you see tracked files, it's initialized. If you see 'not a git repository', run `git init` first."
+> "Open the Source Control panel — the Y-shaped icon on the left sidebar. You should see all the scaffold files listed under your project."
 
-**Check:** wait for learner to run and report back.
-
-**If already initialized:** *"Good — it did it for you. Let's commit."*
-**If not:** *"Run `git init` in the terminal first, then we commit."*
+**Check:** wait for *"I see it"* / *"I see files"*. If they see nothing or 'no source control providers': *"`create-next-app` sometimes skips `git init`. Open the terminal (Terminal → New Terminal) and run `git init`, then check Source Control again."*
 
 **Say (chunk 4):**
 
-> "Source Control panel — the Y-shaped icon on the left sidebar, or `Ctrl+Shift+G`. Stage everything (the `+` next to Changes), then commit with:"
+> "Stage everything (the `+` next to Changes), then commit with:"
 
 ```
 scaffold: nextjs + ts + tailwind
@@ -379,6 +387,16 @@ Surface the file path in one line after writing.
 
 **Mirror:** *"That's the project's identity. Claude reads this first, every time."*
 
+**Say (commit):**
+
+> "Commit it now — Source Control panel, stage `CLAUDE.md`, message:"
+
+```
+setup: add claude.md
+```
+
+**Check:** wait for *"committed"*.
+
 **Any questions before we move on?**
 
 ---
@@ -397,42 +415,51 @@ Surface the file path in one line after writing.
 
 **Say (chunk 2 — typeui.sh):**
 
-> "Before we generate — quick detour. Open a browser and go to `typeui.sh/design-skills`. Just browse and scroll. You're looking for anything that catches your eye — could be the color, the font, the whole feel. When you find something, copy the URL from the address bar."
+> "Before we generate — quick detour. Open a browser and go to `typeui.sh/design-skills`. Browse and scroll. You're looking for anything that catches your eye — color, font, the whole feel. When you find something, copy the URL."
 
 **Check:** wait for *"I'm there"* / *"open"*.
 
 **Say (chunk 3):**
 
-> "Take a minute. No wrong answers."
+> "Take a minute. No wrong answers. You can also take a screenshot of something you like from anywhere — paste it into chat and I'll use it as reference."
 
-**Check:** wait for them to share a URL or say *"found one"* / *"I like this one"*. If they genuinely can't find anything, ask: *"Just describe a vibe — warm, minimal, bold, whatever."*
+**Check:** wait for them to share a URL or screenshot or say *"found one"*. If nothing resonates: *"Just describe a vibe — warm, minimal, bold, whatever."*
 
 **Say (chunk 4):**
 
-> "Now prompt me to generate the previews. One file, four panels side by side — so you can compare all of them at once without switching tabs. Try something like:"
+> "Now — before we generate, tell me a bit more about the feel. What should someone feel when they land on this page? One or two sentences."
+
+**Check:** wait for their answer. Mirror it back briefly, confirm.
+
+**Say (chunk 5):**
+
+> "Good. Now prompt me to generate the previews. Keep it short — the skill handles the details. Something like:"
 
 **Suggest something like:**
 
-> using the frontend-design skill, from this reference [paste URL or describe vibe], generate a single HTML file called `design-previews.html` at the project root. it should have **4 side-by-side panels**, one per style direction — each panel shows a mini hero + one section below. label each panel (Style A, B, C, D). distinct directions: pick four that make sense for the brief. mobile responsive. real content from the brief, not lorem ipsum. don't touch the Next.js code.
+> using the frontend-design skill, fetch `[paste URL]` and use it as style reference. generate `design-previews.html` — 4 side-by-side panels, each a different style direction for [business name]. real content, not lorem ipsum. don't touch the Next.js files. 
+
+**Teaching note:** *"Include `fetch [URL]` explicitly — Claude will skip it otherwise."*
 
 **Pre-write narration:**
 
-> "This takes 1–2 min. While it runs: the reason we do this before writing any component is that 'warm and editorial' means completely different things to different people. Seeing it is the only way to align."
+> "This takes 1–2 min. While it runs: the reason we do this before writing any component — 'warm and editorial' means completely different things to different people. Seeing it is the only way to align."
 
 **When learner sends a prompt:**
 
-1. Activate / honor the `frontend-design` skill.
-2. If the brief leaves genuine ambiguity, ask **one** clarifying question max. Then go.
-3. Write `design-previews.html` at the project root. Requirements:
+1. **Fetch the typeui.sh URL** the learner provided — do not skip this step.
+2. Activate / honor the `frontend-design` skill.
+3. Interview the learner if the brief is still vague: ask **one** clarifying question max. Then go.
+4. Write `design-previews.html` at the project root. Requirements:
    - Single HTML file, no external fetches, all CSS inline or in `<style>`
    - Four panels displayed **side by side** (CSS grid or flexbox, horizontal layout on desktop)
    - Each panel: distinct visual direction (typography, color, layout density, feel)
-   - Each panel: labelled (Style A / B / C / D) and shows hero + one section
+   - Each panel: labelled (Style A / B / C / D) and shows hero + one section below
    - Mobile responsive (panels stack vertically on small screens)
    - Real content from the brief — business name, copy that fits the story
    - No lorem ipsum
-4. Do NOT touch the Next.js app files.
-5. After writing, output the file path in one line.
+5. Do NOT touch the Next.js app files.
+6. After writing, output the file path in one line.
 
 **Say (chunk 5):**
 
@@ -542,10 +569,10 @@ Use actual colors/fonts from the chosen panel — not placeholders.
 
 **Say (chunk 4 — commit):**
 
-> "Commit this before we move on. Source Control panel — stage `CLAUDE.md`, `DESIGN.md`, and `design-previews.html`. Commit message:"
+> "Commit this before we move on. Source Control panel — stage `DESIGN.md` and `design-previews.html`. Commit message:"
 
 ```
-plan: claude.md + design.md + style previews
+plan: design.md + style previews
 ```
 
 **Check:** wait for *"committed"*.
@@ -557,7 +584,7 @@ plan: claude.md + design.md + style previews
 - `CLAUDE.md` written — Claude knows the brief every session
 - 4 styles generated side by side, you picked one
 - `DESIGN.md` captures the look in plain language
-- Two commits — you can roll back to either
+- Three commits — scaffold / CLAUDE.md / design
 
 **Re-anchor:** the brief is now encoded in two files. Every build prompt from here has something to answer to.
 
@@ -571,11 +598,13 @@ What comes next: Plan Mode → build the landing page from `CLAUDE.md` + `DESIGN
 
 When the learner asks "what's next?" after the Beat 7 commit:
 
-> "That's the planning half done. The build half — switching to Plan Mode, then building the actual page — comes next. For now, type `/done` and we'll checkpoint this."
+> "That's the planning half done. The build half — switching to Plan Mode, then building the actual page — comes next. Just say 'done' when you're ready to wrap this session."
 
 ---
 
-## When `/done` runs
+## When learner says "done"
+
+*(The project window has no slash commands — `/done` only works in the workshop window. When learner says "done", "finished", "that's it", or similar, treat it as the wrap signal.)*
 
 Reaching the Beat 7 commit = **checkpointed** (build half still ahead).
 
