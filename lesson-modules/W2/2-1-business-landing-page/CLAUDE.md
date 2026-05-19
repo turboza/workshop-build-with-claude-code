@@ -2,18 +2,18 @@
 
 > **Read first:** `shared-context/workshop-rules.md` (voice, journaling at `/done`, FX, slash commands, tool discipline). Version: v2.5.
 
-**Time for this slice:** 30–40 min (Beats 1 → 7, up through DESIGN.md commit). Build beats come after.
+**Time:** ~90 min full workshop. Planning half (Beats 1–7): ~40 min. Build half (Beats 8–11): ~50 min.
 
-**Output of this slice:**
+**Output:**
 
-- A `course-workspace/website-xxx/` folder beside the workshop (same parent level)
-- Next.js + TypeScript + Tailwind scaffolded inside it, running on `localhost:3000`
-- First git commit (scaffold checkpoint)
-- Learner opens the project in a **new Cursor window** — that window is home for the rest of the course
-- `CLAUDE.md` at the project root (brief + stack + "use frontend-design")
-- `design-previews.html` — one file, 4 side-by-side style panels
-- `DESIGN.md` written from the chosen style
-- Second commit covering `CLAUDE.md` + `DESIGN.md` + `design-previews.html`
+- `course-workspace/website-xxx/` beside the workshop — clean separation
+- Next.js + TypeScript + Tailwind scaffolded, running on `localhost:3000`
+- `CLAUDE.md` — project identity and rules
+- `design-previews.html` — 4 side-by-side style panels
+- `DESIGN.md` — locked style spec
+- Landing page built from the plan, iterated
+- Deployed live on Vercel
+- Four commits: scaffold / claude.md / design / build
 
 **Wow moment:** learner picks a visual style from 4 panels they can see side-by-side — then watches Claude turn it into a real `DESIGN.md` that the build will follow. Design as a *decision*, not a guess.
 
@@ -255,7 +255,7 @@ brief: <one-sentence brief from Beat 1>
 
 **Say (chunk 4):**
 
-> "Copy that. Open Claude Code in the new Cursor window — paste it in, and we'll continue there. Come back here and let me know once you've pasted it."
+> "Copy that. Open Composer in the new Cursor window — paste it in, and we'll continue there. Come back here and let me know once you've pasted it."
 
 **Check:** wait for *"pasted"* / *"done"* / *"I'm in the new window"*.
 
@@ -273,11 +273,11 @@ brief: <one-sentence brief from Beat 1>
 
 *(This beat runs in the learner's project Cursor window.)*
 
-**Say (chunk 0 — acknowledge + skill install):**
+**Say (chunk 0 — acknowledge the arrival):**
 
-> "Got it — you're in the project window. This is home from now on. Before we do anything else, install one skill we'll need — the `frontend-design` skill. In Cursor, open the command palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) → search 'Install Skill' → search for `frontend-design` and install it."
+> "Got it — you're in the project window. This is home from now on."
 
-**Check:** wait for *"installed"* / *"done"*. If they can't find it: *"Try Extensions panel instead — search 'frontend-design skill'."*
+**Check:** wait for *"ok"* / nod.
 
 **Say (chunk 1 — verify it runs):**
 
@@ -339,7 +339,7 @@ scaffold: nextjs + ts + tailwind
 
 **Say (chunk 2):**
 
-> "Think of it as project memory. It survives `/clear`, new sessions, even sharing the project with a teammate. We're going to write a short one now — under 20 lines."
+> "Think of it as project memory. It survives `/clear`, new sessions, even sharing the project with a teammate. We're going to write a short one now"
 
 **Check:** wait for *"ok"* / *"got it"*.
 
@@ -349,29 +349,11 @@ scaffold: nextjs + ts + tailwind
 
 **Suggest something like:**
 
-> create a CLAUDE.md at the project root. include: a one-line description of the business (use the brief we've been working from), the stack (Next.js + TypeScript + Tailwind), and one rule — "always use the frontend-design skill for any UI work." keep it under 20 lines.
+> create a CLAUDE.md at the project root. include: a one-line description of the business (use the brief we've been working from), the stack (Next.js + TypeScript + Tailwind), and one rule — "always use the frontend-design skill for any UI work.".
 
 **When learner sends a prompt:**
 
-Write `CLAUDE.md` at the project root. Under 20 lines. Shape (adapt to actual brief):
-
-```markdown
-# <Project Name>
-
-## Business
-<one line — who, where, what>
-
-## Stack
-Next.js + TypeScript + Tailwind CSS
-
-## Goal
-A simple, beautiful landing page that feels like the brand — not a template.
-
-## Rules
-- Always use the `frontend-design` skill for any UI work.
-- Mobile responsive by default.
-- Single landing page for now. No backend yet.
-```
+Write `CLAUDE.md` at the project root. Also help generate more business detail if it is not real one, so we have enough details for building a landing page (adapt to actual brief):
 
 Surface the file path in one line after writing.
 
@@ -461,28 +443,13 @@ setup: add claude.md
 5. Do NOT touch the Next.js app files.
 6. After writing, output the file path in one line.
 
-**Say (chunk 5):**
+**Say (chunk 6):**
 
-> "Right-click `design-previews.html` in the sidebar → 'Open in Browser'. All four styles are in one page — scroll across and compare. Take a minute."
+> "Right-click `design-previews.html` in the sidebar → 'Open in Browser'. All four styles are in one page — scroll across and compare. Take a minute. Tell me what you're seeing."
 
-**Check:** wait for *"open"* / *"I see them"*. Give them a genuine minute to look.
+**Check:** wait for *"open"* / *"I see them"*. Give them a genuine minute — let them react naturally. Don't prompt a pick immediately.
 
-**AskUserQuestion:**
-
-```
-AskUserQuestion({
-  question: "Which direction for DESIGN.md?",
-  options: [
-    "Style A",
-    "Style B",
-    "Style C",
-    "Style D",
-    "Mix — I'll describe what I'm taking from which"
-  ]
-})
-```
-
-Text fallback: *"A, B, C, D, or mix — describe what you're taking from which."*
+**When they start commenting** (or after they've clearly had time to look): *"Which one is speaking to you? Could be A, B, C, D — or a mix. What do you like from which?"*
 
 If mix: *"One sentence — what are you taking from which?"* Mirror back, confirm.
 
@@ -512,7 +479,7 @@ If mix: *"One sentence — what are you taking from which?"* Mirror back, confir
 
 **Suggest something like:**
 
-> based on Style [A/B/C/D] from `design-previews.html` [and the mix I described, if any], write a `DESIGN.md` at the project root. cover: typography (fonts, scale, weights), color palette (hex codes with role names — background, text, accent, etc.), spacing rhythm, the overall vibe in 2 sentences, and what this style does and doesn't do. under 60 lines. this is the rulebook all future components follow.
+> based on Style [A/B/C/D] from `design-previews.html` [and the mix I described, if any], write a `DESIGN.md` at the project root. cover: typography (fonts, scale, weights), color palette (hex codes with role names — background, text, accent, etc.), spacing rhythm, the overall vibe in 2 sentences, and what this style does and doesn't do. this is the rulebook all future components follow.
 
 **Pre-write narration:**
 
@@ -521,7 +488,7 @@ If mix: *"One sentence — what are you taking from which?"* Mirror back, confir
 **When learner sends a prompt:**
 
 1. Read `design-previews.html`, focusing on the chosen style panel.
-2. Write `DESIGN.md` at the project root. Under 60 lines:
+2. Write `DESIGN.md` based on the provided typeui.sh's design.md at the project root. The following template is optional:
 
 ```markdown
 # Design — <Project Name>
@@ -592,13 +559,243 @@ plan: design.md + style previews
 
 ---
 
-# 🛑 END OF DRAFT SLICE
+# 🟢 BEAT 8 — Plan Mode: plan the page (~6 min)
 
-What comes next: Plan Mode → build the landing page from `CLAUDE.md` + `DESIGN.md` → verify in browser → iterate → deploy.
+**Mode:** coach → work
 
-When the learner asks "what's next?" after the Beat 7 commit:
+**Major-transition gate:**
 
-> "That's the planning half done. The build half — switching to Plan Mode, then building the actual page — comes next. Just say 'done' when you're ready to wrap this session."
+> "Planning half done. Design is locked, identity is set. Now we build — but before a single line of code, we plan. Ok?"
+
+**Check:** wait for *"ok"*.
+
+**Say (chunk 1):**
+
+> "Switch to Plan Mode. Bottom-right of the Cursor window — click where it says 'Auto' or 'Edit Automatically'. Toggle it until you see 'Plan'. Or: Shift+Tab cycles through modes."
+
+**Check:** wait for *"I see Plan"* / *"switched"*. If stuck: *"Look at the very bottom right of the chat area — there's a mode label. Click it."*
+
+**Say (chunk 2):**
+
+> "In Plan Mode, Claude writes a plan and stops. It doesn't touch any files until you approve. Read it before you hit go — plan equals code."
+
+**Check:** wait for *"ok"* / *"got it"*.
+
+**Say (chunk 3):**
+
+> "Now prompt me to plan. Keep it conversational — I'll ask if I need anything. Something like:"
+
+**Suggest something like:**
+
+> help me plan a landing page for [business name] using the CLAUDE.md and DESIGN.md already in this project. single page, sections from the brief. verify it works after building — run the dev server and check the page loads. don't build yet, just plan.
+
+**Pre-write narration:**
+
+> "While it plans: I'll write out the sections, components, and order. Read it properly when it appears — changing the plan is free, changing code costs tokens."
+
+**When learner sends a prompt:**
+
+1. Read `CLAUDE.md` and `DESIGN.md`.
+2. Write a plan — sections list, component breakdown, build order, verification step. Do NOT write any code.
+3. End with: *"Does this match what you had in mind? Any sections to add, remove, or reorder?"*
+
+**Check:** wait for learner to read and respond. One round of plan edits if needed.
+
+**Mirror:** *"That's the plan. When you approve it, Claude builds exactly this."*
+
+---
+
+# 🟢 BEAT 9 — Build: approve + verify (~10 min)
+
+**Mode:** coach → work
+
+**Say (chunk 1):**
+
+> "Happy with the plan? If yes — switch back to Auto mode (same toggle, bottom right) and tell me to go."
+
+**Check:** wait for mode switch confirmed.
+
+**Suggest something like:**
+
+> looks good, go ahead and build it.
+
+**Pre-write narration:**
+
+> "This takes 2–4 min — it's writing real components. While it runs: watch the file list in the sidebar. You'll see files appear as they're written. Don't interrupt unless something looks wrong."
+
+**When learner sends the build prompt:**
+
+1. Build the landing page following the approved plan. Use `DESIGN.md` for all style decisions — colors, fonts, spacing, tone.
+2. Use the `frontend-design` skill for component quality.
+3. Follow `CLAUDE.md` rules throughout.
+4. After building, run `npm run dev` and confirm the server starts. Report: *"Dev server running on localhost:3000."*
+5. Do NOT auto-open the browser — let the learner verify.
+
+**Say (chunk 2):**
+
+> "Open `localhost:3000` in your browser. Take a look. Screenshot and paste it here if anything looks off."
+
+**Check:** wait for *"I see it"* / *"it's loading"* / screenshot. If errors: walk through one at a time.
+
+**Say (chunk 3):**
+
+> "Two things to check: does the page load without errors, and does the overall feel match the brief? Don't worry about perfection yet."
+
+**Check:** wait for their verdict.
+
+**If it looks good:** proceed to commit.
+**If something's off:** one focused fix. *"Tell me exactly what looks wrong — one thing at a time."* Fix it, re-verify.
+
+**Say (chunk 4 — commit):**
+
+> "Before we touch anything else — commit this. Source Control panel, stage everything, message:"
+
+```
+build: landing page v1
+```
+
+**Check:** wait for *"committed"*.
+
+**Mirror:** *"That's a real page. If anything breaks from here, you have this to come back to."*
+
+---
+
+# 🟢 BEAT 10 — Iterate (~8 min)
+
+**Mode:** coach → work
+
+**Re-anchor:** *(one sentence — e.g. "Lina wanted something warm, not corporate. Let's see if there's one thing that would make this feel more like her shop.")*
+
+**Say (chunk 1):**
+
+> "One round of additions. What's one thing you'd change or add — a section, a detail, a tweak to the feel?"
+
+**Check:** wait for their answer. If they're not sure: *"Look at the page — does the hero feel right? Is there a section missing? What would Lina notice first?"*
+
+**Suggest something like:**
+
+> add [what they want]. keep it consistent with DESIGN.md — same fonts, colors, spacing.
+
+**When learner sends a prompt:**
+
+1. Make the requested change. Stay within `DESIGN.md` spec.
+2. Verify `npm run dev` still runs without errors.
+3. Report what changed in one line.
+
+**Check:** wait for *"looks good"* / *"nice"* / another request. One more round max — then commit.
+
+**Say (commit):**
+
+> "Commit this iteration. Source Control, stage changes, message:"
+
+```
+build: iteration 1
+```
+
+**Check:** wait for *"committed"*.
+
+**Micro-praise (bullets):**
+
+- Brief → DESIGN.md → plan → build → iterate — that's the full loop
+- Every step was deliberate: you picked the style, you approved the plan, you decided what to iterate
+- Three clean commits — you can roll back to any point
+
+**Re-anchor:** *"That loop — plan, build, verify, commit — is the one you'll run every session from here."*
+
+---
+
+# 🟢 BEAT 11 — Deploy (~8 min)
+
+**Mode:** coach → work
+
+**Major-transition gate:**
+
+> "Last step — deploy it. Put it on the internet. Ok?"
+
+**Check:** wait for *"ok"* / *"yes"*.
+
+**Say (chunk 1):**
+
+> "We'll use Vercel — the same platform Next.js is built for. One command. Make sure you're in the project folder in the terminal."
+
+**Check:** wait for *"ok"*.
+
+**Say (chunk 2):**
+
+> "Run this in the terminal:"
+
+```
+npx vercel
+```
+
+> "It'll ask a few questions — project name, which account. Follow the prompts. First deploy takes ~2 min."
+
+**Pre-write narration:**
+
+> "While it deploys: Vercel is reading your Next.js app, building it in the cloud, and putting it behind a URL. Same process as pushing to production at a startup."
+
+**Check:** wait for deploy to complete. If it errors: paste the terminal output — walk through one line at a time.
+
+**When deploy succeeds:**
+
+> "Open the URL it gave you. That's your site — live, on the internet."
+
+**Check:** wait for *"I see it"* / *"it's live"*. If something looks different from local: *"That's the production build — minified and optimized. Usually looks identical, sometimes fonts render slightly different."*
+
+**Mirror:** *"From brief to live site in one session. That's what this course is for."*
+
+**Say (chunk 3):**
+
+> "One last commit — capture the deploy state."
+
+```
+deploy: vercel initial deploy
+```
+
+**Check:** wait for *"committed"*.
+
+---
+
+# 🏁 BONUS — Add a component from typeui.sh (if time)
+
+**Mode:** coach → work
+
+**Say:**
+
+> "Time permitting — there's one more move. typeui.sh has full copyable components, not just style references. Want to drop one in?"
+
+**Check:** wait for *"yes"* / *"sure"* / skip if low on time.
+
+**Say:**
+
+> "Go back to `typeui.sh` — this time look at the Components section. Find something that fits: a testimonial, a feature section, a footer. Copy the URL."
+
+**Check:** wait for URL.
+
+**Suggest something like:**
+
+> fetch [URL] and add this component to the landing page. adapt the copy to fit [business name] and follow DESIGN.md for any style overrides.
+
+**When learner sends a prompt:**
+
+1. Fetch the component URL.
+2. Add the component — adapt copy, apply `DESIGN.md` color/font overrides where needed.
+3. Verify `npm run dev` still runs.
+4. Report the component added in one line.
+
+**Check:** wait for *"looks good"*.
+
+**Say:**
+
+> "Commit and redeploy:"
+
+```
+build: add [component name]
+```
+
+Then: `npx vercel --prod`
+
+**Check:** wait for *"live"*.
 
 ---
 
@@ -606,21 +803,19 @@ When the learner asks "what's next?" after the Beat 7 commit:
 
 *(The project window has no slash commands — `/done` only works in the workshop window. When learner says "done", "finished", "that's it", or similar, treat it as the wrap signal.)*
 
-Reaching the Beat 7 commit = **checkpointed** (build half still ahead).
+**Acknowledge specifically (bullets):**
 
-Acknowledge specifically:
+- Brief confirmed — every decision answered to it
+- `course-workspace/` — project lives clean, separate from workshop
+- `CLAUDE.md` + `DESIGN.md` — identity and look locked before a line of code
+- Plan Mode used — plan read and approved before build
+- Landing page built, iterated, committed
+- Deployed to Vercel — live URL
+- Loop: brief → design → plan → build → verify → commit → deploy
 
-- The `course-workspace/` separation
-- Scaffold + first commit
-- New Cursor window for the project
-- `CLAUDE.md`
-- Side-by-side previews, style picked
-- `DESIGN.md`
-- The plan commit
+**End with:**
 
-End with:
-
-> "That's the planning half of W2-1. The build half picks up from here — Plan Mode, then the actual landing page from CLAUDE.md and DESIGN.md. Take the break — your work is saved."
+> "That's W2-1. The loop you just ran — brief, design, plan, build, deploy — is the one you'll use for every project from here. The tools change. The loop doesn't. Take the break."
 
 ---
 
@@ -629,4 +824,4 @@ End with:
 1. **Mirror first** — *"yeah, this part trips people up."*
 2. Recap where they are in 1–2 sentences from conversation memory.
 3. Offer 3 specific next moves: *"Three options: (a)... (b)... (c)..."*
-4. If Claude is the blocker (looping, bad output): `/clear` + re-read this file fresh. Don't retry the same prompt.
+4. If Claude is the blocker (looping, bad output): suggest `/clear` + re-read this file fresh. Don't retry the same prompt.
