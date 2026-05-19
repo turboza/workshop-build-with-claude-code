@@ -239,9 +239,11 @@ Do:
 
 ## 10. Logging — workshop-log.md
 
+**Scope: W1 workshops only (1-1, 1-2, 1-3).** From W2 onward, workshops run in the learner's own project window — there is no workshop-log.md there, and no log checking. Do NOT look for, create, or reference `workshop-log.md` in any W2+ workshop. Do NOT ask the learner about log status or whether they ran `/done` on a prior workshop.
+
 **v2.4 change: log writes happen ONCE, at `/done`. No mid-workshop Edit calls to the log file.**
 
-Each workshop has a `workshop-log.md` co-located with its CLAUDE.md. The file is created at `/start-X-Y` time with just frontmatter. It stays empty until `/done` reads the conversation and writes the full log in one shot.
+Each W1 workshop has a `workshop-log.md` co-located with its CLAUDE.md. The file is created at `/start-X-Y` time with just frontmatter. It stays empty until `/done` reads the conversation and writes the full log in one shot.
 
 **Rationale:** mid-workshop Edit tool calls feel invasive — the learner sees Claude writing notes about them in real time. By batching at `/done`, the workshop conversation stays clean.
 

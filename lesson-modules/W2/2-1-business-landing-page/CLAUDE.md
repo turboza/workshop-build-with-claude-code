@@ -25,7 +25,8 @@
 
 ## Tool discipline (you, Claude)
 
-- **DO NOT** use `TodoWrite` — workshop-log.md is the tracking system.
+- **DO NOT** use `TodoWrite`.
+- **DO NOT** look for, create, or reference `workshop-log.md` — W2 workshops have no log file.
 - **DO NOT** use `Agent`, `WebSearch`.
 - **DO NOT** run `npm run dev` — always tell the learner to run it in their terminal. Exception: running tests or linting only.
 - **DO NOT** send standalone emojis or single-character responses. If context is filling up, say so directly: *"Context is getting full — let's `/clear` and continue."*
@@ -66,44 +67,28 @@
 
 ---
 
-## Continuing from a new Cursor window
+## Continuing from the project Cursor window
 
-When Claude receives a message like *"continuing workshop 2-1 from [path]"* in a fresh session:
+When Claude receives a message like *"continuing workshop 2-1 — scaffold done..."* in a fresh session:
 
 1. Read the CLAUDE.md at the path provided.
-2. Read `shared-context/workshop-rules.md` from the workshop folder (derive path from the CLAUDE.md path).
-3. Say: *"Got it — picking up W2-1. Scaffold is done, you're in the project window. Let's verify it runs and get the first commit in."*
-4. Begin at **Beat 4** (verify + first commit). Do not repeat Beats 1–3.
+2. Read `shared-context/workshop-rules.md` (derive path from the CLAUDE.md location).
+3. Begin at **Beat 4** — no preamble, no repeating Beats 1–3.
 
 ---
 
-## Workshop log setup
-
-If `workshop-log.md` doesn't exist, create it with just frontmatter:
-
-```markdown
----
-workshop: W2-1 Business Landing Page
-status: in-progress
-started: <ISO timestamp>
----
-
-# Workshop Log
-```
-
-Log stays empty during the workshop. `/done` reconstructs from conversation memory at wrap-up.
-
-If a log exists with `status: in-progress`: ask *"Looks like we started this before — pick up where we left off, or start fresh?"*
-
-If `status: checkpointed` / `completed`: rename with `-archived-<date>` suffix, start fresh.
-
----
-
-# 🟢 BEAT 0 — /start-2-1
+# 🟢 BEAT 0 — Orient (~1 min)
 
 **Mode:** coach
 
-Read this CLAUDE.md + `shared-context/workshop-rules.md`. Create the workshop log if it doesn't exist. Then begin Beat 1 — no meta-commentary.
+Silently read this CLAUDE.md + `shared-context/workshop-rules.md`.
+
+**Say:**
+
+> "Hey — starting W2-1. Quick question before we dive in: is this fresh, or did you start this before?"
+
+- **Fresh:** begin Beat 1.
+- **Returning:** *"Where did you leave off — what was the last thing you finished?"* Listen, jump to the right beat. Don't redo what's done.
 
 ---
 
@@ -243,21 +228,26 @@ Text fallback:
 
 **Say (chunk 3):**
 
-> "Now I'll give you a prompt to paste into Claude in that new window. It tells Claude where the workshop script is and where to pick up."
+> "Now I'll give you a block to paste into Claude in that new window. It tells Claude where the workshop script is and what we're building."
 
 **Generate the continuation prompt.** Use the absolute path captured in Beat 2:
 
-Output this as a copyable block:
+Output this as a clearly labelled copyable block:
 
 ```
+Here's the block to copy ↓
+─────────────────────────────────────────
 continuing workshop 2-1 — scaffold done, picking up from the project window.
 workshop script is at: <absolute-path-to-workshop>/lesson-modules/W2/2-1-business-landing-page/CLAUDE.md
 brief: <one-sentence brief from Beat 1>
+─────────────────────────────────────────
 ```
 
 **Say (chunk 4):**
 
-> "Copy that. Open Composer in the new Cursor window — paste it in, and we'll continue there. Come back here and let me know once you've pasted it."
+> "Switch to your project Cursor window — the one with `<project-name>` open — and start a new Claude Code chat. Paste that block in to start."
+
+**Teaching note:** "New chat" = click the `+` icon or `Ctrl+L` / `Cmd+L` in the chat panel. This keeps the project session clean from the start.
 
 **Check:** wait for *"pasted"* / *"done"* / *"I'm in the new window"*.
 
@@ -616,10 +606,11 @@ plan: design.md + style previews
 
 **When learner sends the build prompt:**
 
-1. Build the landing page following the approved plan. Use `DESIGN.md` for all style decisions — colors, fonts, spacing, tone.
-2. Use the `frontend-design` skill for component quality.
-3. Follow `CLAUDE.md` rules throughout.
-4. Do NOT run the dev server. After building, report what was written in one line.
+1. Read `CLAUDE.md`, `DESIGN.md`, and `design-previews.html` (focus on the chosen style panel). `design-previews.html` is the source of truth for visual details — DESIGN.md is a summary.
+2. Build the landing page following the approved plan. Use `DESIGN.md` for all style decisions — colors, fonts, spacing, tone.
+3. Use the `frontend-design` skill for component quality.
+4. Follow `CLAUDE.md` rules throughout.
+5. Do NOT run the dev server. After building, report what was written in one line.
 
 **Say (chunk 2):**
 
