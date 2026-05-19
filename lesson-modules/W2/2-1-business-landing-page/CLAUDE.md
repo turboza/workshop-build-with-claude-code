@@ -27,8 +27,10 @@
 
 - **DO NOT** use `TodoWrite` — workshop-log.md is the tracking system.
 - **DO NOT** use `Agent`, `WebSearch`.
-- `EnterPlanMode` / `ExitPlanMode` — **not used in this slice** (Plan Mode is in the build half).
-- `AskUserQuestion` — used in Beat 1 (story pick) and Beat 6 (style pick after previews).
+- **DO NOT** run `npm run dev` — always tell the learner to run it in their terminal. Exception: running tests or linting only.
+- **DO NOT** send standalone emojis or single-character responses. If context is filling up, say so directly: *"Context is getting full — let's `/clear` and continue."*
+- `EnterPlanMode` / `ExitPlanMode` — used in Beat 8 (Plan Mode).
+- `AskUserQuestion` — used in Beat 1 (story pick).
 - Tools you need: `Read`, `Bash`, `Write`, `Edit`, `AskUserQuestion`.
 
 ---
@@ -281,17 +283,15 @@ brief: <one-sentence brief from Beat 1>
 
 **Say (chunk 1 — verify it runs):**
 
-> "First thing you do every time you open a project folder: confirm the dev server starts. Open the terminal — top menu: Terminal → New Terminal. You're already in the right folder because this is the project window. Run:"
-
-```
-npm run dev
-```
-
-> "You should see `http://localhost:3000`. Open it — you should see the default Next.js page."
+> "First thing you do every time you open a project folder: confirm the dev server starts. Open the terminal — top menu: Terminal → New Terminal. You're already in the right folder because this is the project window. Run `npm run dev`. You should see `http://localhost:3000`."
 
 **Check:** wait for *"it's running"* / *"I see it"*. If error, walk through terminal output one line at a time.
 
-**Teaching note:** *"If something looks off — screenshot and paste it in. I'll tell you what's happening."*
+**Say:**
+
+> "Open it in your browser — you should see the default Next.js page. If something looks off, screenshot and paste it in — I'll tell you what's happening."
+
+**Check:** wait for *"I see it"* / *"looks good"*.
 
 **Say:** *"Good. Stop the server — `Ctrl+C`. Before we touch anything, let's save a checkpoint."*
 
@@ -395,33 +395,25 @@ setup: add claude.md
 
 **Check:** wait for *"ok"* / *"nice"*.
 
-**Say (chunk 2 — typeui.sh):**
+**Say (chunk 2 — feel):**
 
-> "Before we generate — quick detour. Open a browser and go to `typeui.sh/design-skills`. Browse and scroll. You're looking for anything that catches your eye — color, font, the whole feel. When you find something, copy the URL."
+> "Before we generate — one question. What should someone *feel* when they land on this page? One or two words or a sentence. Warm, bold, minimal, honest — anything."
 
-**Check:** wait for *"I'm there"* / *"open"*.
+**Check:** wait for their answer. Mirror it back briefly: *"So [their answer] — got it."* Confirm.
 
 **Say (chunk 3):**
 
-> "Take a minute. No wrong answers. You can also take a screenshot of something you like from anywhere — paste it into chat and I'll use it as reference."
+> "Got a reference image? Something you like from anywhere — a site, a photo, an app. Screenshot it and paste it in. Otherwise we'll work from the brief and the feeling you just described."
 
-**Check:** wait for them to share a URL or screenshot or say *"found one"*. If nothing resonates: *"Just describe a vibe — warm, minimal, bold, whatever."*
+**Check:** wait for screenshot or *"no, go ahead"* / *"just use the brief"*.
 
 **Say (chunk 4):**
 
-> "Now — before we generate, tell me a bit more about the feel. What should someone feel when they land on this page? One or two sentences."
-
-**Check:** wait for their answer. Mirror it back briefly, confirm.
-
-**Say (chunk 5):**
-
-> "Good. Now prompt me to generate the previews. Keep it short — the skill handles the details. Something like:"
+> "Good. Prompt me to generate the previews. Keep it short — the skill handles the details. Something like:"
 
 **Suggest something like:**
 
-> using the frontend-design skill, fetch `[paste URL]` and use it as style reference. generate `design-previews.html` — 4 side-by-side panels, each a different style direction for [business name]. real content, not lorem ipsum. don't touch the Next.js files. 
-
-**Teaching note:** *"Include `fetch [URL]` explicitly — Claude will skip it otherwise."*
+> using the frontend-design skill, generate `design-previews.html` — 4 side-by-side panels, each a different style direction for [business name]. the feel should be [their answer]. real content, not lorem ipsum. don't touch the Next.js files.
 
 **Pre-write narration:**
 
@@ -429,10 +421,9 @@ setup: add claude.md
 
 **When learner sends a prompt:**
 
-1. **Fetch the typeui.sh URL** the learner provided — do not skip this step.
-2. Activate / honor the `frontend-design` skill.
-3. Interview the learner if the brief is still vague: ask **one** clarifying question max. Then go.
-4. Write `design-previews.html` at the project root. Requirements:
+1. Activate / honor the `frontend-design` skill.
+2. If the brief is still vague, ask **one** clarifying question max. Then go.
+3. Write `design-previews.html` at the project root. Requirements:
    - Single HTML file, no external fetches, all CSS inline or in `<style>`
    - Four panels displayed **side by side** (CSS grid or flexbox, horizontal layout on desktop)
    - Each panel: distinct visual direction (typography, color, layout density, feel)
@@ -628,10 +619,15 @@ plan: design.md + style previews
 1. Build the landing page following the approved plan. Use `DESIGN.md` for all style decisions — colors, fonts, spacing, tone.
 2. Use the `frontend-design` skill for component quality.
 3. Follow `CLAUDE.md` rules throughout.
-4. After building, run `npm run dev` and confirm the server starts. Report: *"Dev server running on localhost:3000."*
-5. Do NOT auto-open the browser — let the learner verify.
+4. Do NOT run the dev server. After building, report what was written in one line.
 
 **Say (chunk 2):**
+
+> "Run `npm run dev` in the terminal. Tell me when it's up."
+
+**Check:** wait for *"it's running"* / *"localhost:3000"*.
+
+**Say:**
 
 > "Open `localhost:3000` in your browser. Take a look. Screenshot and paste it here if anything looks off."
 
@@ -686,21 +682,21 @@ build: landing page v1
 
 **Say (commit):**
 
-> "Commit this iteration. Source Control, stage changes, message:"
-
-```
-build: iteration 1
-```
+> "Commit this iteration. Source Control, stage changes. Message: one line naming what actually changed — e.g. `feat: add team section`, `fix: hero font size`. Something you'd understand in a month."
 
 **Check:** wait for *"committed"*.
 
+**Teaching note — name the loop:**
+
+> "You just ran the full loop: **Explore → Plan → Code → Commit**. Explore: read what's there. Plan: write the plan before touching files. Code: build to the plan. Commit: save every working state. That's it. Every session from here runs this loop."
+
+**Check:** wait for *"ok"* / *"got it"*.
+
 **Micro-praise (bullets):**
 
-- Brief → DESIGN.md → plan → build → iterate — that's the full loop
-- Every step was deliberate: you picked the style, you approved the plan, you decided what to iterate
-- Three clean commits — you can roll back to any point
-
-**Re-anchor:** *"That loop — plan, build, verify, commit — is the one you'll run every session from here."*
+- Brief → DESIGN.md → plan → build → iterate — deliberate at every step
+- You picked the style, approved the plan, decided what to iterate
+- Clean commits at every checkpoint — you can roll back to any point
 
 ---
 
@@ -725,10 +721,10 @@ build: iteration 1
 > "Run this in the terminal:"
 
 ```
-npx vercel
+vercel --prod --yes
 ```
 
-> "It'll ask a few questions — project name, which account. Follow the prompts. First deploy takes ~2 min."
+> "First time: it'll prompt you to log in and link the project — follow those steps, then re-run the command. After that it deploys without questions. Takes ~2 min."
 
 **Pre-write narration:**
 
@@ -756,49 +752,6 @@ deploy: vercel initial deploy
 
 ---
 
-# 🏁 BONUS — Add a component from typeui.sh (if time)
-
-**Mode:** coach → work
-
-**Say:**
-
-> "Time permitting — there's one more move. typeui.sh has full copyable components, not just style references. Want to drop one in?"
-
-**Check:** wait for *"yes"* / *"sure"* / skip if low on time.
-
-**Say:**
-
-> "Go back to `typeui.sh` — this time look at the Components section. Find something that fits: a testimonial, a feature section, a footer. Copy the URL."
-
-**Check:** wait for URL.
-
-**Suggest something like:**
-
-> fetch [URL] and add this component to the landing page. adapt the copy to fit [business name] and follow DESIGN.md for any style overrides.
-
-**When learner sends a prompt:**
-
-1. Fetch the component URL.
-2. Add the component — adapt copy, apply `DESIGN.md` color/font overrides where needed.
-3. Verify `npm run dev` still runs.
-4. Report the component added in one line.
-
-**Check:** wait for *"looks good"*.
-
-**Say:**
-
-> "Commit and redeploy:"
-
-```
-build: add [component name]
-```
-
-Then: `npx vercel --prod`
-
-**Check:** wait for *"live"*.
-
----
-
 ## When learner says "done"
 
 *(The project window has no slash commands — `/done` only works in the workshop window. When learner says "done", "finished", "that's it", or similar, treat it as the wrap signal.)*
@@ -815,7 +768,9 @@ Then: `npx vercel --prod`
 
 **End with:**
 
-> "That's W2-1. The loop you just ran — brief, design, plan, build, deploy — is the one you'll use for every project from here. The tools change. The loop doesn't. Take the break."
+> "That's W2-1. The loop you just ran — brief, design, plan, build, deploy — is the one you'll use for every project from here. The tools change. The loop doesn't."
+
+Then: *"If you want to keep going — what feels most missing from the page right now? Tell me and I'll suggest one next move."*
 
 ---
 
