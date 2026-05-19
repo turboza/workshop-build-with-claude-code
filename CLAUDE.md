@@ -37,14 +37,40 @@ Each workshop folder follows the same shape. Instructor runs `/wrap-up` at end o
 
 ---
 
+## Delivery context — Cursor (VSCode extension), not Claude Code CLI
+
+All learners use **Cursor** (the VSCode extension). There is no `claude` CLI command. This means:
+
+- Learners open the workshop folder in Cursor and interact via Composer/chat
+- Slash commands work via Cursor's Composer command palette
+- "Open the terminal" = Cursor's integrated terminal (`Ctrl + \``)
+- Never write "run `claude`" in any script or instruction — always say "open Cursor" / "open Composer"
+
+---
+
 ## How a workshop runs
 
-1. Learner runs `claude` from this directory
-2. Types `/start-1-2` (or whichever workshop)
+1. Learner opens this folder in Cursor
+2. Opens Composer and types `/start-1-2` (or whichever workshop)
 3. Claude announces "Starting W1-2 — one sec" then reads `shared-context/workshop-rules.md` + the workshop's `CLAUDE.md` (2 file reads, not 5)
 4. Claude begins in character — Beat 1 starts
 5. Workshop produces real artifacts in the workshop folder, all committed to git
 6. End-of-workshop: learner types `/done` to checkpoint
+
+---
+
+## Never read CSVs or Excel files whole
+
+**Hard rule.** A single CSV/XLSX can be 100K–millions of tokens and will blow the context window in one Read call. Always preview first:
+
+- **Shape:** `wc -l <file>` for row count
+- **Header + first rows:** `head -5 <file>`
+- **Last rows:** `tail -5 <file>`
+- **Column names only:** `head -1 <file>`
+- **Sample a column:** `cut -d, -f3 <file> | head -20`
+- **XLSX:** convert to CSV first (`in2csv`, `xlsx2csv`, or a one-line Python script) then preview as above — never Read the binary
+
+Only Read the whole file if it's known to be small (<200 lines) AND you've confirmed shape with `wc -l` first. Applies to W1-2 (`data-dump/`, `data/consolidated.csv`), W1-3 (`data/consolidated.csv`), and any future workshop with data files.
 
 ---
 
