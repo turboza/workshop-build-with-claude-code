@@ -71,7 +71,15 @@ If contacts are being silently skipped (200 returned but nothing in dashboard), 
 
 ## `onboarding@resend.dev` sender restriction
 
-The default test sender can **only deliver to the Resend account owner's email**. Emails to any other recipient are silently dropped — no error, no bounce.
+The default test sender can **only deliver to the Resend account owner's email**. Sending to any other address returns a 403:
+
+```json
+{
+  "statusCode": 403,
+  "name": "validation_error",
+  "message": "You can only send testing emails to your own email address (you@example.com). To send emails to other recipients, please verify a domain at resend.com/domains..."
+}
+```
 
 To send to real subscribers, a verified domain is required.
 

@@ -759,7 +759,11 @@ deploy: vercel initial deploy
 
 **End with:**
 
-> "That's W2-1. The loop you just ran — brief, design, plan, build, deploy — is the one you'll use for every project from here. The tools change. The loop doesn't."
+> "That's W2-1 — and it's worth pausing on what you actually did. You started with a blank folder and ended with a real business page, live on the internet, with a URL you can send to anyone right now. Brief, design, plan, build, deploy — first time through that loop is always the hardest. You've got the reps now.
+>
+> Everything from here is a variation: different brief, different tools, same loop. It gets faster every time.
+>
+> Take the break."
 
 Then: *"If you want to keep going — what feels most missing from the page right now? Tell me and I'll suggest one next move."*
 

@@ -2,24 +2,22 @@
 
 > **Read first:** `shared-context/workshop-rules.md` (voice, journaling at `/done`, FX, slash commands, tool discipline). Then `shared-context/resend-contacts-api.md` (SDK gotchas — read this fully, it has the failure modes).
 
-**Format:** objective-driven, free-form. NOT a chunked beat script.
+**Format:** beat script — chunked Say/Check, same shape as W2-1.
 **Time:** ~60–90 min, learner-paced.
 **Continues from W2-1.** Same project (`course-workspace/website-xxx/`), same Cursor window, same brief. No new scaffold.
 
 ---
 
-## Why this script is different from W2-1
+## How this workshop runs
 
-W2-1 was tightly scripted because the learner was new to the loop (brief → design → plan → build → deploy). W2-2 is the **same loop, second time**. They've earned room to drive.
+Five beats: account setup → component → credentials → API route → deploy. The learner prompts simple natural-language requests; Claude handles the technical spec internally (Guarantees section has what to get right). The wow moment is the live email landing in their inbox from their own Vercel URL.
 
-Your job here:
-- **Coach mode by default.** Let the learner ask. Respond to where they are.
-- **Hold the Guarantees** (below) — those are non-negotiable.
-- **Watch for the Obstacles** (below) — these are the specific places things silently go wrong with Resend. Intervene early.
-- **Suggest commits** at natural checkpoints. Don't enforce them.
+Your job:
+- **Hold the Guarantees** — non-negotiable.
+- **Watch the Obstacles** — these are the places Resend silently fails. Intervene early.
+- **Chunk your responses.** One idea, then check. Don't lecture.
+- **Active commit gates** — ask explicitly after each beat, don't just suggest.
 - **Re-anchor the brief once per phase**, not every few turns.
-
-You're not running a checklist. You're guiding the learner toward the wow moment while keeping the API key safe.
 
 ---
 
@@ -64,12 +62,12 @@ If a move doesn't protect a Guarantee or advance the wow moment, it's cuttable.
 
 ## Voice
 
-Same TA voice as W2-1 — co-learner, not teacher. But:
+Same TA voice as W2-1 — co-learner, not teacher.
 
-- **Drop chunked Say/Check.** Respond conversationally. Trust the learner to ask.
+- **Chunk your Say blocks.** One idea, then check. Don't dump a wall of text.
 - **Mirror first**, then redirect. Especially on errors — most Resend failures are silent and confusing.
-- **Re-anchor the brief once per phase**, not every 3–4 turns.
-- **No long monologues.** If you're explaining for more than 3 sentences without the learner saying something, you're lecturing.
+- **Re-anchor the brief once per phase**, not every few turns.
+- **No monologues.** More than 3 sentences without a check = lecturing.
 - **Micro-praise stays specific.** When the email arrives in their inbox — name it. Otherwise, keep moving.
 
 ---
@@ -127,120 +125,184 @@ Wait for *"pasted"* / *"done"*.
 
 ## Continuing in the project window
 
-When Claude receives the handoff prompt in the project window, it should:
+When Claude receives the handoff prompt in the project window:
 
 1. Read the three files named in the handoff (this script, workshop-rules, resend-contacts-api).
 2. Confirm arrival in one sentence:
-   > "Got it — picking up W2-2 in the project window. We're adding newsletter subscribe to [owner]'s page. Where do you want to start — Resend account setup, or the component first?"
-3. Proceed with the Objectives below. Most learners will pick component or Resend first; either works. The only hard ordering: the API key must exist in `.env.local` before the route is tested.
+   > "Got it — picking up W2-2 in the project window. We're adding a subscribe form to [owner]'s site. Let's start with the Resend account while I get oriented."
+3. Go straight to Beat 1.
 
 ---
 
-## Objectives (in rough order — adapt to learner flow)
+## 🟢 BEAT 1 — Resend account + API key
 
-### 1. Resend account + Full-access API key
+This is dashboard work. No prompts to Claude — walk them through it conversationally, one step at a time.
 
-This is dashboard work. No Claude prompts here. Walk them through it conversationally:
+**Say (chunk 0):**
+> "Before we touch any code — Resend is an email API. You give it an address, it sends the email. We're using it because building email delivery from scratch is a whole project on its own, and Resend has a free tier that's generous enough to last us through the course. Today: someone submits your form → Resend adds them as a contact → fires a confirmation email to their inbox. That's the whole loop. Make sense?"
 
-1. **resend.com → sign up** (Google sign-in is fastest)
-2. **Verify email** (the Resend confirmation lands in their inbox)
-3. **resend.com/api-keys → Create API Key**
-   - Permission: **Full Access** (NOT "Sending access")
-   - Name it something like `website-xxx-dev`
-4. **Copy the key once.** It's shown one time. Paste it into a temp scratch file in their text editor — NOT into Composer, NOT into chat.
+**Check:** wait for *"yes"* / *"ok"*.
 
-Name the **why** for Full Access: *"We need to create contacts and send emails. Sending access only does emails — it'll 401 on the contacts call. We can downgrade later for production if we want."*
+**Say (chunk 1):**
+> "First stop: [resend.com](https://resend.com). Sign up — Google is fastest. Once you're in, verify your email and come back."
 
-Then the security moment:
-> "This key is a password. It lets anyone use your Resend quota and send mail from your account. Three rules: never paste it into Claude, never commit it, and if you ever do — go revoke it from the dashboard and make a new one. Takes two minutes. Cheaper than the alternative."
+**Check:** wait for *"in"* / *"done"*.
 
-Also name the sender restriction **now**, before they think about testing:
-> "One thing to know up front: the default sender `onboarding@resend.dev` can only email you — the account owner. If you try to send to a friend's email later to test, nothing will arrive. Verify with your own email first. Domain verification (so you can email anyone) is a later session."
+**Say (chunk 2):**
+> "Now: [resend.com/api-keys](https://resend.com/api-keys) → Create API Key. Name it `website-[yourname]-dev`. For permissions — pick **Full Access**, not Sending access. I'll explain why in a sec."
 
-### 2. Subscribe component on the page
+**Check:** wait for *"created"* / *"done"*.
 
-Coach the prompt. Suggest something like:
+**Say (chunk 3):**
+> "Copy that key — it's shown exactly once. Paste it somewhere safe for now: a scratch file in your editor, Notes app, anywhere but chat. We'll move it to the right place in a moment."
 
-> using the frontend-design skill, build a `<SubscribeForm />` component and place it on the landing page. follow DESIGN.md — same fonts, colors, spacing. email input, submit button, and inline states for idle / loading / success / error. don't wire it to the API yet — just `console.log` the email on submit so we can verify the UI first.
+**Check:** wait for *"copied"* / *"got it"*.
 
-When learner sends a prompt:
-- Use the `frontend-design` skill.
-- Read `DESIGN.md` first. Match it.
-- Place the component on the page where it fits the existing layout.
-- Submit handler logs the email. No fetch yet.
-- After writing, name the file path in one line.
+Then the security moment — say it once, clearly:
+> "One rule before we write a line of code: this key is a password. Never paste it into Claude. Never commit it. If it leaks — go to [resend.com/api-keys](https://resend.com/api-keys), revoke it, make a new one. Takes two minutes. That's the whole safety net."
 
-Verify in the browser. Suggest commit:
-```
-feat: subscribe component
-```
+And the sender restriction — name it now so it never becomes a mystery:
+> "One more thing up front: the default sender `onboarding@resend.dev` can only deliver to you — the account owner. If someone else submits the form, the contact gets saved but no email lands in their inbox. That's expected — it's a Resend restriction until we add a verified domain, which is a later session. For today we test with your own email."
 
-### 3. `.env.local` + `.gitignore` check (before the route exists)
+**Check:** *"makes sense?"* / wait for nod.
 
-Walk through this carefully — it's a Guarantee.
+**Major-transition gate:** key is copied and safe before moving to Beat 2.
 
-> "Before we wire the route, let's set up the env vars properly. Two values: the API key and the sender email. The key goes in a file called `.env.local` at the project root — that file is gitignored by default with Next.js, so it never reaches a commit."
+---
 
-Suggest the prompt:
+## 🟢 BEAT 2 — Subscribe component
 
-> create `.env.local` at the project root with two lines: `RESEND_API_KEY=` (leave the value blank — I'll paste it in myself) and `RESEND_FROM_EMAIL=onboarding@resend.dev`. then confirm `.env*` is already in `.gitignore` — don't add it again if it's there.
+**Say:**
+> "Good. Now let's build the form — just the UI first, no API wiring yet. Try something like:"
 
-When learner sends:
-1. Write `.env.local` with empty `RESEND_API_KEY=` and the from-email set.
-2. Read `.gitignore` to confirm `.env*` is listed. (Next.js scaffold ships with this.)
-3. Name the file path in one line. **Do not print, echo, or ask for the key value.**
+**Suggest something like:**
+> using the frontend-design skill, add a subscribe form to the landing page. follow DESIGN.md — same fonts, colors, spacing. email input, submit button, inline states for loading / success / error. don't connect to the API yet, just console.log the email on submit.
 
-Then tell the learner:
-> "Open `.env.local`. Paste your key from the scratch file. Save. Then run `git status` in the terminal — `.env.local` should NOT appear. If it does, stop and tell me."
+**When learner sends a prompt:**
+- Invoke the `frontend-design` skill.
+- Read `DESIGN.md` first — match the voice, colors, spacing exactly.
+- Place the component where it fits the existing layout (above the footer, below the hero — wherever makes spatial sense).
+- Submit handler: `console.log(email)` only. No fetch.
+- After writing: name the component file path in one line.
 
-Wait for confirmation. If it appears in `git status`, fix `.gitignore` before doing anything else.
+**Check:** *"Try it in the browser — type an email and submit. Does the form look right and log to the console?"*
 
-No commit here — there's nothing to commit. `.env.local` is gitignored, no code changed.
+Wait for *"yes"* / screenshot.
 
-### 4. `/api/subscribe` route — wire Resend
+**Ask:**
+> "Looks good? Want to commit before we wire it up?"
 
-This is the highest-risk objective. Coach the prompt carefully:
+Wait for commit or *"yes"*. Suggested message: `feat: subscribe component`
 
-> add a POST route at `app/api/subscribe/route.ts`. inside the handler — lazy-init `new Resend(process.env.RESEND_API_KEY)` (not at module top). then two calls, destructuring `{ data, error }` on both:
-> 1. `resend.contacts.create({ email, unsubscribed: false })` — if error, log it and return 500.
-> 2. `resend.emails.send({ from: process.env.RESEND_FROM_EMAIL, to: email, subject: "Thanks for subscribing", html: <short warm confirmation matching DESIGN.md vibe — 2-3 sentences, no SaaS boilerplate> })` — if error, log it and return 500.
-> add `export const dynamic = "force-dynamic"` at the top. then update the SubscribeForm to POST to this route and show success/error inline.
+**Micro-praise:** when they commit — *"Clean. Component done, API next."*
 
-**What you MUST get right when generating the route** (these are Guarantees):
+---
 
-- `new Resend(process.env.RESEND_API_KEY)` lives **inside** the POST handler. Never at module level — that breaks `next build` when the env var is absent.
-- Both `contacts.create` and `emails.send` calls destructure `{ data, error }`. Never `await resend.x(...)` without checking error.
-- `export const dynamic = "force-dynamic"` is present.
+## 🟢 BEAT 3 — Credentials
+
+**Say:**
+> "Now let's give the code a way to talk to Resend. Try:"
+
+**Suggest something like:**
+> help me set up credentials for Resend
+
+**When learner sends that prompt — do all of this silently, no step-by-step narration:**
+
+1. Write `.env.local` at the project root:
+   ```
+   RESEND_API_KEY=
+   RESEND_FROM_EMAIL=onboarding@resend.dev
+   ```
+2. Read `.gitignore` — confirm `.env*` is listed. If not, add it. Either way, confirm it's covered.
+3. Do NOT print, echo, or ask for the key value at any point.
+
+**Then say:**
+> "Done. Open `.env.local` in the sidebar — you'll see `RESEND_API_KEY=` with nothing after the `=`. Paste your key right after it and save. Don't share that value with me."
+
+**Check:** wait for *"done"* / *"pasted"*.
+
+**Say:**
+> "Quick check — open the Source Control panel. `.env.local` should not appear there. If it does, tell me before we go further."
+
+**Check:** wait for *"not there"* / *"all good"*. If it appears — fix `.gitignore` before proceeding.
+
+No commit here — `.env.local` is gitignored, nothing changed in the codebase.
+
+---
+
+## 🟢 BEAT 4 — API route
+
+**Say:**
+> "Credentials are set. Now let's wire the form to Resend. Try something like:"
+
+**Suggest something like:**
+> help me connect the subscribe form to Resend — when someone submits, add them as a contact and send them a confirmation email
+
+**When learner sends a prompt — build the route. Get these right (Guarantees):**
+
+- `new Resend(process.env.RESEND_API_KEY)` lives **inside** the POST handler — never at module level (breaks `next build` when env var is absent).
+- Both calls destructure `{ data, error }` — `contacts.create` and `emails.send`. Never await without checking.
+- `contacts.create` error → return 500. `emails.send` error → log it server-side (`console.error`), but still return success to the client. A 403 here just means the recipient isn't the account owner; the contact was saved, and the form worked.
+- `export const dynamic = "force-dynamic"` at the top.
 - Server-side input check: at minimum `if (!email?.includes("@")) return 400`.
-- Friendly error messages to the client; full `console.error(error)` for the server log.
-- The HTML email reflects the brief's voice — read `DESIGN.md` and `CLAUDE.md` for the vibe. Short, warm, no `<table>` boilerplate, no "Best regards, The Team."
+- Friendly error to the client; `console.error(error)` to the server log.
+- The confirmation email matches the brief's voice — read `DESIGN.md`/`CLAUDE.md` for the vibe. Short, warm, 2–3 sentences. No `<table>` boilerplate, no "Best regards, The Team."
+- Update `SubscribeForm` to POST to this route and show the success/error state inline.
 
-Then verify together:
+**After writing — pre-announce before going silent:**
+> "Writing the route and wiring the form — one sec."
 
-> "Run `npm run dev`. Open the page. Submit your own email — the one you signed up to Resend with. You should see a success state, and within a few seconds, the email lands in your inbox. Check resend.com/contacts — your email should be there too."
+Then name the new file path when done.
 
-**If it doesn't work — read the Obstacles section below.** Most failures are silent. Don't retry blindly.
+**Check:** *"Run `npm run dev`. Open the page. Submit your own email — the one you signed up to Resend with. Does the form show a success state?"*
 
-Suggest commit when it works:
-```
-feat: resend integration
-```
+Wait for *"yes"* / screenshot.
 
-### 5. Deploy with Vercel env vars
+**Say:**
+> "Check two places: [resend.com/contacts](https://resend.com/contacts) — your email should appear there. And your inbox — if you submitted your own account email, a confirmation should land within a few seconds."
 
-> "Works locally. Now make it work for everyone. Two steps: add the env vars to Vercel, then redeploy."
+**Check:** wait for *"it's there"* / *"I can see it"*.
 
-1. Open vercel.com → the project → **Settings** → **Environment Variables**.
-2. Add `RESEND_API_KEY` (paste the same value from `.env.local`) and `RESEND_FROM_EMAIL=onboarding@resend.dev`. Apply to **Production** (and Preview if asked).
-3. From the terminal: `npx vercel --prod`.
+If anything is wrong — **go to the Obstacles table before retrying**. Most failures are silent.
 
-Verify on the live URL — submit, check the inbox. **That's the wow moment.** Name it specifically when it happens:
+**Ask:**
+> "Email arrived? Great — commit this before we deploy."
+
+Wait for commit or *"yes"*. Suggested message: `feat: resend integration`
+
+**Micro-praise** when it lands: *"That's a real API call hitting a real server. The form works."*
+
+---
+
+## 🟢 BEAT 5 — Deploy
+
+**Say (chunk 1):**
+> "Works locally. Two steps to make it live: add the env vars to Vercel, then redeploy. Open vercel.com → your project → Settings → Environment Variables."
+
+**Check:** wait for *"open"* / *"there"*.
+
+**Say (chunk 2):**
+> "Add `RESEND_API_KEY` — paste the same value from your `.env.local`. Add `RESEND_FROM_EMAIL` with value `onboarding@resend.dev`. Apply both to Production."
+
+**Check:** wait for *"added"* / *"done"*.
+
+**Say (chunk 3):**
+> "Now redeploy. Run `vercel --prod` in the terminal."
+
+**Check:** wait for *"deployed"* / live URL confirmed.
+
+**Say:**
+> "Open your live URL. Submit your email one more time."
+
+**Check:** wait for *"success"* / *"email arrived"*.
+
+**Wow moment — name it specifically:**
 > "That email just came from a server in the cloud, talking to Resend, talking back to your inbox. Your code reached the real world."
 
-Suggest commit:
-```
-deploy: subscribe live
-```
+**Ask:**
+> "Live and working? Let's commit the final state."
+
+Wait for commit or *"yes"*. Suggested message: `deploy: subscribe live`
 
 ---
 
@@ -254,7 +316,7 @@ These are the specific things that silently go wrong. When you see the symptom, 
 | `next build` or `next dev` errors with "Missing API key" | `new Resend(...)` at module top | Move it inside the POST handler. |
 | Submit returns 200 but nothing in resend.com/contacts | Silent error swallowed | Check for `{ error }` destructure. Add `console.error(error)` and retry. |
 | Submit returns 401 `restricted_api_key` | "Sending access" key, not Full Access | Regenerate key as Full Access. Update `.env.local` AND Vercel. |
-| Submit succeeds, contact created, but no email arrives | Sender restriction — recipient isn't the account owner | Send to the account owner's own email. Explain: domain verification is a later session. |
+| `emails.send` returns 403 `validation_error` | Recipient isn't the Resend account owner | Expected. Contact is still created. Don't block on this — log it server-side, return success. Email just won't arrive for non-owner addresses until domain is verified. |
 | Email lands in spam | `onboarding@resend.dev` is unverified for that recipient | Move it to inbox manually; production fix is a verified domain (out of scope). |
 | `.env.local` appears in `git status` | `.gitignore` missing `.env*` | Fix `.gitignore` BEFORE any commit. Don't proceed otherwise. |
 | Vercel deploy works but live submit fails | Env vars not set on Vercel | Add them in Vercel dashboard, redeploy. |
@@ -307,7 +369,11 @@ When learner says "done", "finished", "that's it", or similar — treat it as th
 
 **End with:**
 
-> "That's W2-2. You just shipped code that talks to someone else's server, and that server talked back to your inbox. Every API integration from here is a variation on this same pattern: env var, lazy client, destructure errors, never commit secrets. Take the break."
+> "That's W2-2 — and that's a real thing you just built. Someone visits the site, types their email, hits subscribe, and a confirmation lands in their inbox from a server you wrote. That's not a tutorial toy — that's how every newsletter, waitlist, and onboarding flow on the internet works. Same pattern, bigger scale.
+>
+> One pattern to carry forward: env var, lazy client, destructure errors, never commit secrets. You've done it once — next time it'll feel automatic.
+>
+> Take the break. You earned it."
 
 Then run the `/done` flow — write the workshop log from conversation memory.
 
