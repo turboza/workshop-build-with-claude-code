@@ -212,9 +212,11 @@ Text fallback:
 
 **Check:** wait for *"ok"*.
 
-**Say (chunk 1):**
+**Say (chunk 1):** Tell them the absolute path captured in Beat 2 so they know where to navigate. Output it literally — don't leave a placeholder.
 
-> "In Cursor: File → New Window. Then in that new window: File → Open Folder → navigate to `course-workspace/<your-project-name>/` and open it."
+> "In Cursor: File → New Window. Then in that new window: File → Open Folder → navigate to and open:
+>
+> `<absolute path from Beat 2, e.g. /Users/you/Desktop/course-workspace/website-xxx>`"
 
 **Check:** wait for *"open"* / *"I see it"* / *"done"*. If stuck, guide them:
 - Can't find the folder: *"Navigate up to where the `workshop/` folder lives — `course-workspace/` is right beside it."*
@@ -247,7 +249,7 @@ brief: <one-sentence brief from Beat 1>
 
 > "Switch to your project Cursor window — the one with `<project-name>` open — and start a new Claude Code chat. Paste that block in to start."
 
-**Teaching note:** "New chat" = click the `+` icon or `Ctrl+L` / `Cmd+L` in the chat panel. This keeps the project session clean from the start.
+**Teaching note:** "New chat" = click the `+` icon in the chat panel. This keeps the project session clean from the start. If they don't see Claude Code in the new window, point them to the three-dot (`...`) menu in the top-right of the chat panel — Claude Code lives in there.
 
 **Check:** wait for *"pasted"* / *"done"* / *"I'm in the new window"*.
 
@@ -339,7 +341,7 @@ scaffold: nextjs + ts + tailwind
 
 **Suggest something like:**
 
-> create a CLAUDE.md at the project root. include: a one-line description of the business (use the brief we've been working from), the stack (Next.js + TypeScript + Tailwind), and one rule — "always use the frontend-design skill for any UI work.".
+> create or update a CLAUDE.md at the project root. include: a one-line description of the business (use the brief we've been working from), the stack (Next.js + TypeScript + Tailwind), and one rule — "always use the frontend-design skill for any UI work.".
 
 **When learner sends a prompt:**
 
